@@ -32,6 +32,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'jettywrapper'
 end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
