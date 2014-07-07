@@ -16,3 +16,7 @@
 /tmp
 
 jetty
+
+.rvmrc
+
+/config/secrets.yml
