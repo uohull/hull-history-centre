@@ -9,27 +9,19 @@ class EadParser
   end
 
   def self.parse_items(node)
-    item_nodes = node.xpath("//#{item_node_map[:root]}")
+    item_nodes = node.xpath("//#{Ead::Item.root_xpath}")
     item_nodes.map {|item| single_item(item) }
   end
 
   def self.single_item(node)
-    item_fields.inject({}) do |attrs, field|
-      value = node.xpath("./#{item_node_map[field]}").text
+    Ead::Item.fields_map.inject({}) do |attrs, field_map|
+      field = field_map.first
+      xpath = field_map.last
+
+      value = node.xpath("./#{xpath}").text
       value = value.strip if value
       attrs = attrs.merge(field => value)
     end
-  end
-
-  def self.item_node_map
-    { root: 'c[@level = "item"]',
-      id: 'did/unitid[@label = "Reference"]',
-      title: 'did/unittitle'
-    }
-  end
-
-  def self.item_fields
-    item_node_map.reject {|k,v| k == :root }.keys
   end
 
 end

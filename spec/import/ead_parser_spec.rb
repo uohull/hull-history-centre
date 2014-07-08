@@ -1,11 +1,12 @@
 require 'spec_helper'
 require_relative '../../lib/import/ead_parser'
+require_relative '../../lib/import/ead/item'
 
 describe EadParser do
 
   describe '.single_item' do
     it 'finds the attributes for that item' do
-      xml = Nokogiri::XML(item_14).xpath("//#{EadParser.item_node_map[:root]}")
+      xml = Nokogiri::XML(item_14).xpath("//#{Ead::Item.root_xpath}")
       attrs = EadParser.single_item(xml)
       expect(attrs[:id]).to eq 'U DDH/14'
       expect(attrs[:title]).to eq 'Photocopy. Revolutionary Communist Party'
