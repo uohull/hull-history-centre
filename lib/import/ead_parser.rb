@@ -13,11 +13,9 @@ class EadParser
     item_nodes.map {|item| single_item(item) }
   end
 
+  # Get all the attributes for a single Item
   def self.single_item(node)
-    Ead::Item.fields_map.inject({}) do |attrs, field_map|
-      field = field_map.first
-      xpath = field_map.last
-
+    Ead::Item.fields_map.inject({}) do |attrs, (field, xpath)|
       value = node.xpath("./#{xpath}").text
       value = value.strip if value
       attrs = attrs.merge(field => value)
