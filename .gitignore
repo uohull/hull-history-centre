@@ -18,5 +18,6 @@
 jetty
 
 .rvmrc
+.ruby-gemset
 
 /config/secrets.yml

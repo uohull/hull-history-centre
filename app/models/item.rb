@@ -10,11 +10,13 @@ class Item
     end
   end
 
-  def to_solr
-    {}.tap do |fields|
+  def to_solr(doc = {})
+    doc.tap do |fields|
       fields['id'] = id
       fields['title_tesim'] = title
     end
   end
 
+  def save
+  end
 end
