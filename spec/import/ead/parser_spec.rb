@@ -1,13 +1,13 @@
 require 'spec_helper'
-require_relative '../../lib/import/ead_parser'
-require_relative '../../lib/import/ead/item'
+require_relative '../../../lib/import/ead/parser'
+require_relative '../../../lib/import/ead/item'
 
-describe EadParser do
+describe Ead::Parser do
 
   describe '.single_item' do
     it 'finds the attributes for that item' do
       xml = Nokogiri::XML(item_14).xpath("//#{Ead::Item.root_xpath}")
-      attrs = EadParser.single_item(xml)
+      attrs = Ead::Parser.single_item(xml)
       expect(attrs[:id]).to eq 'U DDH/14'
       expect(attrs[:title]).to eq 'Photocopy. Revolutionary Communist Party'
     end
@@ -16,7 +16,7 @@ describe EadParser do
   describe '.parse_items' do
     it 'finds the attributes for all items' do
       xml = Nokogiri::XML(two_items).xpath('*')
-      items = EadParser.parse_items(xml)
+      items = Ead::Parser.parse_items(xml)
       expect(items.count).to eq 2
       expect(items.last[:id]).to eq 'U DDH/14'
       expect(items.last[:title]).to eq 'Photocopy. Revolutionary Communist Party'
@@ -28,7 +28,7 @@ describe EadParser do
     let(:ead_file) { File.join(fixtures_path, 'U_DDH.xml') }
 
     it 'returns a hash of object attributes' do
-      objects = EadParser.parse(ead_file)
+      objects = Ead::Parser.parse(ead_file)
       expect(objects[:items].count).to eq 14
     end
   end
