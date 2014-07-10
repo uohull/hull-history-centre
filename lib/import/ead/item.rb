@@ -14,11 +14,11 @@ module Ead
         }
       end
 
-      def to_solr(attributes, doc = {})
-        doc.tap do |fields|
-          fields['id'] = attributes[:id]
-          fields['title_tesim'] = attributes[:title]
-        end
+      def to_solr(attributes)
+        {
+          'id' => attributes[:id],
+          'title_tesim' => attributes[:title]
+        }
       end
     end
   end

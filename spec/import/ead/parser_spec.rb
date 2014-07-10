@@ -1,6 +1,5 @@
 require 'spec_helper'
-require_relative '../../../lib/import/ead/parser'
-require_relative '../../../lib/import/ead/item'
+require_relative '../../../lib/import/ead'
 
 describe Ead::Parser do
 
