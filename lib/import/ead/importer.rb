@@ -3,7 +3,7 @@ module Ead
     class << self
 
       def import(filenames)
-        filenames.each do |filename|
+        Array(filenames).each do |filename|
           objects = Ead::Parser.parse(filename)
           objects[:items].each do |attributes|
             Blacklight.solr.add(Ead::Item.to_solr(attributes))

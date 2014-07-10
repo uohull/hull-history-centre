@@ -1,9 +1,9 @@
 module Ead
-  module Item
+  module Collection
     class << self
 
       def root_xpath
-        'c[@level = "item"]'
+        '//ead/archdesc'
       end
 
       # Map the name of the field to its xpath within the EAD xml
@@ -17,10 +17,11 @@ module Ead
       def to_solr(attributes)
         {
           'id' => attributes[:id],
-          'type_ssi' => 'item',
+          'type_ssi' => 'collection',
           'title_tesim' => attributes[:title]
         }
       end
+
     end
   end
 end

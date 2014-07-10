@@ -8,20 +8,21 @@ module Ead
         ead_data = File.read(file)
         doc = Nokogiri::XML(ead_data)
         {
-          items: parse_items(doc),
-          # TODO parse collection nodes
-          collections: []
+          items: parse_records(doc, Ead::Item),
+          collections: parse_records(doc, Ead::Collection),
         }
       end
 
-      def parse_items(node)
-        item_nodes = node.xpath("//#{Ead::Item.root_xpath}")
-        item_nodes.map {|item| single_item(item) }
+      def parse_records(node, record_class)
+        nodes = node.xpath("//#{record_class.root_xpath}")
+        nodes.map do |item|
+          attrs_for_record(item, record_class)
+        end
       end
 
-      # Get all the attributes for a single Item
-      def single_item(node)
-        Ead::Item.fields_map.inject({}) do |attrs, (field, xpath)|
+      # Get all the attributes for a single record
+      def attrs_for_record(node, record_class)
+        record_class.fields_map.inject({}) do |attrs, (field, xpath)|
           value = node.xpath("./#{xpath}").text
           value = value.strip if value
           attrs = attrs.merge(field => value)
