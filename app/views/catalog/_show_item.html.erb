@@ -1,0 +1,9 @@
+<%# A show view for a single Item -%>
+<dl class="dl-horizontal  dl-invert">
+  <%= render 'catalog/show_attributes_list', document: document %>
+
+  <dt> Collection: </dt>
+  <dd>
+    <%= link_to document[:collection_title_ss], catalog_path(document[:collection_id_ss]) %>
+  </dd>
+</dl>
