@@ -3,7 +3,7 @@ module Ead
     class << self
 
       def root_xpath
-        '//ead/archdesc'
+        'archdesc'
       end
 
       # Map the name of the field to its xpath within the EAD xml

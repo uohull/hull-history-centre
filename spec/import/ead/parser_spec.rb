@@ -11,18 +11,22 @@ describe Ead::Parser do
 
   describe 'attrs_for_record' do
     context 'for a single Item' do
+      let(:single_item) { File.join(fixtures_path, 'U_DAR_single_item.xml') }
+
       it 'finds the attributes for that item' do
-        xml = Nokogiri::XML(item_14).xpath("//#{Ead::Item.root_xpath}")
+        xml = Nokogiri::XML(File.read(single_item)).xpath("//#{Ead::Item.root_xpath}")
         attrs = Ead::Parser.attrs_for_record(xml, Ead::Item)
-        expect(attrs[:id]).to eq 'U DDH/14'
-        expect(attrs[:title]).to eq 'Photocopy. Revolutionary Communist Party'
+        expect(attrs[:id]).to eq 'U DAR/x1/1/51'
+        expect(attrs[:title]).to eq 'File. Shaw, George Bernard'
+        expect(attrs[:collection_id]).to eq 'U DAR'
+        expect(attrs[:collection_title]).to eq 'Papers of Robin Page Arnot'
       end
     end
 
     context 'for a single Collection' do
       it 'finds the attributes for that collection' do
         xml = Nokogiri::XML(File.read(ddh_file))
-        collection_node = xml.xpath("#{Ead::Collection.root_xpath}").first
+        collection_node = xml.xpath("//#{Ead::Collection.root_xpath}").first
         attrs = Ead::Parser.attrs_for_record(collection_node, Ead::Collection)
         expect(attrs[:id]).to eq 'U DDH'
         expect(attrs[:title]).to eq 'Papers of Denzil Dean Harber'

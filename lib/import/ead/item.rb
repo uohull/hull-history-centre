@@ -6,11 +6,19 @@ module Ead
         'c[@level = "item"]'
       end
 
+      # The xpath to the collection that the item belongs to
+      # (relative path from the item node)
+      def collection_xpath
+        "ancestor::#{Ead::Collection.root_xpath}[1]"
+      end
+
       # Map the name of the field to its xpath within the EAD xml
       def fields_map
         {
           id: 'did/unitid[@label = "Reference"]',
-          title: 'did/unittitle'
+          title: 'did/unittitle',
+          collection_id: "#{collection_xpath}/#{Ead::Collection.fields_map[:id]}",
+          collection_title: "#{collection_xpath}/#{Ead::Collection.fields_map[:title]}"
         }
       end
 
@@ -18,7 +26,9 @@ module Ead
         {
           'id' => attributes[:id],
           'type_ssi' => 'item',
-          'title_tesim' => attributes[:title]
+          'title_tesim' => attributes[:title],
+          'collection_id_ss' => attributes[:collection_id],
+          'collection_title_ss' => attributes[:collection_title]
         }
       end
     end
