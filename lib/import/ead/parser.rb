@@ -16,6 +16,7 @@ module Ead
       def parse_records(node, record_class)
         nodes = node.xpath("//#{record_class.root_xpath}")
         nodes.map do |item|
+          print '.' unless Rails.env == 'test'
           attrs_for_record(item, record_class)
         end
       end
