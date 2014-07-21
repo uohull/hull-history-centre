@@ -8,9 +8,10 @@ describe Ead::Item do
     let(:title) { 'Photocopy. Revolutionary Communist Party' }
     let(:collection_id) { 'U DDH' }
     let(:collection_title) { 'Papers of Denzil Dean Harber' }
+    let(:repo) { 'Hull University Archives' }
 
     it 'converts attributes to a hash of solr fields' do
-      attributes = { id: id, title: title, collection_id: collection_id, collection_title: collection_title }
+      attributes = { id: id, title: title, collection_id: collection_id, collection_title: collection_title, repository: repo }
       solr_fields = Ead::Item.to_solr(attributes)
 
       expect(solr_fields['id']).to eq id
@@ -18,6 +19,7 @@ describe Ead::Item do
       expect(solr_fields['type_ssi']).to eq 'item'
       expect(solr_fields['collection_id_ss']).to eq collection_id
       expect(solr_fields['collection_title_ss']).to eq collection_title
+      expect(solr_fields['repository_ssi']).to eq repo
     end
   end
 

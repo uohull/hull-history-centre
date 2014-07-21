@@ -6,11 +6,18 @@ module Ead
         'archdesc'
       end
 
+      # The xpath to the <eadheader> node
+      # (relative path from the collection node)
+      def ead_header_xpath
+        'ancestor::ead[1]/eadheader'
+      end
+
       # Map the name of the field to its xpath within the EAD xml
       def fields_map
         {
           id: 'did/unitid[@label = "Reference"]',
-          title: 'did/unittitle'
+          title: 'did/unittitle',
+          repository: "#{ead_header_xpath}/filedesc/titlestmt/author"
         }
       end
 
@@ -18,7 +25,8 @@ module Ead
         {
           'id' => attributes[:id],
           'type_ssi' => 'collection',
-          'title_tesim' => attributes[:title]
+          'title_tesim' => attributes[:title],
+          'repository_ssi' => attributes[:repository]
         }
       end
 

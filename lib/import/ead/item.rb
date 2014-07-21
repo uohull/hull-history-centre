@@ -18,7 +18,8 @@ module Ead
           id: 'did/unitid[@label = "Reference"]',
           title: 'did/unittitle',
           collection_id: "#{collection_xpath}/#{Ead::Collection.fields_map[:id]}",
-          collection_title: "#{collection_xpath}/#{Ead::Collection.fields_map[:title]}"
+          collection_title: "#{collection_xpath}/#{Ead::Collection.fields_map[:title]}",
+          repository: "#{Ead::Collection.fields_map[:repository]}",
         }
       end
 
@@ -28,7 +29,8 @@ module Ead
           'type_ssi' => 'item',
           'title_tesim' => attributes[:title],
           'collection_id_ss' => attributes[:collection_id],
-          'collection_title_ss' => attributes[:collection_title]
+          'collection_title_ss' => attributes[:collection_title],
+          'repository_ssi' => attributes[:repository]
         }
       end
     end

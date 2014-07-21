@@ -20,6 +20,7 @@ describe Ead::Parser do
         expect(attrs[:title]).to eq 'File. Shaw, George Bernard'
         expect(attrs[:collection_id]).to eq 'U DAR'
         expect(attrs[:collection_title]).to eq 'Papers of Robin Page Arnot'
+        expect(attrs[:repository]).to eq 'Hull University Archives'
       end
     end
 
@@ -30,6 +31,7 @@ describe Ead::Parser do
         attrs = Ead::Parser.attrs_for_record(collection_node, Ead::Collection)
         expect(attrs[:id]).to eq 'U DDH'
         expect(attrs[:title]).to eq 'Papers of Denzil Dean Harber'
+        expect(attrs[:repository]).to eq 'Hull University Archives'
       end
     end
   end
