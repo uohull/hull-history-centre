@@ -33,7 +33,7 @@ class CatalogController < ApplicationController
     config.index.display_type_field = 'format'
 
     # solr field configuration for document/show views
-    #config.show.title_field = 'title_display'
+    config.show.title_field = 'title_tesim'
     #config.show.display_type_field = 'format'
 
     # solr fields that will be treated as facets by the blacklight application
@@ -68,7 +68,7 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display 
-    config.add_show_field 'title_tesim', label: 'Title'
+    config.add_show_field 'id', label: 'Reference No'
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
