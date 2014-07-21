@@ -5,6 +5,11 @@ describe Ead::Importer do
   let(:fixtures_path) { File.expand_path(File.join('spec', 'fixtures', 'sample_ead_files')) }
   let(:ead_file) { File.join(fixtures_path, 'U_DDH.xml') }
 
+  before do
+    allow(Ead::Importer).to receive(:verbose) { false }
+    allow(Ead::Parser).to receive(:verbose) { false }
+  end
+
   describe '.import' do
     it "imports the correct number of items" do
       Blacklight.solr.delete_by_query('*:*', params: {commit: true})

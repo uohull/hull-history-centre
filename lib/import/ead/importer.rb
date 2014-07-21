@@ -22,7 +22,7 @@ module Ead
       end
 
       def print_message(msg)
-        puts msg unless Rails.env == 'test'
+        puts msg if verbose
       end
 
       def with_timing &blk
@@ -30,6 +30,10 @@ module Ead
         yield
         end_time = Time.now
         print_message "\nImport finished in: #{(end_time - start_time).ceil} seconds."
+      end
+
+      def verbose
+        true
       end
 
     end  # class << self

@@ -5,6 +5,10 @@ describe Ead::Parser do
   let(:fixtures_path) { File.expand_path(File.join('spec', 'fixtures', 'sample_ead_files')) }
   let(:ddh_file) { File.join(fixtures_path, 'U_DDH.xml') }
 
+  before do
+    allow(Ead::Parser).to receive(:verbose) { false }
+  end
+
   describe 'attrs_for_record' do
     context 'for a single Item' do
       it 'finds the attributes for that item' do
