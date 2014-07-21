@@ -3,7 +3,7 @@ require_relative '../../../lib/import/ead'
 
 describe Ead::Parser do
   let(:fixtures_path) { File.expand_path(File.join('spec', 'fixtures', 'sample_ead_files')) }
-  let(:ead_file) { File.join(fixtures_path, 'U_DDH.xml') }
+  let(:ddh_file) { File.join(fixtures_path, 'U_DDH.xml') }
 
   describe 'attrs_for_record' do
     context 'for a single Item' do
@@ -17,7 +17,7 @@ describe Ead::Parser do
 
     context 'for a single Collection' do
       it 'finds the attributes for that collection' do
-        xml = Nokogiri::XML(File.read(ead_file))
+        xml = Nokogiri::XML(File.read(ddh_file))
         collection_node = xml.xpath("#{Ead::Collection.root_xpath}").first
         attrs = Ead::Parser.attrs_for_record(collection_node, Ead::Collection)
         expect(attrs[:id]).to eq 'U DDH'
@@ -39,7 +39,7 @@ describe Ead::Parser do
 
     context 'for Collection records' do
       it 'finds the attributes for the collection(s)' do
-        xml = Nokogiri::XML(File.read(ead_file))
+        xml = Nokogiri::XML(File.read(ddh_file))
         collections = Ead::Parser.parse_records(xml, Ead::Collection)
         expect(collections.count).to eq 1
         expect(collections.first[:id]).to eq 'U DDH'
@@ -50,9 +50,9 @@ describe Ead::Parser do
 
   describe '.parse' do
     it 'returns a hash of object attributes' do
-      objects = Ead::Parser.parse(ead_file)
-      expect(objects[:items].count).to eq 14
+      objects = Ead::Parser.parse(ddh_file)
       expect(objects[:collections].count).to eq 1
+      expect(objects[:items].count).to eq 14
     end
   end
 
