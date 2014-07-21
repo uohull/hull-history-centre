@@ -91,8 +91,7 @@ class CatalogController < ApplicationController
     config.add_search_field 'all_fields', :label => 'All Fields'
     
     config.add_search_field('title') do |field|
-      field.solr_parameters = { :'spellcheck.dictionary' => 'title' }
-      field.solr_local_parameters = { 
+      field.solr_local_parameters = {
         :qf => 'title_tesim',
         :pf => 'title_tesim'
       }
