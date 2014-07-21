@@ -5,8 +5,9 @@ require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
 
-require 'rspec/core/rake_task'
-RSpec::Core::RakeTask.new(:spec)
+#require 'rspec/core/rake_task'
+#RSpec::Core::RakeTask.new(:spec)
+task :default => []; Rake::Task[:default].clear
 
 ZIP_URL = "https://github.com/projectblacklight/blacklight-jetty/archive/v4.6.0.zip"
 require 'jettywrapper'
