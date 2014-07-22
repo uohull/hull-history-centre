@@ -1,6 +1,7 @@
 <div id="content" class="col-md-12 show-document">
 
   <%= render 'previous_next_doc' %>
+  <%= render 'catalog/breadcrumbs', document: @document %>
 
   <% @page_title = t('blacklight.search.show.title', :document_title => document_show_html_title, :application_name => application_name).html_safe -%>
   <% content_for(:head) { render_link_rel_alternates } -%>

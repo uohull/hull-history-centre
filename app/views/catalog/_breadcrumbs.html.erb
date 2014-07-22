@@ -1,0 +1,20 @@
+<% unless document['type_ssi'] == 'collection' %>
+
+  <% breadcrumb_items = [['collection_title_ss', 'collection_id_ss'],
+                         ['series_title_ss', 'series_id_ss'],
+                        ]%>
+
+  <% crumbs = breadcrumb_items.map do |(title_key, id_key)| %>
+    <% if document[title_key] && document[id_key] %>
+      <% link_to document[title_key], catalog_path(document[id_key]) %>
+    <% else %>
+      <% document[title_key] %>
+    <% end %>
+  <% end %>
+
+  <% current_crumb = document['title_tesim'].first %>
+  <% crumbs = crumbs.compact + [current_crumb] %>
+  <% crumbs = crumbs.join(' &gt; ').html_safe %>
+
+  <div id='breadcrumbs'> <%= crumbs %> </div>
+<% end %>

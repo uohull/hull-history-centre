@@ -30,6 +30,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'jettywrapper'
+  gem 'capybara'
 end
 
 # Use Capistrano for deployment

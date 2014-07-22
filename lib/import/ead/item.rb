@@ -12,6 +12,10 @@ module Ead
         "ancestor::#{Ead::Collection.root_xpath}[1]"
       end
 
+      def series_xpath
+        "ancestor::#{Ead::Series.root_xpath}[1]"
+      end
+
       # Map the name of the field to its xpath within the EAD xml
       def fields_map
         {
@@ -19,6 +23,7 @@ module Ead
           title: 'did/unittitle',
           collection_id: "#{collection_xpath}/#{Ead::Collection.fields_map[:id]}",
           collection_title: "#{collection_xpath}/#{Ead::Collection.fields_map[:title]}",
+          series_title: "#{series_xpath}/#{Ead::Series.fields_map[:title]}",
           repository: 'did/repository',
           extent: 'did/physdesc/extent',
           access: 'accessrestrict',
@@ -33,6 +38,7 @@ module Ead
           'title_tesim' => attributes[:title],
           'collection_id_ss' => attributes[:collection_id],
           'collection_title_ss' => attributes[:collection_title],
+          'series_title_ss' => attributes[:series_title],
           'repository_ssi' => attributes[:repository],
           'format_ssi' => 'Archive Item',
           'extent_ss' => attributes[:extent],
