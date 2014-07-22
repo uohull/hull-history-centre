@@ -29,8 +29,8 @@ class CatalogController < ApplicationController
     #}
 
     # solr field configuration for search results/index views
-    config.index.title_field = 'title_display'
-    config.index.display_type_field = 'format'
+    config.index.title_field = 'title_tesim'
+    #config.index.display_type_field = 'format'
 
     # solr field configuration for document/show views
     config.show.title_field = 'title_tesim'
@@ -64,7 +64,7 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display 
-    config.add_index_field 'title_tesim', label: 'Title'
+    config.add_index_field 'id', label: 'Reference No'
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display 
