@@ -24,8 +24,15 @@ module Ead
       # Get all the attributes for a single record
       def attrs_for_record(node, record_class)
         record_class.fields_map.inject({}) do |attrs, (field, xpath)|
-          value = node.xpath("./#{xpath}").text
-          value = value.strip if value
+          element = node.xpath("./#{xpath}")
+
+          value = if element.children.length > 1
+                    element.children.map(&:to_s)
+                  else
+                    text = element.text
+                    text = text.strip if text
+                  end
+
           attrs = attrs.merge(field => value)
         end
       end

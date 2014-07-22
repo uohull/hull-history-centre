@@ -67,11 +67,9 @@ class CatalogController < ApplicationController
     config.add_index_field 'id', label: 'Reference No'
 
     # solr fields to be displayed in the show (single result) view
-    #   The ordering of the field names is the order of the display 
-    config.add_show_field 'id', label: 'Reference No'
-    config.add_show_field 'format_ssi', label: 'Format'
-    config.add_show_field 'extent_ss', label: 'Extent'
-    config.add_show_field 'repository_ssi', label: 'Repository'
+    # The ordering of the field names is the order of the display
+    # config.add_show_field 'id', label: 'Reference No'
+    # NB: These are set directly in the views for each type of record
 
 
     # "fielded" search configuration. Used by pulldown among other places.

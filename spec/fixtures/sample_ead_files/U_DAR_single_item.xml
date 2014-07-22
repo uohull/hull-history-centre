@@ -91,7 +91,8 @@ John Saville, &apos;Obituary: Robin Page Arnot (1890-1986)&apos;, in Bulletin of
               <unitid label="Former Reference">U DAR/1/51</unitid>
               <unitid encodinganalog="3.1.1" label="Reference" countrycode="GB" repositorycode="050">U DAR/x1/1/51</unitid>
             </did>
-            <accessrestrict encodinganalog="3.4.1"><p>Access will be granted to any accredited reader</p></accessrestrict>
+            <accessrestrict encodinganalog="3.4.1"><p>Access will be granted to any accredited reader</p><p> Paragraph 2 </p></accessrestrict>
+            <scopecontent encodinganalog="3.3.1"><p>desc 1</p><p>desc 2</p></scopecontent>
             <c level="otherlevel" otherlevel="Piece">
               <did>
                 <unittitle encodinganalog="3.1.2">Letter. George Bernard Shaw to Robin Page Arnot: - sending (an article?). Palme Dutt had already asked for it: Typed and signed</unittitle>

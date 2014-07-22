@@ -21,6 +21,8 @@ module Ead
           collection_title: "#{collection_xpath}/#{Ead::Collection.fields_map[:title]}",
           repository: 'did/repository',
           extent: 'did/physdesc/extent',
+          access: 'accessrestrict',
+          description: 'scopecontent'
         }
       end
 
@@ -33,7 +35,9 @@ module Ead
           'collection_title_ss' => attributes[:collection_title],
           'repository_ssi' => attributes[:repository],
           'format_ssi' => 'Archive Item',
-          'extent_ss' => attributes[:extent]
+          'extent_ss' => attributes[:extent],
+          'access_ssim' => attributes[:access],
+          'description_tesim' => attributes[:description]
         }
       end
     end

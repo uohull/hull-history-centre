@@ -1,4 +1,8 @@
 <%# A show view for a single Collection -%>
 <dl class="dl-horizontal  dl-invert">
-  <%= render 'catalog/show_attributes_list', document: document %>
+  <% show_fields = [['id', 'Reference No']] %>
+
+  <% show_fields.each do |(solr_doc_key, label)| %>
+    <%= show_attribute(document, solr_doc_key, label) %>
+  <% end %>
 </dl>
