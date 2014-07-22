@@ -19,7 +19,8 @@ module Ead
           title: 'did/unittitle',
           collection_id: "#{collection_xpath}/#{Ead::Collection.fields_map[:id]}",
           collection_title: "#{collection_xpath}/#{Ead::Collection.fields_map[:title]}",
-          repository: "did/repository",
+          repository: 'did/repository',
+          extent: 'did/physdesc/extent',
         }
       end
 
@@ -30,7 +31,9 @@ module Ead
           'title_tesim' => attributes[:title],
           'collection_id_ss' => attributes[:collection_id],
           'collection_title_ss' => attributes[:collection_title],
-          'repository_ssi' => attributes[:repository]
+          'repository_ssi' => attributes[:repository],
+          'format_ssi' => 'Archive Item',
+          'extent_ss' => attributes[:extent]
         }
       end
     end

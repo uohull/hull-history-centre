@@ -21,6 +21,7 @@ describe Ead::Parser do
         expect(attrs[:collection_id]).to eq 'U DAR'
         expect(attrs[:collection_title]).to eq 'Papers of Robin Page Arnot'
         expect(attrs[:repository]).to eq 'Hull University Archives'
+        expect(attrs[:extent]).to eq '1 file'
       end
     end
 
