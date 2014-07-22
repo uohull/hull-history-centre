@@ -19,7 +19,7 @@ module Ead
           title: 'did/unittitle',
           collection_id: "#{collection_xpath}/#{Ead::Collection.fields_map[:id]}",
           collection_title: "#{collection_xpath}/#{Ead::Collection.fields_map[:title]}",
-          repository: "#{Ead::Collection.fields_map[:repository]}",
+          repository: "did/repository",
         }
       end
 
