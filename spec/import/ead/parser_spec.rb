@@ -46,6 +46,7 @@ describe Ead::Parser do
         expect(attrs[:id]).to eq 'U DDH'
         expect(attrs[:title]).to eq 'Papers of Denzil Dean Harber'
         expect(attrs[:repository]).to eq 'Hull University Archives'
+        expect(attrs[:dates]).to eq '1932-1946'
       end
     end
   end

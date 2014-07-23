@@ -46,9 +46,9 @@ module Ead
         {
           'id' => attributes[:id],
           'type_ssi' => 'item',
+          'format_ssi' => 'Archive Item',
           'title_tesim' => attributes[:title],
           'repository_ssi' => attributes[:repository],
-          'format_ssi' => 'Archive Item',
           'extent_ss' => attributes[:extent],
           'access_ssim' => attributes[:access],
           'description_tesim' => attributes[:description],

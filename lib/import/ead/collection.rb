@@ -11,7 +11,8 @@ module Ead
         {
           id: 'did/unitid[@label = "Reference"]',
           title: 'did/unittitle',
-          repository: "did/repository"
+          repository: "did/repository",
+          dates: 'did/unitdate'
         }
       end
 
@@ -19,9 +20,10 @@ module Ead
         {
           'id' => attributes[:id],
           'type_ssi' => 'collection',
+          'format_ssi' => 'Archive Collection',
           'title_tesim' => attributes[:title],
           'repository_ssi' => attributes[:repository],
-          'format_ssi' => 'Archive Collection'
+          'dates_ssim' => attributes[:dates],
         }
       end
 

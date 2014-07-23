@@ -1,6 +1,11 @@
 <%# A show view for a single Collection -%>
+
+<h2> Summary </h2>
+
 <dl class="dl-horizontal  dl-invert">
-  <% show_fields = [['id', 'Reference No']] %>
+  <% show_fields = [['id', 'Reference No'],
+                    ['dates_ssim', 'Dates']
+                   ] %>
 
   <% show_fields.each do |(solr_doc_key, label)| %>
     <%= show_attribute(document, solr_doc_key, label) %>
