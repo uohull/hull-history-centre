@@ -10,6 +10,7 @@ describe Ead::Item do
     let(:extent) { '1 item' }
     let(:access) { ['<p>acc 1</p>' '<p>acc 2</p>'] }
     let(:desc) { ['<p>desc 1</p>' '<p>desc 2</p>'] }
+    let(:dates) { ['1932-1938'] }
 
     let(:collection_id) { 'U DDH' }
     let(:collection_title) { 'Papers of Denzil Dean Harber' }
@@ -20,7 +21,7 @@ describe Ead::Item do
     it 'converts attributes to a hash of solr fields' do
       attributes = { id: id, title: title, repository: repo,
                      extent: extent, access: access,
-                     description: desc,
+                     description: desc, dates: dates,
                      collection_id: collection_id,
                      collection_title: collection_title,
                      sub_collection_title: sub_collection_title,
@@ -36,6 +37,7 @@ describe Ead::Item do
       expect(solr_fields['extent_ss']).to eq '1 item'
       expect(solr_fields['access_ssim']).to eq access
       expect(solr_fields['description_tesim']).to eq desc
+      expect(solr_fields['dates_ssim']).to eq dates
 
       expect(solr_fields['collection_id_ss']).to eq collection_id
       expect(solr_fields['collection_title_ss']).to eq collection_title
