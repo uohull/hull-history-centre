@@ -12,7 +12,10 @@ module Ead
           id: 'did/unitid[@label = "Reference"]',
           title: 'did/unittitle',
           repository: "did/repository",
-          dates: 'did/unitdate'
+          dates: 'did/unitdate',
+          extent: 'did/physdesc/extent',
+          access: 'accessrestrict',
+          custodial_history: 'custodhist'
         }
       end
 
@@ -24,6 +27,9 @@ module Ead
           'title_tesim' => attributes[:title],
           'repository_ssi' => attributes[:repository],
           'dates_ssim' => attributes[:dates],
+          'extent_ss' => attributes[:extent],
+          'access_ssim' => attributes[:access],
+          'custodial_history_ssim' => attributes[:custodial_history]
         }
       end
 

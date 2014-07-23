@@ -4,7 +4,10 @@
 
 <dl class="dl-horizontal  dl-invert">
   <% show_fields = [['id', 'Reference No'],
-                    ['dates_ssim', 'Dates']
+                    ['dates_ssim', 'Dates'],
+                    ['extent_ss', 'Extent'],
+                    ['access_ssim', 'Access'],
+                    ['custodial_history_ssim', 'Custodial History']
                    ] %>
 
   <% show_fields.each do |(solr_doc_key, label)| %>
