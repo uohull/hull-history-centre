@@ -20,6 +20,10 @@ module Ead
         "ancestor::#{Ead::Series.root_xpath}[1]"
       end
 
+      def sub_series_xpath
+        "ancestor::#{Ead::SubSeries.root_xpath}[1]"
+      end
+
       # Map the name of the field to its xpath within the EAD xml
       def fields_map
         {
@@ -33,6 +37,7 @@ module Ead
           collection_title: "#{collection_xpath}/#{Ead::Collection.fields_map[:title]}",
           sub_collection_title: "#{sub_collection_xpath}/#{Ead::SubCollection.fields_map[:title]}",
           series_title: "#{series_xpath}/#{Ead::Series.fields_map[:title]}",
+          sub_series_title: "#{sub_series_xpath}/#{Ead::SubSeries.fields_map[:title]}",
         }
       end
 
@@ -50,6 +55,7 @@ module Ead
           'collection_title_ss' => attributes[:collection_title],
           'sub_collection_title_ss' => attributes[:sub_collection_title],
           'series_title_ss' => attributes[:series_title],
+          'sub_series_title_ss' => attributes[:sub_series_title]
         }
       end
     end

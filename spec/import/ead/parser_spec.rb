@@ -12,6 +12,7 @@ describe Ead::Parser do
   describe 'attrs_for_record' do
     context 'for a single Item' do
       let(:single_item) { File.join(fixtures_path, 'U_DAR_single_item.xml') }
+      let(:item_with_sub_series) { File.join(fixtures_path, 'C_DBCO_pruned.xml') }
 
       it 'finds the attributes for that item' do
         xml = Nokogiri::XML(File.read(single_item)).xpath("//#{Ead::Item.root_xpath}")
@@ -27,6 +28,12 @@ describe Ead::Parser do
         expect(attrs[:collection_title]).to eq 'Papers of Robin Page Arnot'
         expect(attrs[:sub_collection_title]).to eq 'First Deposit'
         expect(attrs[:series_title]).to eq 'General Files'
+      end
+
+      it 'finds sub_series attributes' do
+        xml = Nokogiri::XML(File.read(item_with_sub_series)).xpath("//#{Ead::Item.root_xpath}")
+        attrs = Ead::Parser.attrs_for_record(xml, Ead::Item)
+        expect(attrs[:sub_series_title]).to eq 'Comet Radiovision Services Ltd Minute Books'
       end
     end
 
