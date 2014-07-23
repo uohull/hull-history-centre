@@ -7,7 +7,7 @@ describe Ead::Item do
     let(:id) { 'U DDH/14' }
     let(:title) { 'Photocopy. Revolutionary Communist Party' }
     let(:repo) { 'Hull University Archives' }
-    let(:extent) { '1 item' }
+    let(:extent) { ['6 items', '1 volume'] }
     let(:access) { ['<p>acc 1</p>' '<p>acc 2</p>'] }
     let(:desc) { ['<p>desc 1</p>' '<p>desc 2</p>'] }
     let(:dates) { ['1932-1938'] }
@@ -34,7 +34,7 @@ describe Ead::Item do
       expect(solr_fields['title_tesim']).to eq title
       expect(solr_fields['repository_ssi']).to eq repo
       expect(solr_fields['format_ssi']).to eq 'Archive Item'
-      expect(solr_fields['extent_ss']).to eq '1 item'
+      expect(solr_fields['extent_ssm']).to eq extent
       expect(solr_fields['access_ssim']).to eq access
       expect(solr_fields['description_tesim']).to eq desc
       expect(solr_fields['dates_ssim']).to eq dates

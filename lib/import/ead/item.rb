@@ -49,7 +49,7 @@ module Ead
           'format_ssi' => 'Archive Item',
           'title_tesim' => attributes[:title],
           'repository_ssi' => attributes[:repository],
-          'extent_ss' => attributes[:extent],
+          'extent_ssm' => attributes[:extent],
           'access_ssim' => attributes[:access],
           'description_tesim' => attributes[:description],
           'dates_ssim' => attributes[:dates],
