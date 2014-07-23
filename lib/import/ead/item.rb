@@ -12,6 +12,10 @@ module Ead
         "ancestor::#{Ead::Collection.root_xpath}[1]"
       end
 
+      def sub_collection_xpath
+        "ancestor::#{Ead::SubCollection.root_xpath}[1]"
+      end
+
       def series_xpath
         "ancestor::#{Ead::Series.root_xpath}[1]"
       end
@@ -21,13 +25,14 @@ module Ead
         {
           id: 'did/unitid[@label = "Reference"]',
           title: 'did/unittitle',
-          collection_id: "#{collection_xpath}/#{Ead::Collection.fields_map[:id]}",
-          collection_title: "#{collection_xpath}/#{Ead::Collection.fields_map[:title]}",
-          series_title: "#{series_xpath}/#{Ead::Series.fields_map[:title]}",
           repository: 'did/repository',
           extent: 'did/physdesc/extent',
           access: 'accessrestrict',
-          description: 'scopecontent'
+          description: 'scopecontent',
+          collection_id: "#{collection_xpath}/#{Ead::Collection.fields_map[:id]}",
+          collection_title: "#{collection_xpath}/#{Ead::Collection.fields_map[:title]}",
+          sub_collection_title: "#{sub_collection_xpath}/#{Ead::SubCollection.fields_map[:title]}",
+          series_title: "#{series_xpath}/#{Ead::Series.fields_map[:title]}",
         }
       end
 
@@ -36,14 +41,15 @@ module Ead
           'id' => attributes[:id],
           'type_ssi' => 'item',
           'title_tesim' => attributes[:title],
-          'collection_id_ss' => attributes[:collection_id],
-          'collection_title_ss' => attributes[:collection_title],
-          'series_title_ss' => attributes[:series_title],
           'repository_ssi' => attributes[:repository],
           'format_ssi' => 'Archive Item',
           'extent_ss' => attributes[:extent],
           'access_ssim' => attributes[:access],
-          'description_tesim' => attributes[:description]
+          'description_tesim' => attributes[:description],
+          'collection_id_ss' => attributes[:collection_id],
+          'collection_title_ss' => attributes[:collection_title],
+          'sub_collection_title_ss' => attributes[:sub_collection_title],
+          'series_title_ss' => attributes[:series_title],
         }
       end
     end

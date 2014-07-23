@@ -18,12 +18,14 @@ describe Ead::Parser do
         attrs = Ead::Parser.attrs_for_record(xml, Ead::Item)
         expect(attrs[:id]).to eq 'U DAR/x1/1/51'
         expect(attrs[:title]).to eq 'File. Shaw, George Bernard'
-        expect(attrs[:collection_id]).to eq 'U DAR'
-        expect(attrs[:collection_title]).to eq 'Papers of Robin Page Arnot'
         expect(attrs[:repository]).to eq 'Hull University Archives'
         expect(attrs[:extent]).to eq '1 file'
         expect(attrs[:access]).to eq ['<p>Access will be granted to any accredited reader</p>', '<p> Paragraph 2 </p>']
         expect(attrs[:description]).to eq ['<p>desc 1</p>', '<p>desc 2</p>']
+
+        expect(attrs[:collection_id]).to eq 'U DAR'
+        expect(attrs[:collection_title]).to eq 'Papers of Robin Page Arnot'
+        expect(attrs[:sub_collection_title]).to eq 'First Deposit'
         expect(attrs[:series_title]).to eq 'General Files'
       end
     end
