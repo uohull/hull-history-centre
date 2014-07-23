@@ -55,6 +55,7 @@ class CatalogController < ApplicationController
     #
     # :show may be set to false if you don't want the facet to be drawn in the 
     # facet bar
+    config.add_facet_field 'format_ssi', label: 'Format'
     config.add_facet_field 'repository_ssi', label: 'Repository'
 
     # Have BL send all facet field names to Solr, which has been the default
@@ -65,6 +66,7 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display 
     config.add_index_field 'id', label: 'Reference No'
+    config.add_index_field 'format_ssi', label: 'Format'
 
     # solr fields to be displayed in the show (single result) view
     # The ordering of the field names is the order of the display

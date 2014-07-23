@@ -20,7 +20,8 @@ module Ead
           'id' => attributes[:id],
           'type_ssi' => 'collection',
           'title_tesim' => attributes[:title],
-          'repository_ssi' => attributes[:repository]
+          'repository_ssi' => attributes[:repository],
+          'format_ssi' => 'Archive Collection'
         }
       end
 
