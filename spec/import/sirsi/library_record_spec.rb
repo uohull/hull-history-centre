@@ -11,7 +11,7 @@ describe Sirsi::LibraryRecord do
 
     it 'converts attributes to a hash of solr fields' do
       solr_fields = Sirsi::LibraryRecord.to_solr(attrs)
-      expect(solr_fields['type_ssi']).to eq 'library record'
+      expect(solr_fields['type_ssi']).to eq 'library_record'
       expect(solr_fields['id']).to eq id
       expect(solr_fields['title_tesim']).to eq title
       expect(solr_fields['repository_ssi']).to eq 'Hull Local Studies Library'

@@ -17,7 +17,7 @@ module Sirsi
 
       def to_solr(attributes)
         {
-          'type_ssi' => 'library record',
+          'type_ssi' => 'library_record',
           'repository_ssi' => 'Hull Local Studies Library',
           'id' => attributes[:id],
           'title_tesim' => attributes[:title],

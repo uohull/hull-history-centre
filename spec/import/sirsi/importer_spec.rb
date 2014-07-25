@@ -14,7 +14,7 @@ describe Sirsi::Importer do
     it 'imports the records into solr documents' do
       Blacklight.solr.delete_by_query('*:*', params: {commit: true})
       Sirsi::Importer.import([sirsi_file])
-      count = Blacklight.solr.select(params: {'q' => 'type_ssi:"library record"'})['response']['numFound']
+      count = Blacklight.solr.select(params: {'q' => 'type_ssi:"library_record"'})['response']['numFound']
       expect(count).to eq 3
 
       doc = Blacklight.solr.select(params: {'q' => 'title_tesim:"Country ballads"'})['response']['docs'].first
