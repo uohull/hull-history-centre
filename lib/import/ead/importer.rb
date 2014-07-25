@@ -10,6 +10,7 @@ module Ead
       objects[:items].each do |attributes|
         Blacklight.solr.add(Ead::Item.to_solr(attributes))
       end
+      print_message "\nSaving records to solr"
       Blacklight.solr.commit
     end
 

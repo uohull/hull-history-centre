@@ -7,6 +7,7 @@ module Sirsi
       objects[:library_records].each do |attributes|
         Blacklight.solr.add(Sirsi::LibraryRecord.to_solr(attributes))
       end
+      print_message "\nSaving records to solr"
       Blacklight.solr.commit
     end
 
