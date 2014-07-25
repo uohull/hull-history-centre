@@ -9,6 +9,7 @@ module Sirsi
         xml = Nokogiri::XML(sirsi_data)
         nodes = xml.xpath("//#{Sirsi::LibraryRecord.root_xpath}")
         records = nodes.map do |record|
+          print '.' if verbose
           attrs_for_record(record, Sirsi::LibraryRecord)
         end
 
@@ -23,6 +24,10 @@ module Sirsi
           value = value.strip if value
           attrs = attrs.merge(field => value)
         end
+      end
+
+      def verbose
+        true
       end
 
     end

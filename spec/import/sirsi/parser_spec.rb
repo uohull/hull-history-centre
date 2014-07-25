@@ -6,6 +6,10 @@ describe Sirsi::Parser do
   let(:single_item) { File.join(fixtures_path, 'single_sirsi_record.xml') }
   let(:sirsi_records) { File.join(fixtures_path, 'full_record_sample.xml') }
 
+  before do
+    allow(Sirsi::Parser).to receive(:verbose) { false }
+  end
+
   describe '.attrs_for_record' do
     let(:attrs) {
       xml = Nokogiri::XML(File.read(single_item)).xpath("//#{Sirsi::LibraryRecord.root_xpath}")
