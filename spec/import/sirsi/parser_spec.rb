@@ -19,6 +19,7 @@ describe Sirsi::Parser do
     it 'finds the attributes for that record' do
       expect(attrs[:id]).to eq '1667917'
       expect(attrs[:title]).to match(/Abrâegâe des preuves/)
+      expect(attrs[:format]).to eq 'ANFHBK'
     end
   end
 

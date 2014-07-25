@@ -10,7 +10,8 @@ module Sirsi
       def fields_map
         {
           id: 'catalog/catalog_key',
-          title: 'catalog/marc/marc_field[@tag="245"]'
+          title: 'catalog/marc/marc_field[@tag="245"]',
+          format: 'catalog/item_record/cat1'
         }
       end
 
@@ -19,7 +20,56 @@ module Sirsi
           'type_ssi' => 'library record',
           'repository_ssi' => 'Hull Local Studies Library',
           'id' => attributes[:id],
-          'title_tesim' => attributes[:title]
+          'title_tesim' => attributes[:title],
+          'format_ssi' => transformed_format(attributes[:format])
+        }
+      end
+
+      def transformed_format(raw_data_format)
+        data = raw_data_format.upcase if raw_data_format
+        format_map.fetch(data, raw_data_format)
+      end
+
+      # TODO: Fill in format_map values or delete the ones
+      # that aren't needed.
+
+      # Keys are how the format appears in the SIRSI xml.
+      # Values are how the format appears in blacklight facets.
+      def format_map
+        {
+#          "AFCAS" => '?',
+          "AFHDBK" => 'Book',
+#          "AFLPTHDBK" => '?',
+#          "AFLPTPBK" => '?',
+          "AFPBK" => 'Book',
+#          "ANFCAS" => '?',
+          "ANFHBK" => 'Book',
+#          "ANFLPTHDBK" => '?',
+#          "ANFLPTPBK" => '?',
+          "ANFPBK" => 'Book',
+#          "AVEQUIP" => '?',
+          "CD" => 'DVD',
+          "CDROM" => 'DVD',
+          "CFHBK" => 'Book',
+          "CFPBK" => 'Book',
+          "CNFHBK" => 'Book',
+          "CNFPBK" => 'Book',
+          "DVD" => 'DVD',
+#          "FOREIGNF" => '?',
+#          "LARGEPRINT" => '?',
+          "MAGAZINE" => 'Book',
+          "MAP" => 'Map',
+          "MICROFORM" => 'Microfilm',
+#          "NEWSPAPER" => '?',
+#          "PAMPHLARGE" => '?',
+#          "PAMPHSMALL" => '?',
+#          "PICBK" => '?',
+#          "RESOURCE" => '?',
+#          "TEENFPBK" => '?',
+#          "TKBKADCAS" => '?',
+#          "TKBKADCD" => '?',
+#          "UNKNOWN" => '?',
+          "VIDEO" => 'Video'
         }
       end
 
