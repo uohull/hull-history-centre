@@ -13,6 +13,7 @@ describe Sirsi::LibraryRecord do
       expect(solr_fields['type_ssi']).to eq 'library record'
       expect(solr_fields['id']).to eq id
       expect(solr_fields['title_tesim']).to eq title
+      expect(solr_fields['repository_ssi']).to eq 'Hull Local Studies Library'
     end
   end
 end
