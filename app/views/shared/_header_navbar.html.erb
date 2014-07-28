@@ -1,0 +1,20 @@
+<div>
+  <%= link_to image_tag('/assets/Logo438C.jpg', :class => "hhc-logo"), "http://www.hullhistorycentre.org.uk/" %>
+</div>
+
+<div id="header-navbar" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+
+      <h1>
+        <%= link_to application_name, root_path %>
+      </h1>
+    </div>
+  </div>
+</div>
+
+<div id="search-navbar" class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <%= render_search_bar  %>
+  </div>
+</div>
