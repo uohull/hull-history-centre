@@ -3,6 +3,10 @@
 
 $gray-blue: #c1d1d1;
 
+// ---------
+//  Header
+// ---------
+
 #header-navbar {
   background-color: $gray-blue;
   border-bottom: 1px solid darken($gray-blue, 20%);
@@ -30,5 +34,23 @@ $gray-blue: #c1d1d1;
   padding-right: 1em;
   padding-left: 2em;
   background-color: #fff;
+}
+
+// ---------
+//  Footer
+// ---------
+
+#footer {
+  margin-top: 3em;
+  margin-bottom: 1em;
+}
+
+.partner-logos {
+  border:    1px solid #e7e7e7;
+  padding: 0;
+
+  img {
+    padding: 2em;
+  }
 }
 
