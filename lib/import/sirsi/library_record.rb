@@ -23,7 +23,8 @@ module Sirsi
           'id' => attributes[:id],
           'title_tesim' => attributes[:title],
           'format_ssi' => transformed_format(attributes[:format]),
-          'subject_ssim' => attributes[:subject]
+          'subject_ssim' => attributes[:subject],
+          'subject_tesim' => attributes[:subject]
         }
       end
 

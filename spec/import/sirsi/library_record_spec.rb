@@ -17,6 +17,7 @@ describe Sirsi::LibraryRecord do
       expect(solr_fields['title_tesim']).to eq title
       expect(solr_fields['repository_ssi']).to eq 'Hull Local Studies Library'
       expect(solr_fields['subject_ssim']).to eq ['Slave-trade--Great Britain--Early works to 1800.', 'Antislavery movements--Great Britain.']
+      expect(solr_fields['subject_tesim']).to eq ['Slave-trade--Great Britain--Early works to 1800.', 'Antislavery movements--Great Britain.']
     end
   end
 
