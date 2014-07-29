@@ -15,7 +15,8 @@ module Ead
           dates: 'did/unitdate',
           extent: 'did/physdesc/extent',
           access: 'accessrestrict',
-          custodial_history: 'custodhist'
+          custodial_history: 'custodhist',
+          language: 'did/langmaterial/language'
         }
       end
 
@@ -29,7 +30,8 @@ module Ead
           'dates_ssim' => attributes[:dates],
           'extent_ssm' => attributes[:extent],
           'access_ssim' => attributes[:access],
-          'custodial_history_ssim' => attributes[:custodial_history]
+          'custodial_history_ssim' => attributes[:custodial_history],
+          'language_ssim' => attributes[:language]
         }
       end
 

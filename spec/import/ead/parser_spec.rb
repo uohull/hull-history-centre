@@ -50,6 +50,7 @@ describe Ead::Parser do
         expect(attrs[:extent]).to eq '2 boxes'
         expect(attrs[:access]).to eq 'Access will be given to any accredited reader'
         expect(attrs[:custodial_history]).to eq ['<p>Copied with the permission of Julian Harber</p>', '<p>Another paragraph</p>']
+        expect(attrs[:language]).to eq 'English'
       end
     end
   end
