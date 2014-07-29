@@ -11,7 +11,8 @@ module Sirsi
         {
           id: 'catalog/catalog_key',
           title: 'catalog/marc/marc_field[@tag="245"]',
-          format: 'catalog/item_record/cat1'
+          format: 'catalog/item_record/cat1',
+          subject: 'catalog/marc/marc_field[@tag="650"]'
         }
       end
 
@@ -21,7 +22,8 @@ module Sirsi
           'repository_ssi' => 'Hull Local Studies Library',
           'id' => attributes[:id],
           'title_tesim' => attributes[:title],
-          'format_ssi' => transformed_format(attributes[:format])
+          'format_ssi' => transformed_format(attributes[:format]),
+          'subject_ssim' => attributes[:subject]
         }
       end
 

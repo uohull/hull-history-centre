@@ -20,6 +20,7 @@ describe Sirsi::Parser do
       expect(attrs[:id]).to eq '1667917'
       expect(attrs[:title]).to match(/Abrâegâe des preuves/)
       expect(attrs[:format]).to eq 'ANFHBK'
+      expect(attrs[:subject]).to eq ['Slave-trade--Great Britain--Early works to 1800.', 'Antislavery movements--Great Britain.']
     end
   end
 

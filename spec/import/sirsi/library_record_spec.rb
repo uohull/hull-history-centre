@@ -6,8 +6,9 @@ describe Sirsi::LibraryRecord do
   describe '.to_solr' do
     let(:id) { '123' }
     let(:title) { 'my title' }
+    let(:subject) { ['Slave-trade--Great Britain--Early works to 1800.', 'Antislavery movements--Great Britain.'] }
 
-    let(:attrs) { { id: id, title: title } }
+    let(:attrs) { { id: id, title: title, subject: subject } }
 
     it 'converts attributes to a hash of solr fields' do
       solr_fields = Sirsi::LibraryRecord.to_solr(attrs)
@@ -15,6 +16,7 @@ describe Sirsi::LibraryRecord do
       expect(solr_fields['id']).to eq id
       expect(solr_fields['title_tesim']).to eq title
       expect(solr_fields['repository_ssi']).to eq 'Hull Local Studies Library'
+      expect(solr_fields['subject_ssim']).to eq ['Slave-trade--Great Britain--Early works to 1800.', 'Antislavery movements--Great Britain.']
     end
   end
 

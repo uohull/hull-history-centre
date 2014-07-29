@@ -20,8 +20,14 @@ module Sirsi
       def attrs_for_record(node, record_class)
         record_class.fields_map.inject({}) do |attrs, (field, xpath)|
           element = node.xpath("./#{xpath}")
-          value = element.text
-          value = value.strip if value
+
+          value = Array(element).inject([]) do |values, element|
+            text = element.text
+            text = text.strip if text
+            values << text
+          end
+
+          value = value.first if value.length == 1
           attrs = attrs.merge(field => value)
         end
       end
