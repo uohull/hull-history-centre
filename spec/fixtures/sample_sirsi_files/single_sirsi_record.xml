@@ -8,6 +8,7 @@
       <catalog_year_of_pub><![CDATA[1814]]></catalog_year_of_pub>
       <marc primary_key="0|3573986|">
         <marc_field tag="084" label="Local class number">L(SLA).326.8</marc_field>
+        <marc_field tag="100" label="Personal Author">Fawcett, Bill</marc_field>
         <marc_field tag="110" label="Corporate Author">Great Britain. Parliament. House of Commons.</marc_field>
         <marc_field tag="245" label="Title">Abrâegâe des preuves donnâees devant un comitâe de la Chambre des communes de la Grande Bretagne, en 1790 et 1791, en faveur de l'abolition de la traite des ne?gres / traduit de l'anglois par Jean de Carro.</marc_field>
         <marc_field tag="260" label="Publication info">Vienne, Impr. d'A. Strauss, 1814.</marc_field>
@@ -15,6 +16,8 @@
         <marc_field tag="650" label="Subject term">Slave-trade--Great Britain--Early works to 1800.</marc_field>
         <marc_field tag="650" label="Subject term">Antislavery movements--Great Britain.</marc_field>
         <marc_field tag="700" label="Added author">Carro, Joannes de,</marc_field>
+        <marc_field tag="700" label="Added Entry-Personal Name">Poulson, George,</marc_field>
+        <marc_field tag="710" label="Added Entry-Corporate Name">English Heritage.</marc_field>
       </marc>
       <callnum_records>
         <item_number><![CDATA[L(SLA).326.8]]></item_number>

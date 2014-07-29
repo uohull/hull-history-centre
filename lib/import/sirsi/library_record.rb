@@ -12,7 +12,11 @@ module Sirsi
           id: 'catalog/catalog_key',
           title: 'catalog/marc/marc_field[@tag="245"]',
           format: 'catalog/item_record/cat1',
-          subject: 'catalog/marc/marc_field[@tag="650"]'
+          subject: 'catalog/marc/marc_field[@tag="650"]',
+          author_100: 'catalog/marc/marc_field[@tag="100"]',
+          author_110: 'catalog/marc/marc_field[@tag="110"]',
+          author_700: 'catalog/marc/marc_field[@tag="700"]',
+          author_710: 'catalog/marc/marc_field[@tag="710"]'
         }
       end
 
@@ -24,8 +28,16 @@ module Sirsi
           'title_tesim' => attributes[:title],
           'format_ssi' => transformed_format(attributes[:format]),
           'subject_ssim' => attributes[:subject],
-          'subject_tesim' => attributes[:subject]
+          'subject_tesim' => attributes[:subject],
+          'author_tesim' => authors(attributes)
         }
+      end
+
+      def authors(attributes)
+        [attributes[:author_100],
+         attributes[:author_700],
+         attributes[:author_110],
+         attributes[:author_710]].flatten
       end
 
       def transformed_format(raw_data_format)

@@ -66,6 +66,7 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display 
+    config.add_index_field 'author_tesim', label: 'Author'
     config.add_index_field 'id', label: 'Reference No'
     config.add_index_field 'format_ssi', label: 'Format'
 
@@ -99,6 +100,13 @@ class CatalogController < ApplicationController
       field.solr_local_parameters = {
         :qf => 'title_tesim',
         :pf => 'title_tesim'
+      }
+    end
+
+    config.add_search_field('author') do |field|
+      field.solr_local_parameters = {
+        :qf => 'author_tesim',
+        :pf => 'author_tesim'
       }
     end
 
