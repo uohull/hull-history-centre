@@ -31,6 +31,7 @@ describe Sirsi::Parser do
       expect(attrs[:author_110]).to eq 'Great Britain. Parliament. House of Commons.'
       expect(attrs[:author_710]).to eq 'English Heritage.'
       expect(attrs[:language]).to eq 'Parallel Latin text and English translation.'
+      expect(attrs[:publisher]).to eq "Vienne, Impr. d'A. Strauss, 1814."
     end
   end
 

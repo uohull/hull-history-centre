@@ -20,7 +20,8 @@ module Sirsi
           author_110: 'catalog/marc/marc_field[@tag="110"]',
           author_700: 'catalog/marc/marc_field[@tag="700"]',
           author_710: 'catalog/marc/marc_field[@tag="710"]',
-          language: 'catalog/marc/marc_field[@tag="546"]'
+          language: 'catalog/marc/marc_field[@tag="546"]',
+          publisher: 'catalog/marc/marc_field[@tag="260"]'
         }
       end
 
@@ -41,7 +42,8 @@ module Sirsi
           'geographical_subject_ssim' => attributes[:subject_651],
           'geographical_subject_tesim' => attributes[:subject_651],
           'author_tesim' => authors(attributes),
-          'language_ssim' => attributes[:language]
+          'language_ssim' => attributes[:language],
+          'publisher_ssim' => attributes[:publisher]
         }
       end
 
