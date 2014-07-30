@@ -13,6 +13,9 @@ module Sirsi
           title: 'catalog/marc/marc_field[@tag="245"]',
           format: 'catalog/item_record/cat1',
           subject: 'catalog/marc/marc_field[@tag="650"]',
+          subject_600: 'catalog/marc/marc_field[@tag="600"]',
+          subject_630: 'catalog/marc/marc_field[@tag="630"]',
+          subject_651: 'catalog/marc/marc_field[@tag="651"]',
           author_100: 'catalog/marc/marc_field[@tag="100"]',
           author_110: 'catalog/marc/marc_field[@tag="110"]',
           author_700: 'catalog/marc/marc_field[@tag="700"]',
@@ -30,6 +33,12 @@ module Sirsi
           'format_ssi' => transformed_format(attributes[:format]),
           'subject_ssim' => attributes[:subject],
           'subject_tesim' => attributes[:subject],
+          'personal_subject_ssim' => attributes[:subject_600],
+          'personal_subject_tesim' => attributes[:subject_600],
+          'corporate_subject_ssim' => attributes[:subject_630],
+          'corporate_subject_tesim' => attributes[:subject_630],
+          'geographical_subject_ssim' => attributes[:subject_651],
+          'geographical_subject_tesim' => attributes[:subject_651],
           'author_tesim' => authors(attributes),
           'language_ssim' => attributes[:language]
         }

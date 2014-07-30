@@ -20,7 +20,11 @@ describe Sirsi::Parser do
       expect(attrs[:id]).to eq '1667917'
       expect(attrs[:title]).to match(/Abrâegâe des preuves/)
       expect(attrs[:format]).to eq 'ANFHBK'
+
       expect(attrs[:subject]).to eq ['Slave-trade--Great Britain--Early works to 1800.', 'Antislavery movements--Great Britain.']
+      expect(attrs[:subject_600]).to eq 'Bond, Alice--Biography'
+      expect(attrs[:subject_630]).to eq 'Asiento treaty, 1713. [from old catalog]'
+      expect(attrs[:subject_651]).to eq 'Africa, Central--Description and travel.'
 
       expect(attrs[:author_100]).to eq 'Fawcett, Bill'
       expect(attrs[:author_700]).to eq ['Carro, Joannes de,', 'Poulson, George,']
