@@ -26,6 +26,7 @@ module Ead
           'type_ssi' => 'collection',
           'format_ssi' => 'Archive Collection',
           'title_tesim' => attributes[:title],
+          'display_title_ss' => display_title(attributes[:title]),
           'repository_ssi' => attributes[:repository],
           'dates_ssim' => attributes[:dates],
           'extent_ssm' => attributes[:extent],
@@ -33,6 +34,10 @@ module Ead
           'custodial_history_ssim' => attributes[:custodial_history],
           'language_ssim' => attributes[:language]
         }
+      end
+
+      def display_title(title)
+        "Archive Collection: #{Array(title).first}"
       end
 
     end

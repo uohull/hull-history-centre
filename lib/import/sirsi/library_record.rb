@@ -30,6 +30,7 @@ module Sirsi
           'repository_ssi' => 'Hull Local Studies Library',
           'id' => attributes[:id],
           'title_tesim' => attributes[:title],
+          'display_title_ss' => display_title(attributes),
           'format_ssi' => transformed_format(attributes[:format]),
           'subject_ssim' => attributes[:subject],
           'subject_tesim' => attributes[:subject],
@@ -97,6 +98,12 @@ module Sirsi
 #          "UNKNOWN" => '?',
           "VIDEO" => 'Video'
         }
+      end
+
+      def display_title(attributes)
+        format = transformed_format(attributes[:format])
+        format = 'Library Book' if format == 'Book'
+        "#{format}: #{Array(attributes[:title]).first}"
       end
 
     end

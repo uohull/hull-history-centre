@@ -5,7 +5,7 @@ describe Ead::Item do
 
   describe '.to_solr' do
     let(:id) { 'U DDH/14' }
-    let(:title) { 'Photocopy. Revolutionary Communist Party' }
+    let(:title) { ['Photocopy. Revolutionary Communist Party', 'title2'] }
     let(:repo) { 'Hull University Archives' }
     let(:extent) { ['6 items', '1 volume'] }
     let(:access) { ['<p>acc 1</p>' '<p>acc 2</p>'] }
@@ -32,6 +32,7 @@ describe Ead::Item do
       expect(solr_fields['type_ssi']).to eq 'item'
       expect(solr_fields['id']).to eq id
       expect(solr_fields['title_tesim']).to eq title
+      expect(solr_fields['display_title_ss']).to eq "Archive Item: #{title.first}"
       expect(solr_fields['repository_ssi']).to eq repo
       expect(solr_fields['format_ssi']).to eq 'Archive Item'
       expect(solr_fields['extent_ssm']).to eq extent

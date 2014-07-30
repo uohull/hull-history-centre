@@ -22,6 +22,7 @@ describe Ead::Collection do
       expect(solr_fields['type_ssi']).to eq 'collection'
       expect(solr_fields['id']).to eq id
       expect(solr_fields['title_tesim']).to eq title
+      expect(solr_fields['display_title_ss']).to eq "Archive Collection: #{title}"
       expect(solr_fields['repository_ssi']).to eq repo
       expect(solr_fields['format_ssi']).to eq 'Archive Collection'
       expect(solr_fields['dates_ssim']).to eq dates

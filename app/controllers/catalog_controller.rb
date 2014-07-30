@@ -29,11 +29,11 @@ class CatalogController < ApplicationController
     #}
 
     # solr field configuration for search results/index views
-    config.index.title_field = 'title_tesim'
+    config.index.title_field = 'display_title_ss'
     #config.index.display_type_field = 'format'
 
     # solr field configuration for document/show views
-    config.show.title_field = 'title_tesim'
+    config.show.title_field = 'display_title_ss'
     #config.show.display_type_field = 'format'
 
     # solr fields that will be treated as facets by the blacklight application
@@ -71,7 +71,6 @@ class CatalogController < ApplicationController
     config.add_index_field 'dates_ssim', label: 'Date'
     config.add_index_field 'extent_ssm', label: 'Extent'
     config.add_index_field 'id', label: 'Reference No'
-    config.add_index_field 'format_ssi', label: 'Format'
 
     # solr fields to be displayed in the show (single result) view
     # The ordering of the field names is the order of the display

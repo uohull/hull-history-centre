@@ -48,6 +48,7 @@ module Ead
           'type_ssi' => 'item',
           'format_ssi' => 'Archive Item',
           'title_tesim' => attributes[:title],
+          'display_title_ss' => display_title(attributes[:title]),
           'repository_ssi' => attributes[:repository],
           'extent_ssm' => attributes[:extent],
           'access_ssim' => attributes[:access],
@@ -60,6 +61,11 @@ module Ead
           'sub_series_title_ss' => attributes[:sub_series_title]
         }
       end
+
+      def display_title(title)
+        "Archive Item: #{Array(title).first}"
+      end
+
     end
   end
 end
