@@ -32,4 +32,9 @@ module ShowHelper
     crumbs = crumbs.compact.join(' &gt; ').html_safe
   end
 
+  def author_label(solr_doc)
+    author_count = Array(solr_doc['author_tesim']).count
+    author_count > 1 ? 'Authors: ' : 'Author: '
+  end
+
 end

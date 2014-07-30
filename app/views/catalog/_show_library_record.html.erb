@@ -1,3 +1,26 @@
+<%# A show view for a single LibraryRecord -%>
 
-<h3> Placeholder page for a Book or other library record.  </h3>
+<% authors = Array(document['author_tesim']) %>
+<% unless authors.empty? %>
+  <dl class="dl-horizontal  dl-invert">
+    <h3>
+      <dt> <%= author_label(document) %> &nbsp; </dt>
+      <dd>
+        <% authors.each do |auth| %>
+          <%= auth %> <br />
+        <% end %>
+      </dd>
+    </h3>
+  </dl>
+<% end %>
 
+<dl class="dl-horizontal  dl-invert">
+  <% show_fields = [['id', 'Reference No'],
+                    ['subject_ssim', 'Subject Keywords'],
+                    ['repository_ssi', 'Repository']
+                   ] %>
+
+  <% show_fields.each do |(solr_doc_key, label)| %>
+    <%= show_attribute(document, solr_doc_key, label) %>
+  <% end %>
+</dl>
