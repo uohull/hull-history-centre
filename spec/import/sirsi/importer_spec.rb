@@ -21,4 +21,24 @@ describe Sirsi::Importer do
       expect(doc['id']).to eq '1667617'
     end
   end
+
+  describe '.import with errors' do
+    let(:first_file) { sirsi_file }
+    let(:second_file) { File.join(fixtures_path, 'single_sirsi_record.xml') }
+
+    context 'when one file fails during import' do
+      it 'continues importing the other files in the list' do
+        expect(Sirsi::Parser).to receive(:parse).ordered.with(first_file).and_raise(StandardError.new('problem with file'))
+        expect(Sirsi::Parser).to receive(:parse).ordered.with(second_file) { {} }
+        Sirsi::Importer.import([first_file, second_file])
+      end
+
+      it 'returns the error messages' do
+        expect(Sirsi::Parser).to receive(:parse).ordered.with(first_file).and_raise(StandardError.new('problem with file'))
+        expect(Sirsi::Parser).to receive(:parse).ordered.with(second_file) { {} }
+        errors = Sirsi::Importer.import([first_file, second_file])
+        expect(errors).to eq ["#{first_file}: problem with file"]
+      end
+    end
+  end
 end

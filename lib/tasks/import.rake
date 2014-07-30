@@ -17,7 +17,12 @@ namespace :import do
     end
 
     files = files.flatten
-    Ead::Importer.import(files)
+    errors = Ead::Importer.import(files)
+
+    unless errors.empty?
+      puts "Import finished with the following errors: "
+      errors.map {|e| puts "\n"; puts e }
+    end
   end
 
 
@@ -38,7 +43,12 @@ namespace :import do
     end
 
     files = files.flatten
-    Sirsi::Importer.import(files)
+    errors = Sirsi::Importer.import(files)
+
+    unless errors.empty?
+      puts "Import finished with the following errors: "
+      errors.map {|e| puts "\n"; puts e }
+    end
   end
 
 end
