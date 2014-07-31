@@ -1,16 +1,12 @@
 <%# A show view for a single Collection -%>
 
-<h2> Summary </h2>
+<% unless document['dates_ssim'].blank? %>
+  <h3>
+    <dl class="dl-horizontal  dl-invert">
+      <dt> Dates: &nbsp; </dt>
+      <dd> <%= Array(document['dates_ssim']).join(', ') %> </dd>
+    </dl>
+  </h3>
+<% end %>
 
-<dl class="dl-horizontal  dl-invert">
-  <% show_fields = [['id', 'Reference No'],
-                    ['dates_ssim', 'Dates'],
-                    ['extent_ssm', 'Extent'],
-                    ['access_ssim', 'Access'],
-                    ['custodial_history_ssim', 'Custodial History']
-                   ] %>
-
-  <% show_fields.each do |(solr_doc_key, label)| %>
-    <%= show_attribute(document, solr_doc_key, label) %>
-  <% end %>
-</dl>
+<%= render "catalog/show_collection_summary", document: document %>

@@ -1,8 +1,8 @@
 <%# A show view for a single LibraryRecord -%>
 
-<% authors = Array(document['author_tesim']) %>
 <dl class="dl-horizontal  dl-invert">
     <h3>
+      <% authors = Array(document['author_tesim']) %>
       <% unless authors.empty? %>
         <dt> <%= author_label(document) %> &nbsp; </dt>
         <dd>
