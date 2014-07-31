@@ -1,5 +1,22 @@
 
+$highlight_color: #d8d0bb;
+
 h2 {
   color: #a8a08b;
 }
 
+
+#tab-sidebar {
+  font-size: 130%;
+
+  .tab-menu-item {
+    border: 1px solid lighten($highlight_color, 8%);
+    border-collapse: collapse;
+    padding: 0.5em;
+    text-decoration: none;
+  }
+
+  .current-tab {
+    background-color: $highlight_color;
+  }
+}

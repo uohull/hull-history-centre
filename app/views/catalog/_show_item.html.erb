@@ -7,8 +7,7 @@
                     ['format_ssi', 'Format'],
                     ['extent_ssm', 'Extent'],
                     ['access_ssim', 'Access Conditions'],
-                    ['repository_ssi', 'Repository'],
-                   ] %>
+                    ['repository_ssi', 'Repository']] %>
 
   <% show_fields.each do |(solr_doc_key, label)| %>
     <%= show_attribute(document, solr_doc_key, label) %>
