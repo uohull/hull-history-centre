@@ -16,14 +16,18 @@ describe Sirsi::LibraryRecord do
   let(:lang) { 'Parallel Latin text and English translation.' }
   let(:pub) { "Vienne, Impr. d'A. Strauss, 1814." }
   let(:phy_desc) { "48 p. : ill. (some col.), coats of arms, facsims., col. maps, ports. (chiefly col.) ; 24 cm." }
+  let(:dates) { '1814' }
+  let(:notes) { 'Includes index.' }
+  let(:isbn) { '123' }
 
   let(:attrs) {{ id: id, title: title, format: format,
                  subject: subject, subject_600: sub_600,
                  subject_630: sub_630, subject_651: sub_651,
                  author_100: author_100, author_110: author_110,
                  author_700: author_700, author_710: author_710,
-                 language: lang, publisher: pub,
-                 physical_desc: phy_desc }}
+                 language: lang, publisher: pub, dates: dates,
+                 physical_desc: phy_desc, notes: notes,
+                 isbn: isbn }}
 
   describe '.to_solr' do
     it 'converts attributes to a hash of solr fields' do
@@ -47,7 +51,10 @@ describe Sirsi::LibraryRecord do
       expect(solr_fields['author_tesim']).to eq [author_100, author_700, author_110, author_710].flatten
       expect(solr_fields['language_ssim']).to eq lang
       expect(solr_fields['publisher_ssim']).to eq pub
-      expect(solr_fields['physical_description_ssim']).to eq phy_desc
+      expect(solr_fields['dates_ssim']).to eq dates
+      expect(solr_fields['physical_description_ssm']).to eq phy_desc
+      expect(solr_fields['notes_ssm']).to eq notes
+      expect(solr_fields['isbn_ssm']).to eq isbn
     end
   end
 

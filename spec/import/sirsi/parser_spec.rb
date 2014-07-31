@@ -33,6 +33,9 @@ describe Sirsi::Parser do
       expect(attrs[:language]).to eq 'Parallel Latin text and English translation.'
       expect(attrs[:publisher]).to eq "Vienne, Impr. d'A. Strauss, 1814."
       expect(attrs[:physical_desc]).to eq '186 p. ; 22 cm.'
+      expect(attrs[:dates]).to eq '1814'
+      expect(attrs[:notes]).to eq 'Spine title: History of Barton.'
+      expect(attrs[:isbn]).to eq '0852062907'
     end
   end
 

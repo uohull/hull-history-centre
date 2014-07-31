@@ -22,7 +22,10 @@ module Sirsi
           author_710: 'catalog/marc/marc_field[@tag="710"]',
           language: 'catalog/marc/marc_field[@tag="546"]',
           publisher: 'catalog/marc/marc_field[@tag="260"]',
-          physical_desc: 'catalog/marc/marc_field[@tag="300"]'
+          physical_desc: 'catalog/marc/marc_field[@tag="300"]',
+          dates: 'catalog/catalog_year_of_pub',
+          notes: 'catalog/marc/marc_field[@tag="500"]',
+          isbn: 'catalog/marc/marc_field[@tag="020"]',
         }
       end
 
@@ -45,7 +48,10 @@ module Sirsi
           'author_tesim' => authors(attributes),
           'language_ssim' => attributes[:language],
           'publisher_ssim' => attributes[:publisher],
-          'physical_description_ssim' => attributes[:physical_desc]
+          'dates_ssim' => attributes[:dates],
+          'physical_description_ssm' => attributes[:physical_desc],
+          'notes_ssm' => attributes[:notes],
+          'isbn_ssm' => attributes[:isbn]
         }
       end
 
