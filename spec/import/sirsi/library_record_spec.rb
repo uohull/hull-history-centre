@@ -15,13 +15,15 @@ describe Sirsi::LibraryRecord do
   let(:author_710) { 'English Heritage.' }
   let(:lang) { 'Parallel Latin text and English translation.' }
   let(:pub) { "Vienne, Impr. d'A. Strauss, 1814." }
+  let(:phy_desc) { "48 p. : ill. (some col.), coats of arms, facsims., col. maps, ports. (chiefly col.) ; 24 cm." }
 
   let(:attrs) {{ id: id, title: title, format: format,
                  subject: subject, subject_600: sub_600,
                  subject_630: sub_630, subject_651: sub_651,
                  author_100: author_100, author_110: author_110,
                  author_700: author_700, author_710: author_710,
-                 language: lang, publisher: pub }}
+                 language: lang, publisher: pub,
+                 physical_desc: phy_desc }}
 
   describe '.to_solr' do
     it 'converts attributes to a hash of solr fields' do
@@ -45,6 +47,7 @@ describe Sirsi::LibraryRecord do
       expect(solr_fields['author_tesim']).to eq [author_100, author_700, author_110, author_710].flatten
       expect(solr_fields['language_ssim']).to eq lang
       expect(solr_fields['publisher_ssim']).to eq pub
+      expect(solr_fields['physical_description_ssim']).to eq phy_desc
     end
   end
 
