@@ -40,7 +40,7 @@ describe Ead::Item do
       expect(solr_fields['description_tesim']).to eq desc
       expect(solr_fields['dates_ssim']).to eq dates
 
-      expect(solr_fields['collection_id_ss']).to eq collection_id
+      expect(solr_fields['collection_id_ssi']).to eq collection_id
       expect(solr_fields['collection_title_ss']).to eq collection_title
       expect(solr_fields['sub_collection_title_ss']).to eq sub_collection_title
       expect(solr_fields['series_title_ss']).to eq series_title

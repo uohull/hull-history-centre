@@ -10,7 +10,7 @@ module ShowHelper
   end
 
   def breadcrumbs(document)
-    keys = [['collection_title_ss', 'collection_id_ss'],
+    keys = [['collection_title_ss', 'collection_id_ssi'],
             ['sub_collection_title_ss', 'sub_collection_id_ss'],
             ['series_title_ss', 'series_id_ss'],
             ['sub_series_title_ss', 'sub_series_id_ss'] ]

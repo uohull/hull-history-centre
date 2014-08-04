@@ -61,6 +61,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'repository_ssi', label: 'Repository', limit: 5
     config.add_facet_field 'subject_ssim', label: 'Subject', limit: 15
     config.add_facet_field 'language_ssim', label: 'Language', limit: 10
+    config.add_facet_field 'collection_id_ssi', label: 'Collection', show: false, helper_method: :collection_name
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
@@ -134,6 +135,8 @@ class CatalogController < ApplicationController
     # mean") suggestion is offered.
     config.spell_max = 5
   end
+
+protected
 
   def show_tab
     @show_tab = params['tab']

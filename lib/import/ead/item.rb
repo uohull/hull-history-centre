@@ -54,7 +54,7 @@ module Ead
           'access_ssim' => attributes[:access],
           'description_tesim' => attributes[:description],
           'dates_ssim' => attributes[:dates],
-          'collection_id_ss' => attributes[:collection_id],
+          'collection_id_ssi' => attributes[:collection_id],
           'collection_title_ss' => attributes[:collection_title],
           'sub_collection_title_ss' => attributes[:sub_collection_title],
           'series_title_ss' => attributes[:series_title],

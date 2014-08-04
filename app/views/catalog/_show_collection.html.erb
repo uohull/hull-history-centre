@@ -23,7 +23,7 @@
 
     <%= link_to 'Related Material', catalog_path(document.id, tab: 'related'), class: "#{tab_class('related', @show_tab)} #{menu_item_classes}" %>
 
-    <%= link_to 'Search', '#', class: menu_item_classes %>
+    <%= link_to 'Search', catalog_path(document.id, tab: 'search'), class: "#{tab_class('search', @show_tab)} #{menu_item_classes}" %>
   </div>
 
   <div id="tab-content" class="col-md-9">

@@ -18,7 +18,7 @@ describe Ead::Parser do
         xml = Nokogiri::XML(File.read(single_item)).xpath("//#{Ead::Item.root_xpath}")
         attrs = Ead::Parser.attrs_for_record(xml, Ead::Item)
         expect(attrs[:id]).to eq 'U DAR/x1/1/51'
-        expect(attrs[:title]).to eq 'File. Shaw, George Bernard'
+        expect(attrs[:title]).to eq 'File. Shaw, George Bernard, added socialist to the title'
         expect(attrs[:repository]).to eq 'Hull University Archives'
         expect(attrs[:extent]).to eq '1 file'
         expect(attrs[:access]).to eq ['<p>Access will be granted to any accredited reader</p>', '<p> Paragraph 2 </p>']
