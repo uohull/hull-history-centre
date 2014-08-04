@@ -14,12 +14,14 @@ describe Ead::Collection do
     let(:biog) { 'biog' }
     let(:desc) { 'desc' }
     let(:arrange) { ['<p>arr 1</p>' '<p>arr 2</p>'] }
+    let(:rel) { ['<p>rel 1</p>' '<p>rel 2</p>'] }
 
     let(:attributes) {{ id: id, title: title, repository: repo,
                      dates: dates, extent: extent,
                      access: access, custodial_history: cust,
                      language: lang, biog_hist: biog,
-                     description: desc, arrangement: arrange }}
+                     description: desc, arrangement: arrange,
+                     related: rel }}
 
     it 'converts attributes to a hash of solr fields' do
       solr_fields = Ead::Collection.to_solr(attributes)
@@ -37,6 +39,7 @@ describe Ead::Collection do
       expect(solr_fields['biog_hist_ssm']).to eq biog
       expect(solr_fields['description_ssim']).to eq desc
       expect(solr_fields['arrangement_ssm']).to eq arrange
+      expect(solr_fields['related_ssm']).to eq rel
     end
   end
 end

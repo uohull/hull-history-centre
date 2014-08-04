@@ -19,7 +19,8 @@ module Ead
           language: 'did/langmaterial/language',
           biog_hist: 'bioghist',
           description: 'scopecontent',
-          arrangement: 'arrangement'
+          arrangement: 'arrangement',
+          related: 'relatedmaterial'
         }
       end
 
@@ -38,7 +39,8 @@ module Ead
           'language_ssim' => attributes[:language],
           'biog_hist_ssm' => attributes[:biog_hist],
           'description_ssim' => attributes[:description],
-          'arrangement_ssm' => attributes[:arrangement]
+          'arrangement_ssm' => attributes[:arrangement],
+          'related_ssm' => attributes[:related]
         }
       end
 

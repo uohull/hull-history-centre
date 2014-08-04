@@ -57,6 +57,8 @@ describe Ead::Parser do
         expect(attrs[:description].first).to match(/statements and correspondence of the Revolutionary Socialist League/)
         expect(attrs[:arrangement].count).to eq 4
         expect(attrs[:arrangement].first).to eq '<p>U DDH/1	Various parties, 1932-1938</p>'
+        expect(attrs[:related].count).to eq 4
+        expect(attrs[:related].first).to eq '<p>Papers of Jock Haston (records of the Revolutionary Communist Party) [U DJH]</p>'
       end
     end
   end
