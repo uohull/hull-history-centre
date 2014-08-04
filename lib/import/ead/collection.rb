@@ -16,7 +16,9 @@ module Ead
           extent: 'did/physdesc/extent',
           access: 'accessrestrict',
           custodial_history: 'custodhist',
-          language: 'did/langmaterial/language'
+          language: 'did/langmaterial/language',
+          biog_hist: 'bioghist',
+          description: 'scopecontent'
         }
       end
 
@@ -32,7 +34,9 @@ module Ead
           'extent_ssm' => attributes[:extent],
           'access_ssim' => attributes[:access],
           'custodial_history_ssim' => attributes[:custodial_history],
-          'language_ssim' => attributes[:language]
+          'language_ssim' => attributes[:language],
+          'biog_hist_ssm' => attributes[:biog_hist],
+          'description_ssim' => attributes[:description]
         }
       end
 

@@ -51,6 +51,10 @@ describe Ead::Parser do
         expect(attrs[:access]).to eq 'Access will be given to any accredited reader'
         expect(attrs[:custodial_history]).to eq ['<p>Copied with the permission of Julian Harber</p>', '<p>Another paragraph</p>']
         expect(attrs[:language]).to eq 'English'
+        expect(attrs[:biog_hist].count).to eq 2
+        expect(attrs[:biog_hist].first).to match(/<p>Denzil Harber was born at 25 Fairmile Avenue, Streatham, on 25 Jan 1909./)
+        expect(attrs[:description].count).to eq 2
+        expect(attrs[:description].first).to match(/statements and correspondence of the Revolutionary Socialist League/)
       end
     end
   end

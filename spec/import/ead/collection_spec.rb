@@ -11,11 +11,14 @@ describe Ead::Collection do
     let(:access) { ['<p>acc 1</p>' '<p>acc 2</p>'] }
     let(:cust) { ['<p>cust 1</p>' '<p>cust 2</p>'] }
     let(:lang) { 'English' }
+    let(:biog) { 'biog' }
+    let(:desc) { 'desc' }
 
     let(:attributes) {{ id: id, title: title, repository: repo,
                      dates: dates, extent: extent,
                      access: access, custodial_history: cust,
-                     language: lang }}
+                     language: lang, biog_hist: biog,
+                     description: desc }}
 
     it 'converts attributes to a hash of solr fields' do
       solr_fields = Ead::Collection.to_solr(attributes)
@@ -30,6 +33,8 @@ describe Ead::Collection do
       expect(solr_fields['access_ssim']).to eq access
       expect(solr_fields['custodial_history_ssim']).to eq cust
       expect(solr_fields['language_ssim']).to eq lang
+      expect(solr_fields['biog_hist_ssm']).to eq biog
+      expect(solr_fields['description_ssim']).to eq desc
     end
   end
 end
