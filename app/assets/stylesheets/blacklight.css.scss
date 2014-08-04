@@ -1,15 +1,15 @@
 @import 'bootstrap';
 @import 'blacklight/blacklight';
 
-$gray-olive: #c9c4b7;
+$beige: #e2d8cc;
 
 // ---------
 //  Header
 // ---------
 
 #header-navbar {
-  background-color: $gray-olive;
-  border-bottom: 1px solid darken($gray-olive, 20%);
+  background-color: $beige;
+  border-bottom: 1px solid darken($beige, 13%);
 
   h1 {
     padding: 0.2em 0;
@@ -23,7 +23,7 @@ $gray-olive: #c9c4b7;
 
   h1 a:hover, h1 a:focus {
     text-decoration: none;
-    color: darken($gray-olive, 40%);
+    color: darken($beige, 40%);
   }
 }
 
