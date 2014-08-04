@@ -55,6 +55,8 @@ describe Ead::Parser do
         expect(attrs[:biog_hist].first).to match(/<p>Denzil Harber was born at 25 Fairmile Avenue, Streatham, on 25 Jan 1909./)
         expect(attrs[:description].count).to eq 2
         expect(attrs[:description].first).to match(/statements and correspondence of the Revolutionary Socialist League/)
+        expect(attrs[:arrangement].count).to eq 4
+        expect(attrs[:arrangement].first).to eq '<p>U DDH/1	Various parties, 1932-1938</p>'
       end
     end
   end

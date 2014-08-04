@@ -18,7 +18,8 @@ module Ead
           custodial_history: 'custodhist',
           language: 'did/langmaterial/language',
           biog_hist: 'bioghist',
-          description: 'scopecontent'
+          description: 'scopecontent',
+          arrangement: 'arrangement'
         }
       end
 
@@ -36,7 +37,8 @@ module Ead
           'custodial_history_ssim' => attributes[:custodial_history],
           'language_ssim' => attributes[:language],
           'biog_hist_ssm' => attributes[:biog_hist],
-          'description_ssim' => attributes[:description]
+          'description_ssim' => attributes[:description],
+          'arrangement_ssm' => attributes[:arrangement]
         }
       end
 
