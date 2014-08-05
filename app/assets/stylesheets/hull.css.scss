@@ -5,6 +5,34 @@ h2 {
   color: #a8a08b;
 }
 
+.main-home-image {
+  width: 100%;
+  padding: 1em 5em;
+  border: 2px solid $highlight_color;
+}
+
+.story-box {
+  border: 2px solid $highlight_color;
+  margin-top: 1em;
+  padding: 1em;
+
+  h2 { margin: 0; }
+
+  dl {
+    padding: 1em;
+    margin-bottom: 0;
+  }
+
+  dt {
+    width: 30%;
+    text-align: left;
+    font-size: 18px;
+  }
+
+  dd {
+    margin-left: 30%;
+  }
+}
 
 #tab-sidebar {
   font-size: 130%;
