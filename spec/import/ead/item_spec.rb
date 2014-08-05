@@ -1,5 +1,5 @@
 require 'spec_helper'
-require_relative '../../../lib/import/ead/item'
+require_relative '../../../lib/import/ead'
 
 describe Ead::Item do
 
@@ -11,6 +11,7 @@ describe Ead::Item do
     let(:access) { ['<p>acc 1</p>' '<p>acc 2</p>'] }
     let(:desc) { ['<p>desc 1</p>' '<p>desc 2</p>'] }
     let(:dates) { ['1932-1938'] }
+    let(:dates_normal) { '1940-1942' }
 
     let(:collection_id) { 'U DDH' }
     let(:collection_title) { 'Papers of Denzil Dean Harber' }
@@ -22,6 +23,7 @@ describe Ead::Item do
       attributes = { id: id, title: title, repository: repo,
                      extent: extent, access: access,
                      description: desc, dates: dates,
+                     dates_normal: dates_normal,
                      collection_id: collection_id,
                      collection_title: collection_title,
                      sub_collection_title: sub_collection_title,
@@ -39,6 +41,7 @@ describe Ead::Item do
       expect(solr_fields['access_ssim']).to eq access
       expect(solr_fields['description_tesim']).to eq desc
       expect(solr_fields['dates_ssim']).to eq dates
+      expect(solr_fields['dates_isim']).to eq [1940, 1941, 1942]
 
       expect(solr_fields['collection_id_ssi']).to eq collection_id
       expect(solr_fields['collection_title_ss']).to eq collection_title

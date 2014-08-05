@@ -24,6 +24,7 @@ describe Ead::Parser do
         expect(attrs[:access]).to eq ['<p>Access will be granted to any accredited reader</p>', '<p> Paragraph 2 </p>']
         expect(attrs[:description]).to eq ['<p>desc 1</p>', '<p>desc 2</p>']
         expect(attrs[:dates]).to eq '1941 - 1972'
+        expect(attrs[:dates_normal]).to eq '1941-1972'
 
         expect(attrs[:collection_id]).to eq 'U DAR'
         expect(attrs[:collection_title]).to eq 'Papers of Robin Page Arnot'
@@ -47,6 +48,7 @@ describe Ead::Parser do
         expect(attrs[:title]).to eq 'Papers of Denzil Dean Harber'
         expect(attrs[:repository]).to eq 'Hull University Archives'
         expect(attrs[:dates]).to eq '1932-1946'
+        expect(attrs[:dates_normal]).to eq '1932-1946'
         expect(attrs[:extent]).to eq '2 boxes'
         expect(attrs[:access]).to eq 'Access will be given to any accredited reader'
         expect(attrs[:custodial_history]).to eq ['<p>Copied with the permission of Julian Harber</p>', '<p>Another paragraph</p>']

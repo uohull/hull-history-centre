@@ -49,6 +49,7 @@ module Sirsi
           'language_ssim' => attributes[:language],
           'publisher_ssim' => attributes[:publisher],
           'dates_ssim' => attributes[:dates],
+          'dates_isim' => integer_date(attributes[:dates]),
           'physical_description_ssm' => attributes[:physical_desc],
           'notes_ssm' => attributes[:notes],
           'isbn_ssm' => attributes[:isbn]
@@ -60,6 +61,10 @@ module Sirsi
          attributes[:author_700],
          attributes[:author_110],
          attributes[:author_710]].flatten
+      end
+
+      def integer_date(date_string)
+        Array(date_string).first.to_i
       end
 
       def transformed_format(raw_data_format)

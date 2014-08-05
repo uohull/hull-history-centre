@@ -1,5 +1,7 @@
 module Ead
   module Item
+    extend ::DateFormatter
+
     class << self
 
       def root_xpath
@@ -34,6 +36,7 @@ module Ead
           access: 'accessrestrict',
           description: 'scopecontent',
           dates: 'did/unitdate',
+          dates_normal: 'did/unitdate/@normal',
           collection_id: "#{collection_xpath}/#{Ead::Collection.fields_map[:id]}",
           collection_title: "#{collection_xpath}/#{Ead::Collection.fields_map[:title]}",
           sub_collection_title: "#{sub_collection_xpath}/#{Ead::SubCollection.fields_map[:title]}",
@@ -54,6 +57,7 @@ module Ead
           'access_ssim' => attributes[:access],
           'description_tesim' => attributes[:description],
           'dates_ssim' => attributes[:dates],
+          'dates_isim' => expand_dates(attributes[:dates_normal]),
           'collection_id_ssi' => attributes[:collection_id],
           'collection_title_ss' => attributes[:collection_title],
           'sub_collection_title_ss' => attributes[:sub_collection_title],

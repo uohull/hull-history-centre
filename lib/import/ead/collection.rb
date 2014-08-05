@@ -1,5 +1,7 @@
 module Ead
   module Collection
+    extend ::DateFormatter
+
     class << self
 
       def root_xpath
@@ -13,6 +15,7 @@ module Ead
           title: 'did/unittitle',
           repository: "did/repository",
           dates: 'did/unitdate',
+          dates_normal: 'did/unitdate/@normal',
           extent: 'did/physdesc/extent',
           access: 'accessrestrict',
           custodial_history: 'custodhist',
@@ -35,6 +38,7 @@ module Ead
           'display_title_ss' => display_title(attributes[:title]),
           'repository_ssi' => attributes[:repository],
           'dates_ssim' => attributes[:dates],
+          'dates_isim' => expand_dates(attributes[:dates_normal]),
           'extent_ssm' => attributes[:extent],
           'access_ssim' => attributes[:access],
           'custodial_history_ssim' => attributes[:custodial_history],
