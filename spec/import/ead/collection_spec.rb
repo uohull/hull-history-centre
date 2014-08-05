@@ -15,7 +15,8 @@ describe Ead::Collection do
     let(:desc) { 'desc' }
     let(:arrange) { ['<p>arr 1</p>' '<p>arr 2</p>'] }
     let(:rel) { ['<p>rel 1</p>' '<p>rel 2</p>'] }
-    let(:pub_notes) { 'publication notes' }
+    let(:pub_notes) { "pub notes 1\npub notes 2" }
+    let(:pub_notes_trans) { "pub notes 1<br />pub notes 2" }
 
     let(:attributes) {{ id: id, title: title, repository: repo,
                      dates: dates, extent: extent,
@@ -41,7 +42,7 @@ describe Ead::Collection do
       expect(solr_fields['description_ssim']).to eq desc
       expect(solr_fields['arrangement_ssm']).to eq arrange
       expect(solr_fields['related_ssm']).to eq rel
-      expect(solr_fields['pub_notes_ssm']).to eq pub_notes
+      expect(solr_fields['pub_notes_ssm']).to eq pub_notes_trans
     end
   end
 end

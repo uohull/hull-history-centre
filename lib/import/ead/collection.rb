@@ -42,12 +42,16 @@ module Ead
           'description_ssim' => attributes[:description],
           'arrangement_ssm' => attributes[:arrangement],
           'related_ssm' => attributes[:related],
-          'pub_notes_ssm' => attributes[:pub_notes]
+          'pub_notes_ssm' => break_lines(attributes[:pub_notes])
         }
       end
 
       def display_title(title)
         "Archive Collection: #{Array(title).first}"
+      end
+
+      def break_lines(raw_data)
+        raw_data.gsub("\n", '<br />')
       end
 
     end
