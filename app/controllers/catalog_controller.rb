@@ -57,7 +57,7 @@ class CatalogController < ApplicationController
     #
     # :show may be set to false if you don't want the facet to be drawn in the 
     # facet bar
-    config.add_facet_field 'format_ssi', label: 'Format', limit: 30
+    config.add_facet_field 'format_ssi', label: 'Format', collapse: false, limit: 30
     config.add_facet_field 'dates_isim', label: 'Date', sort: 'index', limit: 10
     config.add_facet_field 'repository_ssi', label: 'Repository', limit: 5
     config.add_facet_field 'subject_ssim', label: 'Subject', limit: 15
