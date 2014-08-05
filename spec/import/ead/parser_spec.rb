@@ -59,6 +59,7 @@ describe Ead::Parser do
         expect(attrs[:arrangement].first).to eq '<p>U DDH/1	Various parties, 1932-1938</p>'
         expect(attrs[:related].count).to eq 4
         expect(attrs[:related].first).to eq '<p>Papers of Jock Haston (records of the Revolutionary Communist Party) [U DJH]</p>'
+        expect(attrs[:pub_notes]).to eq "John Archer, Trotskyism in Britain 1931-37 (PhD Thesis, Central London Polytechnic, 1979)\nReginald Groves, The Balham Group: how British Trotskyism began (Pluto Press Ltd, 1974)"
       end
     end
   end

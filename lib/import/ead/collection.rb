@@ -20,7 +20,8 @@ module Ead
           biog_hist: 'bioghist',
           description: 'scopecontent',
           arrangement: 'arrangement',
-          related: 'relatedmaterial'
+          related: 'relatedmaterial',
+          pub_notes: 'bibliography/bibref'
         }
       end
 
@@ -40,7 +41,8 @@ module Ead
           'biog_hist_ssm' => attributes[:biog_hist],
           'description_ssim' => attributes[:description],
           'arrangement_ssm' => attributes[:arrangement],
-          'related_ssm' => attributes[:related]
+          'related_ssm' => attributes[:related],
+          'pub_notes_ssm' => attributes[:pub_notes]
         }
       end
 
