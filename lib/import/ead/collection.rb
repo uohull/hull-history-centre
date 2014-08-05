@@ -21,7 +21,8 @@ module Ead
           description: 'scopecontent',
           arrangement: 'arrangement',
           related: 'relatedmaterial',
-          pub_notes: 'bibliography/bibref'
+          pub_notes: 'bibliography/bibref',
+          copyright: 'userestrict[@encodinganalog="Calm Copyright"]'
         }
       end
 
@@ -42,7 +43,8 @@ module Ead
           'description_ssim' => attributes[:description],
           'arrangement_ssm' => attributes[:arrangement],
           'related_ssm' => attributes[:related],
-          'pub_notes_ssm' => break_lines(attributes[:pub_notes])
+          'pub_notes_ssm' => break_lines(attributes[:pub_notes]),
+          'copyright_ssm' => attributes[:copyright]
         }
       end
 

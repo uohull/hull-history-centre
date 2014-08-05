@@ -17,13 +17,15 @@ describe Ead::Collection do
     let(:rel) { ['<p>rel 1</p>' '<p>rel 2</p>'] }
     let(:pub_notes) { "pub notes 1\npub notes 2" }
     let(:pub_notes_trans) { "pub notes 1<br />pub notes 2" }
+    let(:copyright) { 'Julian Harber' }
 
     let(:attributes) {{ id: id, title: title, repository: repo,
                      dates: dates, extent: extent,
                      access: access, custodial_history: cust,
                      language: lang, biog_hist: biog,
                      description: desc, arrangement: arrange,
-                     related: rel, pub_notes: pub_notes }}
+                     related: rel, pub_notes: pub_notes,
+                     copyright: copyright }}
 
     it 'converts attributes to a hash of solr fields' do
       solr_fields = Ead::Collection.to_solr(attributes)
@@ -43,6 +45,7 @@ describe Ead::Collection do
       expect(solr_fields['arrangement_ssm']).to eq arrange
       expect(solr_fields['related_ssm']).to eq rel
       expect(solr_fields['pub_notes_ssm']).to eq pub_notes_trans
+      expect(solr_fields['copyright_ssm']).to eq copyright
     end
   end
 end
