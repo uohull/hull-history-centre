@@ -9,6 +9,26 @@ describe Ead::Parser do
     allow(Ead::Parser).to receive(:verbose) { false }
   end
 
+  describe 'encoding' do
+    let(:iso_chars_file) { File.join(fixtures_path, 'iso_chars.xml') }
+    it 'converts data to UTF-8' do
+      data = File.read(iso_chars_file)
+      doc = Nokogiri::XML(data)
+      expect(doc.encoding).to eq 'ISO-8859-1'
+
+      xml = doc.xpath('*')
+      items = Ead::Parser.parse_records(xml, Ead::Item)
+      expect(items.count).to eq 1
+
+      desc = items.first[:description][6]
+      expect(desc.encoding).to eq Encoding::UTF_8
+
+      #expected_result = '<p>Parliamentary Questions for the D&#xE1;il &#xC9;ireann</p>'
+      expected_result = '<p>Parliamentary Questions for the Dáil Éireann</p>'
+      expect(desc).to eq expected_result
+    end
+  end
+
   describe 'attrs_for_record' do
     context 'for a single Item' do
       let(:single_item) { File.join(fixtures_path, 'U_DAR_single_item.xml') }

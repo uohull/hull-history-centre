@@ -32,6 +32,8 @@ module Ead
                     text = element.text
                     text = text.strip if text
                   end
+          value = Array(value).map{|e| e.encode('UTF-8') }
+          value = value.first if value.length == 1
 
           attrs = attrs.merge(field => value)
         end
