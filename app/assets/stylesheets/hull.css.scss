@@ -17,20 +17,21 @@ h2 {
   padding: 1em;
 
   h2 { margin: 0; }
+  h4 { color: #ce8d43; }
 
   dl {
-    padding: 1em;
+    padding: 0 1em;
     margin-bottom: 0;
   }
 
   dt {
-    width: 30%;
     text-align: left;
     font-size: 18px;
   }
 
   dd {
-    margin-left: 30%;
+    margin-left: 2em;
+    margin-bottom: 0.6em;
   }
 }
 
