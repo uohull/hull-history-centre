@@ -1,7 +1,8 @@
 module CommonImporterMethods
 
-  def import(filenames)
+  def import(input_files)
     errors = []
+    filenames = parse_input_args(input_files)
     with_timing do
       files = Array(filenames)
       file_count = files.length
@@ -12,6 +13,23 @@ module CommonImporterMethods
       end
     end
     errors = errors.flatten.compact
+  end
+
+  def parse_input_args(input_files)
+    files = Dir.glob(input_files)
+    raise "#{input_files}: File Not Found" if files.empty?
+
+    files = files.map do |file|
+      if File.directory?(file)
+        match_xml = File.join(file, '*.xml')
+        entries = Dir.glob(match_xml)
+        entries
+      else
+        file
+      end
+    end
+
+    files.flatten
   end
 
   def with_timing &blk

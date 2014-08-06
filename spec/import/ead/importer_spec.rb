@@ -38,8 +38,17 @@ describe Ead::Importer do
   end
 
   describe '.import with errors' do
+    let(:non_existent_file) { 'does_not_exist.xml' }
     let(:first_file) { ead_file }
     let(:second_file) { File.join(fixtures_path, 'U_DAR_single_item.xml') }
+
+    context 'when the file is not found' do
+      it 'returns the error message' do
+        expect{
+          Ead::Importer.import(non_existent_file)
+        }.to raise_error "#{non_existent_file}: File Not Found"
+      end
+    end
 
     context 'when one file fails during import' do
       it 'continues importing the other files in the list' do
