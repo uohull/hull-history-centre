@@ -13,6 +13,7 @@ Import all \*.xml files within a directory:
 
 ```bash
 rake import:ead['path/to/your/ead/files']
+rake import:sirsi['path/to/your/sirsi/files']
 ```
 
 Import specific EAD files:
