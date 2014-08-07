@@ -5,6 +5,7 @@ describe Sirsi::Parser do
   let(:fixtures_path) { File.expand_path(File.join('spec', 'fixtures', 'sample_sirsi_files')) }
   let(:single_item) { File.join(fixtures_path, 'single_sirsi_record.xml') }
   let(:sirsi_records) { File.join(fixtures_path, 'full_record_sample.xml') }
+  let(:bad_file) { File.join(fixtures_path, 'bad_file.xml') }
 
   before do
     allow(Sirsi::Parser).to receive(:verbose) { false }
@@ -43,6 +44,12 @@ describe Sirsi::Parser do
     it 'returns a hash with attributes for all the library records' do
       records = Sirsi::Parser.parse(sirsi_records)
       expect(records[:library_records].count).to eq 3
+    end
+
+    it 'raises an error if it cant parse the file' do
+      expect{
+        Sirsi::Parser.parse(bad_file)
+      }.to raise_error "No records found.  Please check that you have valid XML."
     end
   end
 end

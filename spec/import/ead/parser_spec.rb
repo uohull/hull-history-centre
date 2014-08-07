@@ -4,6 +4,7 @@ require_relative '../../../lib/import/ead'
 describe Ead::Parser do
   let(:fixtures_path) { File.expand_path(File.join('spec', 'fixtures', 'sample_ead_files')) }
   let(:ddh_file) { File.join(fixtures_path, 'U_DDH.xml') }
+  let(:bad_file) { File.join(fixtures_path, 'bad_file.xml') }
 
   before do
     allow(Ead::Parser).to receive(:verbose) { false }
@@ -114,6 +115,12 @@ describe Ead::Parser do
       objects = Ead::Parser.parse(ddh_file)
       expect(objects[:collections].count).to eq 1
       expect(objects[:items].count).to eq 14
+    end
+
+    it 'raises an error if it cant parse the file' do
+      expect{
+        Ead::Parser.parse(bad_file)
+      }.to raise_error "No records found.  Please check that you have valid XML."
     end
   end
 

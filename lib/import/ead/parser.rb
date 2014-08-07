@@ -7,10 +7,14 @@ module Ead
       def parse(file)
         ead_data = File.read(file)
         doc = Nokogiri::XML(ead_data)
-        {
+        records = {
           items: parse_records(doc, Ead::Item),
           collections: parse_records(doc, Ead::Collection),
         }
+        if records[:items].empty? && records[:collections].empty?
+          raise "No records found.  Please check that you have valid XML."
+        end
+        records
       end
 
       def parse_records(node, record_class)

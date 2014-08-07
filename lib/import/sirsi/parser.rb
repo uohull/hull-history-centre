@@ -13,7 +13,11 @@ module Sirsi
           attrs_for_record(record, Sirsi::LibraryRecord)
         end
 
-        { library_records: records }
+        results = { library_records: records }
+        if results[:library_records].empty?
+          raise "No records found.  Please check that you have valid XML."
+        end
+        results
       end
 
       # Get all the attributes for a single record
