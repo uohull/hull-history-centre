@@ -5,11 +5,15 @@
                   ['language_ssim', 'Language'],
                   ['access_ssim', 'Access Conditions'],
                   ['copyright_ssm', 'Copyright'],
-                  ['custodial_history_ssim', 'Custodial History'],
-                  ['repository_ssi', 'Repository']] %>
+                  ['custodial_history_ssim', 'Custodial History']] %>
 
 <dl class="dl-horizontal  dl-invert">
   <% show_fields.each do |(solr_doc_key, label)| %>
     <%= show_attribute(document, solr_doc_key, label) %>
   <% end %>
+
+  <dt> Permanent Link </dt>
+  <dd> <%= catalog_url(document.id) %> </dd>
+
+  <%= show_attribute(document, 'repository_ssi', 'Repository') %>
 </dl>
