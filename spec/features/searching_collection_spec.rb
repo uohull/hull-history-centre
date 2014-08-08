@@ -8,6 +8,7 @@ feature 'Searching within a collection:' do
   let(:search_term) { 'socialist' }
 
   before do
+    Blacklight.solr.delete_by_query("*:*", params: { commit: true })
     allow(Ead::Parser).to receive(:verbose) { false }
     allow(Ead::Importer).to receive(:verbose) { false }
     Ead::Importer.import([ddh_file, dar_file])

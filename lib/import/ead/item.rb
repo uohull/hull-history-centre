@@ -1,5 +1,5 @@
 module Ead
-  module Item
+  class Item
     extend ::DateFormatter
 
     class << self

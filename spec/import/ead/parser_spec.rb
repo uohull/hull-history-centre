@@ -5,6 +5,8 @@ describe Ead::Parser do
   let(:fixtures_path) { File.expand_path(File.join('spec', 'fixtures', 'sample_ead_files')) }
   let(:ddh_file) { File.join(fixtures_path, 'U_DDH.xml') }
   let(:bad_file) { File.join(fixtures_path, 'bad_file.xml') }
+  let(:single_item) { File.join(fixtures_path, 'U_DAR_single_item.xml') }
+  let(:item_with_sub_series) { File.join(fixtures_path, 'C_DBCO_pruned.xml') }
 
   before do
     allow(Ead::Parser).to receive(:verbose) { false }
@@ -31,10 +33,23 @@ describe Ead::Parser do
   end
 
   describe 'attrs_for_record' do
-    context 'for a single Item' do
-      let(:single_item) { File.join(fixtures_path, 'U_DAR_single_item.xml') }
-      let(:item_with_sub_series) { File.join(fixtures_path, 'C_DBCO_pruned.xml') }
+    context 'for a single Piece' do
+      it 'finds the attributes for that piece' do
+        xml = Nokogiri::XML(File.read(single_item)).xpath("//#{Ead::Piece.root_xpath}")
+        attrs = Ead::Parser.attrs_for_record(xml, Ead::Piece)
+        expect(attrs[:title]).to match /Letter Robin Page Arnot to George Bernard Shaw/
+        expect(attrs[:dates]).to eq '11 Nov 1947'
+        expect(attrs[:dates_normal]).to eq '1947-1947'
+        expect(attrs[:extent]).to eq '2 items'
+        expect(attrs[:repository]).to eq 'Hull University Archives'
+        expect(attrs[:id]).to eq 'U DAR/x1/1/51/f'
+        expect(attrs[:item_id]).to eq 'U DAR/x1/1/51'
+        expect(attrs[:item_title]).to eq 'File. Shaw, George Bernard, added socialist to the title'
+        expect(attrs[:description]).to eq "Returned with holograph note from George Bernard Shaw: - 'impossible: it would damage Dutt...', no date"
+      end
+    end
 
+    context 'for a single Item' do
       it 'finds the attributes for that item' do
         xml = Nokogiri::XML(File.read(single_item)).xpath("//#{Ead::Item.root_xpath}")
         attrs = Ead::Parser.attrs_for_record(xml, Ead::Item)
@@ -111,10 +126,13 @@ describe Ead::Parser do
   end
 
   describe '.parse' do
+    let(:dar_file) { File.join(fixtures_path, 'U_DAR_pruned.xml') }
+
     it 'returns a hash of object attributes' do
-      objects = Ead::Parser.parse(ddh_file)
+      objects = Ead::Parser.parse(dar_file)
       expect(objects[:collections].count).to eq 1
-      expect(objects[:items].count).to eq 14
+      expect(objects[:items].count).to eq 11
+      expect(objects[:pieces].count).to eq 27
     end
 
     it 'raises an error if it cant parse the file' do

@@ -4,6 +4,7 @@ require_relative '../../../lib/import/ead'
 describe Ead::Importer do
   let(:fixtures_path) { File.expand_path(File.join('spec', 'fixtures', 'sample_ead_files')) }
   let(:ead_file) { File.join(fixtures_path, 'U_DDH.xml') }
+  let(:dar_file) { File.join(fixtures_path, 'U_DAR_pruned.xml') }
 
   before do
     allow(Ead::Importer).to receive(:verbose) { false }
@@ -13,13 +14,15 @@ describe Ead::Importer do
   describe '.import' do
     it "imports the correct number of items" do
       Blacklight.solr.delete_by_query('*:*', params: {commit: true})
-      Ead::Importer.import([ead_file])
+      Ead::Importer.import(dar_file)
 
+      num_of_pieces = Blacklight.solr.select(params: {'q' => "type_ssi:piece"})['response']['numFound']
       num_of_items = Blacklight.solr.select(params: {'q' => "type_ssi:item"})['response']['numFound']
       num_of_collections = Blacklight.solr.select(params: {'q' => "type_ssi:collection"})['response']['numFound']
 
-      expect(num_of_items).to eq 14
       expect(num_of_collections).to eq 1
+      expect(num_of_items).to eq 11
+      expect(num_of_pieces).to eq 27
     end
 
     it "imports items correctly" do

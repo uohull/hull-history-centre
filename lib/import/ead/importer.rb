@@ -5,14 +5,19 @@ module Ead
     def self.create_solr_docs_from_file_data(filename)
       errors = []
       objects = Ead::Parser.parse(filename)
-      Array(objects[:collections]).each do |attributes|
-        Blacklight.solr.add(Ead::Collection.to_solr(attributes))
-      end
-      Array(objects[:items]).each do |attributes|
-        Blacklight.solr.add(Ead::Item.to_solr(attributes))
-      end
+
+      map_key_to_class = { collections: Ead::Collection,
+                           items:       Ead::Item,
+                           pieces:      Ead::Piece }
+
       print_message "\nSaving records to solr"
-      Blacklight.solr.commit
+      map_key_to_class.each do |key, ead_class|
+        Array(objects[key]).each do |attributes|
+          Blacklight.solr.add(ead_class.to_solr(attributes))
+        end
+        Blacklight.solr.commit
+      end
+
       errors
     rescue => e
       print_message(" ERROR: Import Aborted")
