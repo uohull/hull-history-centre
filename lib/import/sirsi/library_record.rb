@@ -35,6 +35,7 @@ module Sirsi
           'repository_ssi' => 'Hull Local Studies Library',
           'id' => attributes[:id],
           'title_tesim' => attributes[:title],
+          'title_ssi' => Array(attributes[:title]).first,
           'display_title_ss' => display_title(attributes),
           'format_ssi' => transformed_format(attributes[:format]),
           'subject_ssim' => attributes[:subject],

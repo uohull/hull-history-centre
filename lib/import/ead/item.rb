@@ -51,6 +51,7 @@ module Ead
           'type_ssi' => 'item',
           'format_ssi' => 'Archive Item',
           'title_tesim' => attributes[:title],
+          'title_ssi' => Array(attributes[:title]).first,
           'display_title_ss' => display_title(attributes[:title]),
           'repository_ssi' => attributes[:repository],
           'extent_ssm' => attributes[:extent],
