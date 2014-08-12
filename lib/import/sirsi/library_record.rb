@@ -73,45 +73,43 @@ module Sirsi
         format_map.fetch(data, raw_data_format)
       end
 
-      # TODO: Fill in format_map values or delete the ones
-      # that aren't needed.
-
       # Keys are how the format appears in the SIRSI xml.
       # Values are how the format appears in blacklight facets.
       def format_map
         {
-#          "AFCAS" => '?',
           "AFHDBK" => 'Book',
+          "AFLPPBK" => 'Book',
           "AFLPTHDBK" => 'Book',
           "AFLPTPBK" => 'Book',
           "AFPBK" => 'Book',
-#          "ANFCAS" => '?',
           "ANFHBK" => 'Book',
+          "ANFLPPBK" => 'Book',
           "ANFLPTHDBK" => 'Book',
           "ANFLPTPBK" => 'Book',
           "ANFPBK" => 'Book',
-#          "AVEQUIP" => '?',
-          "CD" => 'DVD',
-          "CDROM" => 'DVD',
           "CFHBK" => 'Book',
           "CFPBK" => 'Book',
           "CNFHBK" => 'Book',
           "CNFPBK" => 'Book',
-          "DVD" => 'DVD',
-#          "FOREIGNF" => '?',
-#          "LARGEPRINT" => '?',
+          "LARGEPRINT" => 'Book',
           "MAGAZINE" => 'Book',
+          "PICBK" => 'Book',
+          "TEENFPBK" => 'Book',
+
+          "AFCAS" => 'Cassette',
+          "ANFCAS" => 'Cassette',
+          "TKBKADCAS" => 'Cassette',
+
+          "CD" => 'CD/DVD',
+          "CDROM" => 'CD/DVD',
+          "DVD" => 'CD/DVD',
+          "TKBKADCD" => 'CD/DVD',
+
           "MAP" => 'Map',
           "MICROFORM" => 'Microfilm',
-#          "NEWSPAPER" => '?',
-#          "PAMPHLARGE" => '?',
-#          "PAMPHSMALL" => '?',
-          "PICBK" => 'Book',
-#          "RESOURCE" => '?',
-          "TEENFPBK" => 'Book',
-#          "TKBKADCAS" => '?',
-#          "TKBKADCD" => '?',
-#          "UNKNOWN" => '?',
+          "NEWSPAPER" => 'Newspaper',
+          "PAMPHLARGE" => 'Pamphlet',
+          "PAMPHSMALL" => 'Pamphlet',
           "VIDEO" => 'Video'
         }
       end
