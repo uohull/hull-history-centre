@@ -58,7 +58,7 @@ module Ead
           'extent_ssm' => attributes[:extent],
           'access_ssim' => attributes[:access],
           'description_tesim' => attributes[:description],
-          'dates_ssim' => attributes[:dates],
+          'dates_ssim' => standardized_dates(attributes[:dates]),
           'dates_isim' => expand_dates(attributes[:dates_normal]),
           'collection_id_ssi' => attributes[:collection_id],
           'collection_title_ss' => attributes[:collection_title],

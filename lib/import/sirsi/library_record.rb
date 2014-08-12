@@ -1,5 +1,9 @@
+require_relative '../concerns/date_formatter'
+
 module Sirsi
   module LibraryRecord
+    extend ::DateFormatter
+
     class << self
 
       def root_xpath
@@ -51,8 +55,8 @@ module Sirsi
           'author_tesim' => authors(attributes),
           'language_ssim' => attributes[:language],
           'publisher_ssim' => attributes[:publisher],
-          'dates_ssim' => transformed_dates(attributes[:dates]),
-          'dates_isim' => integer_date(attributes[:dates]),
+          'dates_ssim' => standardized_dates(attributes[:dates]),
+          'dates_isim' => integer_dates(attributes[:dates]),
           'physical_description_ssm' => attributes[:physical_desc],
           'notes_ssm' => attributes[:notes],
           'isbn_ssm' => attributes[:isbn]
@@ -64,34 +68,6 @@ module Sirsi
          attributes[:author_700],
          attributes[:author_110],
          attributes[:author_710]].flatten
-      end
-
-      def unknown_dates
-        ['0', 'n.d.', 'no date', 'not dated', 'unknown']
-      end
-
-      def transformed_dates(date_string)
-        dates = Array(date_string).map do |date|
-          unknown_dates.include?(date.downcase) ? 'unknown' : date
-        end
-        dates = dates.first if dates.length == 1
-        dates
-      end
-
-      def integer_date(date_string)
-        dates = transformed_dates(date_string)
-
-        dates = Array(dates).map do |date|
-          date == 'unknown' ? nil : date.to_i
-        end.compact
-
-        if dates.empty?
-          nil
-        elsif dates.length == 1
-          dates.first
-        else
-          dates
-        end
       end
 
       def transformed_format(raw_data_format)

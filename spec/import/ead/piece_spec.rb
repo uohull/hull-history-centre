@@ -50,7 +50,7 @@ describe Ead::Piece do
       expect(solr_fields['extent_ssm']).to eq extent
       expect(solr_fields['access_ssim']).to eq access
       expect(solr_fields['description_tesim']).to eq desc
-      expect(solr_fields['dates_ssim']).to eq dates
+      expect(solr_fields['dates_ssim']).to eq dates.first
       expect(solr_fields['dates_isim']).to eq [1940, 1941, 1942]
 
       expect(solr_fields['collection_id_ssi']).to eq collection_id
@@ -60,6 +60,13 @@ describe Ead::Piece do
       expect(solr_fields['sub_series_title_ss']).to eq sub_series_title
       expect(solr_fields['item_id_ssi']).to eq item_id
       expect(solr_fields['item_title_ss']).to eq item_title
+    end
+
+    it 'handles unknown dates' do
+      unknowns = { dates_normal: '0000-0000', dates: 'n.d.' }
+      solr_fields = Ead::Piece.to_solr(unknowns)
+      expect(solr_fields['dates_ssim']).to eq 'unknown'
+      expect(solr_fields['dates_isim']).to eq nil
     end
   end
 end

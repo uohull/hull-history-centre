@@ -39,7 +39,7 @@ module Ead
           'title_ssi' => Array(attributes[:title]).first,
           'display_title_ss' => display_title(attributes[:title]),
           'repository_ssi' => attributes[:repository],
-          'dates_ssim' => attributes[:dates],
+          'dates_ssim' => standardized_dates(attributes[:dates]),
           'dates_isim' => expand_dates(attributes[:dates_normal]),
           'extent_ssm' => attributes[:extent],
           'access_ssim' => attributes[:access],
@@ -59,6 +59,7 @@ module Ead
       end
 
       def break_lines(raw_data)
+        return nil if raw_data.nil?
         raw_data.gsub("\n", '<br />')
       end
 

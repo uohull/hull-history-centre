@@ -38,7 +38,7 @@ describe Ead::Collection do
       expect(solr_fields['display_title_ss']).to eq "Archive Collection: #{title}"
       expect(solr_fields['repository_ssi']).to eq repo
       expect(solr_fields['format_ssi']).to eq 'Archive Collection'
-      expect(solr_fields['dates_ssim']).to eq dates
+      expect(solr_fields['dates_ssim']).to eq dates.first
       expect(solr_fields['dates_isim']).to eq [1932, 1933, 1934, 1935]
       expect(solr_fields['extent_ssm']).to eq extent
       expect(solr_fields['access_ssim']).to eq access
@@ -50,6 +50,13 @@ describe Ead::Collection do
       expect(solr_fields['related_ssm']).to eq rel
       expect(solr_fields['pub_notes_ssm']).to eq pub_notes_trans
       expect(solr_fields['copyright_ssm']).to eq copyright
+    end
+
+    it 'handles unknown dates' do
+      unknowns = { dates_normal: '0000-0000', dates: 'n.d.' }
+      solr_fields = Ead::Collection.to_solr(unknowns)
+      expect(solr_fields['dates_ssim']).to eq 'unknown'
+      expect(solr_fields['dates_isim']).to eq nil
     end
   end
 end
