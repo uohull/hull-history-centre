@@ -60,6 +60,7 @@ module Ead
           'description_tesim' => attributes[:description],
           'dates_ssim' => standardized_dates(attributes[:dates]),
           'dates_isim' => expand_dates(attributes[:dates_normal]),
+          'date_ssi' => sortable_date(attributes[:dates_normal]),
           'collection_id_ssi' => attributes[:collection_id],
           'collection_title_ss' => attributes[:collection_title],
           'sub_collection_title_ss' => attributes[:sub_collection_title],

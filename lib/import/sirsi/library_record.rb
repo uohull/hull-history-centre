@@ -57,6 +57,7 @@ module Sirsi
           'publisher_ssim' => attributes[:publisher],
           'dates_ssim' => standardized_dates(attributes[:dates]),
           'dates_isim' => integer_dates(attributes[:dates]),
+          'date_ssi' => sortable_date(attributes[:dates]),
           'physical_description_ssm' => attributes[:physical_desc],
           'notes_ssm' => attributes[:notes],
           'isbn_ssm' => attributes[:isbn]

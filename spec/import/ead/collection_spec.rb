@@ -40,6 +40,7 @@ describe Ead::Collection do
       expect(solr_fields['format_ssi']).to eq 'Archive Collection'
       expect(solr_fields['dates_ssim']).to eq dates.first
       expect(solr_fields['dates_isim']).to eq [1932, 1933, 1934, 1935]
+      expect(solr_fields['date_ssi']).to eq 1932
       expect(solr_fields['extent_ssm']).to eq extent
       expect(solr_fields['access_ssim']).to eq access
       expect(solr_fields['custodial_history_ssim']).to eq cust

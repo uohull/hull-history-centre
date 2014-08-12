@@ -52,6 +52,7 @@ describe Ead::Piece do
       expect(solr_fields['description_tesim']).to eq desc
       expect(solr_fields['dates_ssim']).to eq dates.first
       expect(solr_fields['dates_isim']).to eq [1940, 1941, 1942]
+      expect(solr_fields['date_ssi']).to eq 1940
 
       expect(solr_fields['collection_id_ssi']).to eq collection_id
       expect(solr_fields['collection_title_ss']).to eq collection_title

@@ -41,6 +41,7 @@ module Ead
           'repository_ssi' => attributes[:repository],
           'dates_ssim' => standardized_dates(attributes[:dates]),
           'dates_isim' => expand_dates(attributes[:dates_normal]),
+          'date_ssi' => sortable_date(attributes[:dates_normal]),
           'extent_ssm' => attributes[:extent],
           'access_ssim' => attributes[:access],
           'custodial_history_ssim' => attributes[:custodial_history],
