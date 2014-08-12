@@ -82,5 +82,27 @@ describe Sirsi::LibraryRecord do
     end
   end
 
+  describe 'standardize unknown dates' do
+    it 'sets the date to "unknown"' do
+      Sirsi::LibraryRecord.unknown_dates.each do |date|
+        solr_fields = Sirsi::LibraryRecord.to_solr(dates: date)
+        expect(solr_fields['dates_ssim']).to eq 'unknown'
+        expect(solr_fields['dates_isim']).to eq nil
+      end
+    end
+
+    it 'works for arrays too' do
+      solr_fields = Sirsi::LibraryRecord.to_solr(dates: ['0', '1986'])
+      expect(solr_fields['dates_ssim']).to eq ['unknown', '1986']
+      expect(solr_fields['dates_isim']).to eq 1986
+    end
+
+    it 'ignore case differences' do
+      solr_fields = Sirsi::LibraryRecord.to_solr(dates: ['N.D.', 'No Date'])
+      expect(solr_fields['dates_ssim']).to eq ['unknown', 'unknown']
+      expect(solr_fields['dates_isim']).to eq nil
+    end
+  end
+
 end
 
