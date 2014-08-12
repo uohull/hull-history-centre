@@ -32,6 +32,7 @@ module Ead
       def to_solr(attributes)
         {
           'id' => attributes[:id],
+          'reference_no_ssi' => attributes[:id],
           'type_ssi' => 'collection',
           'format_ssi' => 'Archive Collection',
           'title_tesim' => attributes[:title],

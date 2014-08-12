@@ -48,6 +48,7 @@ module Ead
       def to_solr(attributes)
         {
           'id' => attributes[:id],
+          'reference_no_ssi' => attributes[:id],
           'type_ssi' => 'item',
           'format_ssi' => 'Archive Item',
           'title_tesim' => attributes[:title],

@@ -32,6 +32,7 @@ describe Ead::Collection do
       solr_fields = Ead::Collection.to_solr(attributes)
       expect(solr_fields['type_ssi']).to eq 'collection'
       expect(solr_fields['id']).to eq id
+      expect(solr_fields['reference_no_ssi']).to eq id
       expect(solr_fields['title_tesim']).to eq title
       expect(solr_fields['title_ssi']).to eq title
       expect(solr_fields['display_title_ss']).to eq "Archive Collection: #{title}"

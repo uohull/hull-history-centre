@@ -10,6 +10,7 @@ module Sirsi
       def fields_map
         {
           id: 'catalog/catalog_key',
+          reference_number: 'catalog/call_number',
           title: 'catalog/marc/marc_field[@tag="245"]',
           format: 'catalog/item_record/cat1',
           subject: 'catalog/marc/marc_field[@tag="650"]',
@@ -34,6 +35,7 @@ module Sirsi
           'type_ssi' => 'library_record',
           'repository_ssi' => 'Hull Local Studies Library',
           'id' => attributes[:id],
+          'reference_no_ssi' => attributes[:reference_number],
           'title_tesim' => attributes[:title],
           'title_ssi' => Array(attributes[:title]).first,
           'display_title_ss' => display_title(attributes),

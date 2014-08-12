@@ -3,6 +3,7 @@ require_relative '../../../lib/import/sirsi/library_record'
 
 describe Sirsi::LibraryRecord do
   let(:id) { '123' }
+  let(:reference_number) { 'L(SLA).326.8' }
   let(:title) { ['my title', 'title 2'] }
   let(:format) { "AFHDBK" }
   let(:subject) { ['Slave-trade--Great Britain--Early works to 1800.', 'Antislavery movements--Great Britain.'] }
@@ -20,7 +21,8 @@ describe Sirsi::LibraryRecord do
   let(:notes) { 'Includes index.' }
   let(:isbn) { '123' }
 
-  let(:attrs) {{ id: id, title: title, format: format,
+  let(:attrs) {{ id: id, reference_number: reference_number,
+                 title: title, format: format,
                  subject: subject, subject_600: sub_600,
                  subject_630: sub_630, subject_651: sub_651,
                  author_100: author_100, author_110: author_110,
@@ -34,6 +36,7 @@ describe Sirsi::LibraryRecord do
       solr_fields = Sirsi::LibraryRecord.to_solr(attrs)
       expect(solr_fields['type_ssi']).to eq 'library_record'
       expect(solr_fields['id']).to eq id
+      expect(solr_fields['reference_no_ssi']).to eq reference_number
       expect(solr_fields['format_ssi']).to eq 'Book'
       expect(solr_fields['title_tesim']).to eq title
       expect(solr_fields['title_ssi']).to eq title.first

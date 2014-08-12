@@ -74,11 +74,11 @@ class CatalogController < ApplicationController
     config.add_index_field 'author_tesim', label: 'Author'
     config.add_index_field 'dates_ssim', label: 'Date'
     config.add_index_field 'extent_ssm', label: 'Extent'
-    config.add_index_field 'id', label: 'Reference No'
+    config.add_index_field 'reference_no_ssi', label: 'Reference No'
 
     # solr fields to be displayed in the show (single result) view
     # The ordering of the field names is the order of the display
-    # config.add_show_field 'id', label: 'Reference No'
+    # config.add_show_field 'reference_no_ssi', label: 'Reference No'
     # NB: These are set directly in the views for each type of record
 
 
