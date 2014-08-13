@@ -1,5 +1,8 @@
 # Getting Started
 
+* git clone [this repo]
+* bundle install
+* rake db:migrate
 * rake jetty:unzip
 * rake configure\_jetty
 * rake jetty:start
