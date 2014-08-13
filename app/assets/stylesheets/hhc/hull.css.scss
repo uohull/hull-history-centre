@@ -1,20 +1,18 @@
 
 $highlight_color: #ded7c5;
 
-h2 {
-  color: #a8a08b;
+body {
+  color: #666;
 }
 
 .main-home-image {
   width: 100%;
   padding: 1em 5em;
-  border: 2px solid $highlight_color;
 }
 
 .story-box {
-  border: 2px solid $highlight_color;
-  margin-top: 1em;
-  padding: 1em;
+  margin-top: 1.5em;
+  padding-left: 1em;
 
   h2 { margin: 0; }
   h4 { color: #ce8d43; }

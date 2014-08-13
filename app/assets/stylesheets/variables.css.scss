@@ -1,0 +1,83 @@
+/* uoh - bootstrap variables */
+$gridColumns: 16;
+$gridGutterWidth: 0px;
+$gridGutterWidth768: 0px;
+$gridGutterWidth1200: 0px;
+$inputBorderRadius: 2px;
+$navbarBrandColor: #fff !important;
+$navbarLinkColor: #c5c5c5 !important;
+$navbarLinkColorHover: #fff !important;
+$textColor: #333333;
+$bodyBackground: #ffffff; 
+
+/* site */
+/*$primarycolor: #ff0000;*/
+$primarycolor: #7EC6C8;
+$primarycolordark: #188092;
+$primarycolorlight: #ccefe1;
+$linkColor: $primarycolordark;
+/* $primarycolordark: #1a6a1a; */
+/*$altcolor: #3d7a7a;*/
+$altcolor: #72698a;
+$altcolorlight: #a285c5;
+$neutralcolordark: #444;
+$neutralcolorlight: #ccc;
+$primarylinkcolor: #188092;
+$primarylinkhovercolor: $neutralcolordark;
+$formMaxWidth: 1200px;
+$footerTextColor: #c1c1c1;
+$footerColor: #1F1F1F;
+
+/* tiles */
+$greenishblue: #68cab6;
+$cleanwhite: #fff;
+$lightgrey: #f3f3f3;
+$lightgreen: #EDFFC4;
+$aubergine: #72698a;
+$tangerine: #fbb168;
+$maroon: #e17695;
+$lightblue: #75bdbd;
+$lightlink: #fff;
+$darklink: #000;
+$tiletransparency: 1;
+$tilerowgutter: 0;
+
+/* highlighters */
+$selectedtextcolor: #f67872;
+$alertcolor: #4E9799;
+$errorcolor: #cc6565;
+$successcolor: #3E803F;
+$noticecolor: #3d7a7a;
+$infocolor: #9ebe5e;
+$warningcolor: #BE5A13;
+
+/* images */
+$home_background_image: "blah/bjl-1c.jpg" !default;
+
+/* thumbs */
+$generic-thumb: 'hyhull/hyhull-thumb-generic.png';
+$calendar-thumb: 'hyhull/hyhull-thumb-calendar.png';
+$dataset-thumb: 'hyhull/hyhull-thumb-dataset.png';
+$exam-thumb: 'hyhull/hyhull-thumb-exam.png';
+$image-thumb: 'hyhull/hyhull-thumb-image.png';
+$policy-thumb: 'hyhull/hyhull-thumb-policy.png';
+$presentation-thumb: 'hyhull/hyhull-thumb-presentation.png';
+$domesday-thumb: 'hyhull/hyhull-thumb-domesday.png';
+$handbook-thumb: 'hyhull/hyhull-thumb-handbook.png';
+$thesis-thumb: 'hyhull/hyhull-thumb-thesis.png';
+
+/* modal */
+/* adjust to fit modal on lowest prefereable resolution (currently set for 1024x768) */
+$modal-body-maxheight: 406px;
+
+/* nav-tabs */
+$active-tab-color: whitesmoke;
+
+/* workflow */
+$proto-color: #7EC6C8;
+$qa-color: #188092;
+$hidden-color: #444;
+$published-color: #3E803F;
+$deleted-color: #cc6565;
+$worflow-border: 10px;
+$workflow-border-sm: 3px;
