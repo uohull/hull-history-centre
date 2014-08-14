@@ -1,6 +1,11 @@
+# Regex to allow the ID to have dots, slashes, spaces, and things like "%20".
+ID_CONSTRAINTS = /[a-zA-Z0-9_.:\%\/\s]+/
+
 Rails.application.routes.draw do
   root :to => "catalog#index"
-  blacklight_for :catalog
+  blacklight_for :catalog, constraints: { id: ID_CONSTRAINTS }
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
