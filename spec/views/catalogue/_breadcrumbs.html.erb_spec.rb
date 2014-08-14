@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-describe 'catalog/_breadcrumbs.html.erb' do
+describe 'catalogue/_breadcrumbs.html.erb' do
 
   before do
-    render partial: 'catalog/breadcrumbs.html.erb',
+    render partial: 'catalogue/breadcrumbs.html.erb',
            locals: { document: SolrDocument.new(fields) }
   end
 
@@ -17,10 +17,10 @@ describe 'catalog/_breadcrumbs.html.erb' do
                       'id' => '1' }}
 
       it 'displays breadcrumb links' do
-        expect(rendered).to have_link(fields['collection_title_ss'], href: catalog_path(fields['collection_id_ssi']))
-        expect(rendered).to have_link(fields['series_title_ss'], href: catalog_path(fields['series_id_ss']))
+        expect(rendered).to have_link(fields['collection_title_ss'], href: catalogue_path(fields['collection_id_ssi']))
+        expect(rendered).to have_link(fields['series_title_ss'], href: catalogue_path(fields['series_id_ss']))
         expect(rendered).to have_content(fields['title_tesim'].first)
-        expect(rendered).to_not have_link(fields['title_tesim'].first, href: catalog_path(fields['id']))
+        expect(rendered).to_not have_link(fields['title_tesim'].first, href: catalogue_path(fields['id']))
       end
     end
 

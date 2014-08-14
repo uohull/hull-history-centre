@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe CatalogController do
+describe CatalogueController do
   describe "GET show" do
     before { get :show, id: 1, tab: 'my_tab' }
     

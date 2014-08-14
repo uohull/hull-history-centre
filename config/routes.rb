@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  root :to => "catalog#index"
-  blacklight_for :catalog
+  root :to => "catalogue#index"
+  blacklight_for :catalogue
+  get 'catalogue/opensearch', to: 'catalogue#opensearch',  as: 'opensearch_catalog'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
