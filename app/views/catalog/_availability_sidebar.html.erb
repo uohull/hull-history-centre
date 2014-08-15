@@ -7,8 +7,11 @@
         </legend>
         <div id="asset-list">
           <div class="clearfix">
-            <label> Reference No: </label>
-            <br />
+            <% unless @document['type_ssi'] == 'library_record' %>
+              <p> This item is reference only and can only be consulted in person at the Hull History Centre.  </p>
+            <% end %>
+
+            <label> Reference No: </label> <br />
             <%= @document['reference_no_ssi'] %>
           </div>
         </div>
