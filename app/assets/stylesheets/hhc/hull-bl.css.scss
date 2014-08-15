@@ -7,11 +7,31 @@ $khaki: #5b583b;
 // -------
 
 .show-document .dl-horizontal dt {
-  // On the show page for a library record,
-  // the 'Publication Information' field is
-  // too long for 160px.
-  width: 170px;
+  // On the show page for a library record, the
+  //'Publication Information' field is too long for 160px.
+  width: 175px;
 }
+
+.show-document #sidebar {
+  margin-top: 20px;
+}
+
+.show-document .document h1 {
+  font-size: 31.5px !important;
+}
+
+.show-document #asset-list {
+  margin: 0 5% 1.25em 5%;
+}
+
+.show-document #sidebar h3 {
+  margin: 0.25em 5%;
+}
+
+#breadcrumbs {
+  margin-bottom: 0.25em;
+}
+
 
 // ---------
 //  Header
