@@ -61,6 +61,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'dates_isim', label: 'Date', limit: 10
     config.add_facet_field 'repository_ssi', label: 'Repository', limit: 5
     config.add_facet_field 'subject_ssim', label: 'Subject', limit: 15
+    config.add_facet_field 'author_ssim', label: 'Author', limit: 15
     config.add_facet_field 'language_ssim', label: 'Language', limit: 10
     config.add_facet_field 'collection_id_ssi', label: 'Collection', show: false, helper_method: :collection_name
 

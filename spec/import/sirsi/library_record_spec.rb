@@ -53,6 +53,7 @@ describe Sirsi::LibraryRecord do
       expect(solr_fields['geographical_subject_tesim']).to eq sub_651
 
       expect(solr_fields['author_tesim']).to eq [author_100, author_700, author_110, author_710].flatten
+      expect(solr_fields['author_ssim']).to eq [author_100, author_700, author_110, author_710].flatten
       expect(solr_fields['language_ssim']).to eq lang
       expect(solr_fields['publisher_ssim']).to eq pub
       expect(solr_fields['dates_ssim']).to eq dates

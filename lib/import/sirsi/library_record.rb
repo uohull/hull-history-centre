@@ -53,6 +53,7 @@ module Sirsi
           'geographical_subject_ssim' => attributes[:subject_651],
           'geographical_subject_tesim' => attributes[:subject_651],
           'author_tesim' => authors(attributes),
+          'author_ssim' => authors(attributes),
           'language_ssim' => attributes[:language],
           'publisher_ssim' => attributes[:publisher],
           'dates_ssim' => standardized_dates(attributes[:dates]),
