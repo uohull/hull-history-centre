@@ -1,9 +1,14 @@
-# Regex to allow the ID to have dots, slashes, spaces, and things like "%20".
-ID_CONSTRAINTS = /[a-zA-Z0-9_.:\%\/\s]+/
+# Regex to allow the ID to have (escaped) dots, slashes and spaces.
+ID_CONSTRAINTS = /\A[a-zA-Z0-9_.:\%]+\Z/
+
 
 Rails.application.routes.draw do
   root :to => "catalog#index"
-  blacklight_for :catalog, constraints: { id: ID_CONSTRAINTS }
+
+  blacklight_for :catalog, constraints: lambda { |request|
+    (ID_CONSTRAINTS === request.params[:id]) ||
+      (ID_CONSTRAINTS === URI.escape(request.params[:id]).gsub('/', '%2F'))
+  }
 
 
   # The priority is based upon order of creation: first created -> highest priority.
