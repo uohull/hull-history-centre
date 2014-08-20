@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'catalog/_show_collection.html.erb' do
+describe 'catalogue/_show_collection.html.erb' do
   let(:doc) { SolrDocument.new(id: '1') }
   let(:summary_content) { 'Stub content for summary tab' }
   let(:desc_content) { 'Stub content for description tab' }
@@ -8,13 +8,13 @@ describe 'catalog/_show_collection.html.erb' do
   let(:rel_content) { 'Stub content for related material tab' }
 
   before do
-    stub_template 'catalog/_show_collection_summary.html.erb' => summary_content
-    stub_template 'catalog/_show_collection_description.html.erb' => desc_content
-    stub_template 'catalog/_show_collection_arrangement.html.erb' => arr_content
-    stub_template 'catalog/_show_collection_related.html.erb' => rel_content
+    stub_template 'catalogue/_show_collection_summary.html.erb' => summary_content
+    stub_template 'catalogue/_show_collection_description.html.erb' => desc_content
+    stub_template 'catalogue/_show_collection_arrangement.html.erb' => arr_content
+    stub_template 'catalogue/_show_collection_related.html.erb' => rel_content
 
     assign :show_tab, tab
-    render partial: 'catalog/show_collection.html.erb',
+    render partial: 'catalogue/show_collection.html.erb',
            locals: { document: doc }
   end
 
@@ -28,7 +28,7 @@ describe 'catalog/_show_collection.html.erb' do
         expect(rendered).to_not have_content(arr_content)
         expect(rendered).to_not have_content(rel_content)
 
-        expect(rendered).to have_xpath('//a[@class="current-tab tab-menu-item col-md-12"][@href="/catalog/1?tab=summary"]', count: 1)
+        expect(rendered).to have_xpath('//a[@class="current-tab tab-menu-item col-md-12"][@href="/catalogue/1?tab=summary"]', count: 1)
       end
     end
 
@@ -41,7 +41,7 @@ describe 'catalog/_show_collection.html.erb' do
         expect(rendered).to_not have_content(arr_content)
         expect(rendered).to_not have_content(rel_content)
 
-        expect(rendered).to have_xpath('//a[@class="current-tab tab-menu-item col-md-12"][@href="/catalog/1?tab=description"]', count: 1)
+        expect(rendered).to have_xpath('//a[@class="current-tab tab-menu-item col-md-12"][@href="/catalogue/1?tab=description"]', count: 1)
       end
     end
   end

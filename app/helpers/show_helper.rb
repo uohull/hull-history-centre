@@ -23,7 +23,7 @@ module ShowHelper
     crumbs = keys.map do |(title_key, id_key)|
       breadcrumb_title = document[title_key]
       if document[id_key]
-        link_to breadcrumb_title, catalog_path(document[id_key])
+        link_to breadcrumb_title, catalogue_path(document[id_key])
       else
         breadcrumb_title
       end

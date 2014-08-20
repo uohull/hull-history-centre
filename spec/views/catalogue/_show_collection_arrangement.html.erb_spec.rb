@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe 'catalog/_show_collection_arrangement.html.erb' do
+describe 'catalogue/_show_collection_arrangement.html.erb' do
   before do
-    render partial: 'catalog/show_collection_arrangement.html.erb',
+    render partial: 'catalogue/show_collection_arrangement.html.erb',
            locals: { document: SolrDocument.new(fields) }
   end
 

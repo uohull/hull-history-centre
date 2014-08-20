@@ -1,12 +1,11 @@
 require 'rails_helper'
 
-describe 'Catalog routes' do
+describe 'Catalogue routes' do
+  let(:space) { '%20' }
+  let(:slash) { '%2F' }
+  let(:dot)   { '%2E' }
 
   describe 'GET show' do
-    let(:space) { '%20' }
-    let(:slash) { '%2F' }
-    let(:dot)   { '%2E' }
-
     let(:simple_id) { '1' }
     let(:id_with_dots) { "1#{dot}1#{dot}1#{dot}1" }
     let(:id_with_spaces) { "L#{space}WH#{space}1" }
@@ -17,10 +16,10 @@ describe 'Catalog routes' do
       let(:id) { '1' }
 
       it 'routes to show' do
-        expect(get: "catalog/#{simple_id}").to route_to(
-          controller: 'catalog',
-            action: 'show',
-            id: id
+        expect(get: "catalogue/#{simple_id}").to route_to(
+          controller: 'catalogue',
+          action: 'show',
+          id: id
         )
       end
     end
@@ -29,10 +28,10 @@ describe 'Catalog routes' do
       let(:id) { '1.1.1.1' }
 
       it 'routes to show' do
-        expect(get: "catalog/#{id_with_dots}").to route_to(
-          controller: 'catalog',
-            action: 'show',
-            id: id
+        expect(get: "catalogue/#{id_with_dots}").to route_to(
+          controller: 'catalogue',
+          action: 'show',
+          id: id
         )
       end
     end
@@ -41,10 +40,10 @@ describe 'Catalog routes' do
       let(:id) { "L WH 1" }
 
       it 'routes to show' do
-        expect(get: "catalog/#{id_with_spaces}").to route_to(
-          controller: 'catalog',
-            action: 'show',
-            id: id
+        expect(get: "catalogue/#{id_with_spaces}").to route_to(
+          controller: 'catalogue',
+          action: 'show',
+          id: id
         )
       end
     end
@@ -53,13 +52,13 @@ describe 'Catalog routes' do
       let(:id) { "L WH/1/1.1/01a" }
 
       it 'routes to show' do
-        expect(get: "catalog/#{id_with_slashes}").to route_to(
-          controller: 'catalog',
-            action: 'show',
-            id: id
+        expect(get: "catalogue/#{id_with_slashes}").to route_to(
+          controller: 'catalogue',
+          action: 'show',
+          id: id
         )
       end
     end
-
   end
+
 end

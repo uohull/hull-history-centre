@@ -25,7 +25,7 @@ feature 'Searching within a collection:' do
     expect(total_results > 1).to eq true
 
     # Search within a collection:
-    visit catalog_path('U DAR', tab: 'search')
+    visit catalogue_path('U DAR', tab: 'search')
     fill_in :q_collection, with: search_term
     click_button :search_collection
 

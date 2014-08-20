@@ -1,7 +1,7 @@
 <div id="content" class="col-md-12 show-document">
 
   <%= render 'previous_next_doc' %>
-  <%= render 'catalog/breadcrumbs', document: @document %>
+  <%= render 'catalogue/breadcrumbs', document: @document %>
 
   <% @page_title = t('blacklight.search.show.title', :document_title => document_show_html_title, :application_name => application_name).html_safe -%>
   <% content_for(:head) { render_link_rel_alternates } -%>
@@ -17,7 +17,7 @@
 
   <% unless is_collection %>
     <div id="sidebar" class="col-md-4">
-      <%= render 'catalog/availability_sidebar',
+      <%= render 'catalogue/availability_sidebar',
                   document: @document %>
     </div>
   <% end %>

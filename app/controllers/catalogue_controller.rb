@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 #
-class CatalogController < ApplicationController  
+class CatalogueController < ApplicationController  
 
   before_filter :show_tab, only: :show
 
@@ -142,6 +142,12 @@ protected
 
   def show_tab
     @show_tab = params['tab']
+  end
+
+  # Override rails path for the views so that we can match up
+  # app/views/catalog (from blacklight) with 'catalogue' controller.
+  def _prefixes
+    @_prefixes ||= super + ['catalog']
   end
 
 end 

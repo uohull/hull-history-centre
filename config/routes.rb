@@ -3,9 +3,9 @@ ID_CONSTRAINTS = /\A[a-zA-Z0-9_.:\%]+\Z/
 
 
 Rails.application.routes.draw do
-  root :to => "catalog#index"
+  root :to => "catalogue#index"
 
-  blacklight_for :catalog, constraints: lambda { |request|
+  blacklight_for :catalogue, constraints: lambda { |request|
     (ID_CONSTRAINTS === request.params[:id]) ||
       (ID_CONSTRAINTS === URI.escape(request.params[:id]).gsub('/', '%2F'))
   }
