@@ -23,7 +23,7 @@ module Ead
       def to_solr(attributes)
         super.merge({
           'type_ssi' => 'piece',
-          'item_id_ssi' => attributes[:item_id],
+          'item_id_ssi' => format_id(attributes[:item_id]),
           'item_title_ss' => attributes[:item_title]
         })
       end

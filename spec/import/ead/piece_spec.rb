@@ -2,7 +2,9 @@ require 'spec_helper'
 require_relative '../../../lib/import/ead'
 
 describe Ead::Piece do
-  let(:id) { 'U DAR/x1/1/51/a' }
+  let(:id) { 'U DAR/x1/1/51.1/a' }
+  let(:formatted_id) { 'U-DAR-x1-1-51.1-a' }
+
   let(:title) { ['title 1', 'title 2'] }
   let(:repo) { 'Hull University Archives' }
   let(:extent) { ['6 items', '1 volume'] }
@@ -12,11 +14,15 @@ describe Ead::Piece do
   let(:dates_normal) { '1940-1942' }
 
   let(:collection_id) { 'U DDH' }
+  let(:formatted_collection_id) { 'U-DDH' }
   let(:collection_title) { 'Papers of Denzil Dean Harber' }
+
   let(:sub_collection_title) { 'Sub Coll 1' }
   let(:series_title) { 'General Files' }
   let(:sub_series_title) { 'Sub Series 1' }
-  let(:item_id) { 'U DAR/x1/1/51' }
+
+  let(:item_id) { 'U DAR/x1/1/51.1' }
+  let(:formatted_item_id) { 'U-DAR-x1-1-51.1' }
   let(:item_title) { 'File. Shaw, George Bernard' }
 
   let(:attrs) {{ id: id, title: title, repository: repo,
@@ -33,6 +39,14 @@ describe Ead::Piece do
   }}
 
   describe '.to_solr' do
+    it 'formats the IDs' do
+      solr_fields = Ead::Piece.to_solr(attrs)
+
+      expect(solr_fields['id']).to eq formatted_id
+      expect(solr_fields['item_id_ssi']).to eq formatted_item_id
+      expect(solr_fields['collection_id_ssi']).to eq formatted_collection_id
+    end
+
     it 'converts attributes to a hash of solr fields' do
       solr_fields = Ead::Piece.to_solr(attrs)
 
@@ -42,7 +56,6 @@ describe Ead::Piece do
       expect(solr_fields['display_title_ss']).to eq "Archive Item: #{title.first}"
 
       expect(solr_fields['type_ssi']).to eq 'piece'
-      expect(solr_fields['id']).to eq id
       expect(solr_fields['reference_no_ssi']).to eq id
       expect(solr_fields['title_tesim']).to eq title
       expect(solr_fields['title_ssi']).to eq title.first
@@ -54,12 +67,10 @@ describe Ead::Piece do
       expect(solr_fields['dates_isim']).to eq [1940, 1941, 1942]
       expect(solr_fields['date_ssi']).to eq 1940
 
-      expect(solr_fields['collection_id_ssi']).to eq collection_id
       expect(solr_fields['collection_title_ss']).to eq collection_title
       expect(solr_fields['sub_collection_title_ss']).to eq sub_collection_title
       expect(solr_fields['series_title_ss']).to eq series_title
       expect(solr_fields['sub_series_title_ss']).to eq sub_series_title
-      expect(solr_fields['item_id_ssi']).to eq item_id
       expect(solr_fields['item_title_ss']).to eq item_title
     end
 

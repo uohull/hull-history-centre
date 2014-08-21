@@ -27,15 +27,15 @@ describe Ead::Importer do
 
     it "imports items correctly" do
       Ead::Importer.import([ead_file])
-      doc = Blacklight.solr.select(params: {'q' => 'id:"U DDH/1"'})['response']['docs'].first
-      expect(doc['id']).to eq "U DDH/1"
+      doc = Blacklight.solr.select(params: {'q' => 'id:"U-DDH-1"'})['response']['docs'].first
+      expect(doc['id']).to eq "U-DDH-1"
       expect(doc['title_tesim']).to eq ["Photocopy of file '1932 - 38'"]
     end
 
     it "imports collections correctly" do
       Ead::Importer.import([ead_file])
-      doc = Blacklight.solr.select(params: {'q' => 'id:"U DDH"'})['response']['docs'].first
-      expect(doc['id']).to eq "U DDH"
+      doc = Blacklight.solr.select(params: {'q' => 'id:"U-DDH"'})['response']['docs'].first
+      expect(doc['id']).to eq "U-DDH"
       expect(doc['title_tesim']).to eq ['Papers of Denzil Dean Harber']
     end
   end

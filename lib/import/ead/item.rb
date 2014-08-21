@@ -1,6 +1,7 @@
 module Ead
   class Item
     extend ::DateFormatter
+    extend ::IdFormatter
 
     class << self
 
@@ -47,7 +48,7 @@ module Ead
 
       def to_solr(attributes)
         {
-          'id' => attributes[:id],
+          'id' => format_id(attributes[:id]),
           'reference_no_ssi' => attributes[:id],
           'type_ssi' => 'item',
           'format_ssi' => 'Archive Item',
@@ -61,7 +62,7 @@ module Ead
           'dates_ssim' => standardized_dates(attributes[:dates]),
           'dates_isim' => expand_dates(attributes[:dates_normal]),
           'date_ssi' => sortable_date(attributes[:dates_normal]),
-          'collection_id_ssi' => attributes[:collection_id],
+          'collection_id_ssi' => format_id(attributes[:collection_id]),
           'collection_title_ss' => attributes[:collection_title],
           'sub_collection_title_ss' => attributes[:sub_collection_title],
           'series_title_ss' => attributes[:series_title],

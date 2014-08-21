@@ -1,6 +1,7 @@
 module Ead
   module Collection
     extend ::DateFormatter
+    extend ::IdFormatter
 
     class << self
 
@@ -31,7 +32,7 @@ module Ead
 
       def to_solr(attributes)
         {
-          'id' => attributes[:id],
+          'id' => format_id(attributes[:id]),
           'reference_no_ssi' => attributes[:id],
           'type_ssi' => 'collection',
           'format_ssi' => 'Archive Collection',
