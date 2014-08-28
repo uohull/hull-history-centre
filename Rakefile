@@ -10,7 +10,8 @@ Rails.application.load_tasks
 task :default => []; Rake::Task[:default].clear
 
 ZIP_URL = "https://github.com/projectblacklight/blacklight-jetty/archive/v4.6.0.zip"
-require 'jettywrapper'
+require 'bundler/setup'
+#require 'jettywrapper'
 
 task ci: ['jetty:clean', :configure_jetty] do
   ENV['environment'] = "test"
