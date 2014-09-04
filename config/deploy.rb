@@ -1,10 +1,10 @@
 # config valid only for Capistrano 3.1
 lock '3.2.1'
 
-set :application, 'hull-history-center'
-set :repo_url, 'git@github.com:curationexperts/hull-history-center.git'
+set :application, 'hull-history-centre'
+set :repo_url, 'git@github.com:uohull/hull-history-centre.git'
 set :branch, 'master'
-set :deploy_to, '/opt/hull-history-center'
+set :deploy_to, '/opt/hull-history-centre'
 set :scm, :git
 set :log_level, :debug
 
