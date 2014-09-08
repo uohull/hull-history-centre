@@ -6,3 +6,6 @@ en:
       form:
         q: Search our catalogues
 
+    show:
+      availability_link: Check if this item can be borrowed
+

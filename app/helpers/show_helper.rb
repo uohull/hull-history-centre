@@ -1,3 +1,5 @@
+require "uri"
+
 module ShowHelper
 
   def show_attribute(document, field, label)
@@ -37,6 +39,17 @@ module ShowHelper
   def author_label(solr_doc)
     author_count = Array(solr_doc['author_tesim']).count
     author_count > 1 ? 'Authors: ' : 'Author: '
+  end
+
+  def prism_search_link(library_record_title)
+      unless library_record_title.nil? 
+        term = library_record_title.split("/").first # Split any concatenated authors from the title 
+        link_to(t("blacklight.show.availability_link"),  prism_search_url(term), target: "_blank")
+      end
+  end 
+
+  def prism_search_url(search_term)
+    "http://#{HullHistoryCentre::Application.config.prism_server_name}/uhtbin/cgisirsi.exe/x/HULLCENTRL/x/57/5?user_id=HULLWEB&searchdata1=#{URI.encode(search_term)}"
   end
 
 end

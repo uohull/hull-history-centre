@@ -13,6 +13,12 @@
 
             <label> Reference No: </label> <br />
             <%= @document['reference_no_ssi'] %>
+
+            <% if @document["type_ssi"] == "library_record" && @document["repository_ssi"] == "Hull Local Studies Library" %>
+              <p>
+                <%= prism_search_link(@document["title_ssi"]) %>
+              </p>
+            <% end %>
           </div>
         </div>
       </fieldset>
