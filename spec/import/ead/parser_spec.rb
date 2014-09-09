@@ -72,6 +72,28 @@ describe Ead::Parser do
         xml = Nokogiri::XML(File.read(item_with_sub_series)).xpath("//#{Ead::Item.root_xpath}")
         attrs = Ead::Parser.attrs_for_record(xml, Ead::Item)
         expect(attrs[:sub_series_title]).to eq 'Comet Radiovision Services Ltd Minute Books'
+        expect(attrs[:sub_series_id]).to eq 'C DBCO/1/1'
+      end
+    end
+
+
+    context 'for a subseries' do
+      it 'finds the attributes for that subseries' do
+        xml = Nokogiri::XML(File.read(item_with_sub_series)).xpath("//#{Ead::SubSeries.root_xpath}")
+        attrs = Ead::Parser.attrs_for_record(xml, Ead::SubSeries)
+        expect(attrs[:id]).to eq 'C DBCO/1/1'
+        expect(attrs[:title]).to eq 'Comet Radiovision Services Ltd Minute Books'
+        expect(attrs[:repository]).to eq 'Hull City Archives'
+        expect(attrs[:extent]).to eq '8 items'
+        expect(attrs[:access]).to eq 'Access will be granted to any accredited reader'
+        expect(attrs[:description]).to eq 'Subseries contains minute books recording ordinary Board meetings of Comet Radiovision Services Limited. Please note that minutes of AGMs can be found under the reference C DBCO/1/3.'
+        expect(attrs[:dates]).to eq '1972-1988'
+        expect(attrs[:dates_normal]).to eq '1972-1988'
+
+        expect(attrs[:collection_id]).to eq 'C DBCO'
+        expect(attrs[:collection_title]).to eq 'Records of Comet Group PLC (1933-2012)'
+        # Awaiting clarification from Simon  W
+        #expect(attrs[:series_title]).to eq 'Comet Group PLC Minute Books'
       end
     end
 

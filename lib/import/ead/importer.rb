@@ -8,7 +8,8 @@ module Ead
 
       map_key_to_class = { collections: Ead::Collection,
                            items:       Ead::Item,
-                           pieces:      Ead::Piece }
+                           pieces:      Ead::Piece,
+                           sub_series:  Ead::SubSeries }
 
       print_message "\nSaving records to solr"
       map_key_to_class.each do |key, ead_class|

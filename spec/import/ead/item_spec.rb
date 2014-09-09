@@ -19,6 +19,7 @@ describe Ead::Item do
     let(:collection_title) { 'Papers of Denzil Dean Harber' }
     let(:sub_collection_title) { 'Sub Coll 1' }
     let(:series_title) { 'General Files' }
+    let(:sub_series_id) { 'U-DDH-1'}
     let(:sub_series_title) { 'Sub Series 1' }
 
     it 'converts attributes to a hash of solr fields' do
@@ -30,7 +31,8 @@ describe Ead::Item do
                      collection_title: collection_title,
                      sub_collection_title: sub_collection_title,
                      series_title: series_title,
-                     sub_series_title: sub_series_title }
+                     sub_series_title: sub_series_title,
+                     sub_series_id: sub_series_id }
       solr_fields = Ead::Item.to_solr(attributes)
 
       expect(solr_fields['type_ssi']).to eq 'item'
@@ -53,6 +55,7 @@ describe Ead::Item do
       expect(solr_fields['sub_collection_title_ss']).to eq sub_collection_title
       expect(solr_fields['series_title_ss']).to eq series_title
       expect(solr_fields['sub_series_title_ss']).to eq sub_series_title
+      expect(solr_fields['sub_series_id_ssi']).to eq sub_series_id
     end
 
     it 'handles unknown dates' do

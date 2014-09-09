@@ -5,6 +5,7 @@ describe Ead::Importer do
   let(:fixtures_path) { File.expand_path(File.join('spec', 'fixtures', 'sample_ead_files')) }
   let(:ead_file) { File.join(fixtures_path, 'U_DDH.xml') }
   let(:dar_file) { File.join(fixtures_path, 'U_DAR_pruned.xml') }
+  let(:dbco_file) { File.join(fixtures_path, 'C_DBCO_pruned.xml') }
 
   before do
     allow(Ead::Importer).to receive(:verbose) { false }
@@ -25,6 +26,7 @@ describe Ead::Importer do
       expect(num_of_pieces).to eq 27
     end
 
+
     it "imports items correctly" do
       Ead::Importer.import([ead_file])
       doc = Blacklight.solr.select(params: {'q' => 'id:"U-DDH-1"'})['response']['docs'].first
@@ -37,6 +39,13 @@ describe Ead::Importer do
       doc = Blacklight.solr.select(params: {'q' => 'id:"U-DDH"'})['response']['docs'].first
       expect(doc['id']).to eq "U-DDH"
       expect(doc['title_tesim']).to eq ['Papers of Denzil Dean Harber']
+    end
+
+    it "imports subseries correctly" do
+      Ead::Importer.import([dbco_file])
+      doc = Blacklight.solr.select(params: {'q' => 'id:"C-DBCO-1-1"'})['response']['docs'].first
+      expect(doc['id']).to eq "C-DBCO-1-1"
+      expect(doc['title_tesim']).to eq ['Comet Radiovision Services Ltd Minute Books']
     end
   end
 

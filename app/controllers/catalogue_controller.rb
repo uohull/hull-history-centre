@@ -63,7 +63,8 @@ class CatalogueController < ApplicationController
     config.add_facet_field 'subject_ssim', label: 'Subject', limit: 15
     config.add_facet_field 'author_ssim', label: 'Author', limit: 15
     config.add_facet_field 'language_ssim', label: 'Language', limit: 10
-    config.add_facet_field 'collection_id_ssi', label: 'Collection', show: false, helper_method: :collection_name
+    config.add_facet_field 'collection_id_ssi', label: 'Collection', show: false, helper_method: :title_by_id
+    config.add_facet_field 'sub_series_id_ssi', label: 'Sub-series', show: false, helper_method: :title_by_id
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request

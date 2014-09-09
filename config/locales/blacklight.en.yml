@@ -8,4 +8,5 @@ en:
 
     show:
       availability_link: Check if this item can be borrowed
+      child_items_link: Show items
 

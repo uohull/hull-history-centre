@@ -15,7 +15,7 @@ module ShowHelper
     keys = [['collection_title_ss', 'collection_id_ssi'],
             ['sub_collection_title_ss', 'sub_collection_id_ss'],
             ['series_title_ss', 'series_id_ss'],
-            ['sub_series_title_ss', 'sub_series_id_ss'],
+            ['sub_series_title_ss', 'sub_series_id_ssi'],
             ['item_title_ss', 'item_id_ssi']
     ]
 
@@ -34,6 +34,18 @@ module ShowHelper
     current_crumb = document['title_tesim'].first
     crumbs = crumbs + [current_crumb]
     crumbs = crumbs.compact.join(' &gt; ').html_safe
+  end
+
+  def sub_items_link(document)
+    keys = { "subseries" => "sub_series_id_ssi",
+                     "series" => "" 
+                }
+
+    search_id_field =  keys[document['type_ssi']].to_s 
+
+    unless search_id_field.empty?
+      link_to(t("blacklight.show.child_items_link"), catalogue_index_path( "f[#{ search_id_field }][]" => document["id"]))
+    end     
   end
 
   def author_label(solr_doc)

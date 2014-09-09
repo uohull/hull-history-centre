@@ -7,6 +7,9 @@
   <% content_for(:head) { render_link_rel_alternates } -%>
 
   <% is_collection = @document['type_ssi'] == 'collection' %>
+  <% show_availability = @document['type_ssi'] == 'library_record'  || @document['type_ssi'] == 'item'  || @document['type_ssi'] == 'piece' %>
+  <% show_item = @document['type_ssi'] == 'subseries'  || @document['type_ssi'] == 'series'  || @document['type_ssi'] == 'subcollection' %>
+
   <% document_col_class = is_collection ? 'col-md-12' : 'col-md-8' %>
 
   <div id="document" class="document <%= document_col_class %> <%= render_document_class %>" itemscope itemtype="<%= @document.itemtype %>">
@@ -15,11 +18,18 @@
     </div>
   </div>
 
-  <% unless is_collection %>
+  <% if show_availability %>
     <div id="sidebar" class="col-md-4">
       <%= render 'catalogue/availability_sidebar',
                   document: @document %>
     </div>
   <% end %>
+
+  <% if show_item %>
+  <div id="sidebar" class="col-md-4">
+    <%= render 'catalogue/sub_items_sidebar',
+                document: @document %>
+  </div>
+<% end %>
 
 </div>
