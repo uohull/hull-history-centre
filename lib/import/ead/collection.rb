@@ -18,7 +18,7 @@ module Ead
           dates: 'did/unitdate',
           dates_normal: 'did/unitdate/@normal',
           extent: 'did/physdesc/extent',
-          access: 'accessrestrict',
+          access: 'accessrestrict[not(@type="status")]',
           custodial_history: 'custodhist',
           language: 'did/langmaterial/language',
           biog_hist: 'bioghist',

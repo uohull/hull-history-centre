@@ -34,7 +34,7 @@ module Ead
           title: 'did/unittitle',
           repository: 'did/repository',
           extent: 'did/physdesc/extent',
-          access: 'accessrestrict',
+          access: 'accessrestrict[not(@type="status")]',
           description: 'scopecontent',
           dates: 'did/unitdate',
           dates_normal: 'did/unitdate/@normal',
