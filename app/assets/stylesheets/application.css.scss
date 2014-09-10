@@ -11,6 +11,11 @@
  *= require_self
  *= require 'hhc/hull'
  *= require 'hhc/hull-bl'
+
+ *
+ * Used by blacklight_range_limit
+ *= require  'blacklight_range_limit'
+ *
 */
 
 @import 'blacklight.css.scss'; 

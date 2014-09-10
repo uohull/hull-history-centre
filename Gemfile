@@ -28,6 +28,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'blacklight'
+gem 'blacklight_range_limit'
 
 group :development, :test do
   gem 'byebug'

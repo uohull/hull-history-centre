@@ -1,10 +1,11 @@
 # -*- encoding : utf-8 -*-
 #
-class CatalogueController < ApplicationController  
+class CatalogueController < ApplicationController
 
   before_filter :show_tab, only: :show
 
   include Blacklight::Catalog
+  include BlacklightRangeLimit::ControllerOverride
 
   configure_blacklight do |config|
     ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
@@ -58,7 +59,7 @@ class CatalogueController < ApplicationController
     # :show may be set to false if you don't want the facet to be drawn in the 
     # facet bar
     config.add_facet_field 'format_ssi', label: 'Format', collapse: false, limit: 15
-    config.add_facet_field 'dates_isim', label: 'Date', limit: 10
+    config.add_facet_field 'dates_isim', label: 'Date', :range => true
     config.add_facet_field 'repository_ssi', label: 'Repository', limit: 5
     config.add_facet_field 'subject_ssim', label: 'Subject', limit: 15
     config.add_facet_field 'author_ssim', label: 'Author', limit: 15
