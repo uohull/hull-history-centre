@@ -57,10 +57,11 @@ describe Ead::Parser do
         expect(attrs[:title]).to eq 'File. Shaw, George Bernard, added socialist to the title'
         expect(attrs[:repository]).to eq 'Hull University Archives'
         expect(attrs[:extent]).to eq '1 file'
-        expect(attrs[:access]).to eq ['<p>Access will be granted to any accredited reader</p>', '<p> Paragraph 2 </p>']
+        expect(attrs[:access]).to eq ['<p>Access will be granted to any accredited reader</p>', '<p> Paragraph 2 </p>', '<p>Closed</p>']
         expect(attrs[:description]).to eq ['<p>desc 1</p>', '<p>desc 2</p>']
         expect(attrs[:dates]).to eq '1941 - 1972'
         expect(attrs[:dates_normal]).to eq '1941-1972'
+        expect(attrs[:access_status]).to eq "Closed"
 
         expect(attrs[:collection_id]).to eq 'U DAR'
         expect(attrs[:collection_title]).to eq 'Papers of Robin Page Arnot'

@@ -38,6 +38,7 @@ module Ead
           description: 'scopecontent',
           dates: 'did/unitdate',
           dates_normal: 'did/unitdate/@normal',
+          access_status: 'accessrestrict[@type="status"]',
           collection_id: "#{collection_xpath}/#{Ead::Collection.fields_map[:id]}",
           collection_title: "#{collection_xpath}/#{Ead::Collection.fields_map[:title]}",
           sub_collection_title: "#{sub_collection_xpath}/#{Ead::SubCollection.fields_map[:title]}",
@@ -59,6 +60,7 @@ module Ead
           'repository_ssi' => attributes[:repository],
           'extent_ssm' => attributes[:extent],
           'access_ssim' => attributes[:access],
+          'access_status_ssi' => clean_access_status(attributes[:access_status]),
           'description_tesim' => attributes[:description],
           'dates_ssim' => standardized_dates(attributes[:dates]),
           'dates_isim' => expand_dates(attributes[:dates_normal]),
@@ -74,6 +76,10 @@ module Ead
 
       def display_title(title)
         "Archive Item: #{Array(title).first}"
+      end
+
+      def clean_access_status(access)
+        access.to_s.downcase.match(/closed/) ? "closed" : "open"
       end
 
     end

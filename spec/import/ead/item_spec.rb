@@ -13,7 +13,8 @@ describe Ead::Item do
     let(:desc) { ['<p>desc 1</p>' '<p>desc 2</p>'] }
     let(:dates) { ['1932-1938'] }
     let(:dates_normal) { '1940-1942' }
-
+    let(:access_status) { '<p>Closed</p>' }
+ 
     let(:collection_id) { 'U DDH' }
     let(:formatted_collection_id) { 'U-DDH' }
     let(:collection_title) { 'Papers of Denzil Dean Harber' }
@@ -27,6 +28,7 @@ describe Ead::Item do
                      extent: extent, access: access,
                      description: desc, dates: dates,
                      dates_normal: dates_normal,
+                     access_status: access_status,
                      collection_id: collection_id,
                      collection_title: collection_title,
                      sub_collection_title: sub_collection_title,
@@ -49,6 +51,7 @@ describe Ead::Item do
       expect(solr_fields['dates_ssim']).to eq dates.first
       expect(solr_fields['dates_isim']).to eq [1940, 1941, 1942]
       expect(solr_fields['date_ssi']).to eq 1940
+      expect(solr_fields['access_status_ssi']).to eq "closed"
 
       expect(solr_fields['collection_id_ssi']).to eq formatted_collection_id
       expect(solr_fields['collection_title_ss']).to eq collection_title
