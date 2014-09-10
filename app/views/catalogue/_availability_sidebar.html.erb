@@ -8,7 +8,11 @@
         <div id="asset-list">
           <div class="clearfix">
             <% unless @document['type_ssi'] == 'library_record' %>
-              <p> This item is reference only and can only be consulted in person at the Hull History Centre.  </p>
+               <% if ead_item_access_closed?(@document) %>
+                 <p><%= t('blacklight.show.item_closed_access') %></p>
+                <% else %>
+                  <p><%= t('blacklight.show.item_open_access') %></p>
+                <% end %>
             <% end %>
 
             <label> Reference No: </label> <br />

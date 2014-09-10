@@ -58,6 +58,10 @@ module ShowHelper
         term = library_record_title.split("/").first # Split any concatenated authors from the title 
         link_to(t("blacklight.show.availability_link"),  prism_search_url(term), target: "_blank")
       end
+  end
+
+  def ead_item_access_closed?(document)
+    document["access_status_ssi"] == "closed" ? true : false
   end 
 
   def prism_search_url(search_term)
