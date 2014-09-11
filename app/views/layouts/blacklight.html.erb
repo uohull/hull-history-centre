@@ -28,7 +28,11 @@
 
   </head>
   <body class="<%= render_body_class %>">
-  <%= render :partial => 'shared/header_navbar' %>
+
+    <header>
+        <%= render :partial => 'shared/header_navbar' %>
+        <%= render :partial => 'shared/sub_navbar' %>
+    </header>
 
   <%= render partial: 'shared/ajax_modal' %>
 
@@ -41,5 +45,6 @@
   </div>
 
   <%= render :partial => 'shared/footer' %>
+
   </body>
 </html>

@@ -1,0 +1,99 @@
+
+/*Opacity*/
+/*Usage: 
+.article-heading {
+  @include opacity(0.8);
+}*/
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+/*Center-block*/
+/*Useage
+.footer-wrap {
+  width: 450px;
+  @include center-block;
+}*/
+
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*Font-size*/
+/*This mixin sets the font size in rem's with a px fallback*/
+/*Usage: 
+body {
+  @include font-size(16);
+}*/
+
+@mixin font-size($size: 12, $font-size-base: 16 ){
+  font-size: $size; /* fallback for old browsers */
+  font-size: ($size / $font-size-base) * 1rem;
+}
+
+/*Line Height*/
+/*This mixin sets the line height in rem's with a px fallback.*/
+/*Usage:
+body {
+  @include line-height (16);
+}*/
+@mixin line-height($heightValue: 12 ){
+	line-height: $heightValue + px; //fallback for old browsers
+	line-height: (0.125 * $heightValue) + rem;
+}
+
+@mixin navigation-list {
+  list-style-type:none;
+  padding:0;
+  margin:0;
+  overflow:hidden;
+  > li{
+      display:block;
+      float:left;fo
+      &:last-child{
+          margin-right:0px;
+      }
+  }
+}
+
+@mixin transition-in-out($duration, $ease-in, $ease-out) {
+  -webkit-transition: background-color $duration $ease-in $ease-out;
+  -moz-transition: background-color $duration $ease-in $ease-out;
+  -o-transition: background-color $duration $ease-in $ease-out;
+  transition: background-color $duration $ease-in $ease-out;
+}
+
+@mixin tile-link($hover-color) {
+  margin-top: 30px;
+  a {
+    @include transition(0.5s);
+    padding: 1rem;
+    margin: 1rem 0;
+    color: #111;
+    background: $neutral-color-light;
+    border-bottom: none;
+    &:hover {  
+      color: #fff;
+      background: $hover-color;
+    }
+  }
+}
+
+@function set-overlay-text-color($color) {
+    @if (lightness( $color ) > 60) {
+      @return #333;
+    }
+    @else {
+      @return #FFFFFF;
+    }
+}
+
+@mixin message-borders($bordercolor) {
+  border-top: 1px solid lighten($bordercolor, 3%);
+  border-bottom: 1px solid darken($bordercolor, 3%);
+}

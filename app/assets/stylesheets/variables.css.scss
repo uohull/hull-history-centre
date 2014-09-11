@@ -1,83 +1,78 @@
-/* uoh - bootstrap variables */
-$gridColumns: 16;
-$gridGutterWidth: 0px;
-$gridGutterWidth768: 0px;
-$gridGutterWidth1200: 0px;
-$inputBorderRadius: 2px;
-$navbarBrandColor: #fff !important;
-$navbarLinkColor: #c5c5c5 !important;
-$navbarLinkColorHover: #fff !important;
-$textColor: #333333;
-$bodyBackground: #ffffff; 
+/* == bootstrap =========================================================== */
 
-/* site */
-/*$primarycolor: #ff0000;*/
-$primarycolor: #7EC6C8;
-$primarycolordark: #188092;
-$primarycolorlight: #ccefe1;
-$linkColor: $primarycolordark;
-/* $primarycolordark: #1a6a1a; */
-/*$altcolor: #3d7a7a;*/
-$altcolor: #72698a;
-$altcolorlight: #a285c5;
-$neutralcolordark: #444;
-$neutralcolorlight: #ccc;
-$primarylinkcolor: #188092;
-$primarylinkhovercolor: $neutralcolordark;
-$formMaxWidth: 1200px;
-$footerTextColor: #c1c1c1;
-$footerColor: #1F1F1F;
+/* colors */
+$body-bg: #fff;
 
-/* tiles */
-$greenishblue: #68cab6;
-$cleanwhite: #fff;
-$lightgrey: #f3f3f3;
-$lightgreen: #EDFFC4;
-$aubergine: #72698a;
-$tangerine: #fbb168;
-$maroon: #e17695;
-$lightblue: #75bdbd;
-$lightlink: #fff;
-$darklink: #000;
-$tiletransparency: 1;
-$tilerowgutter: 0;
+/*typeography*/
+$font-family-base: 'open_sansregular';
+$font-size-base: 14px;
+$line-height-base: 1.428571429;
+$line-height-computed: floor(($font-size-base * $line-height-base));
+
+
+/* components */
+$grid-gutter-width: 30px;
+$border-radius-base: 0;
+
+/* navbar */
+$navbar-height: 80px;
+$navbar-margin-bottom: 0;
+$brand-logo-height: 35px;
+$navbar-default-bg: #fff;
+$navbar-default-border: darken($navbar-default-bg, 4.5%);
+$navbar-inverse-link-color: #c1c1c1;
+$navbar-default-brand-color: #333;
+$navbar-inverse-brand-color: #fff;
+$navbar-inverse-bg: #1f1f1f;
+$navbar-inverse-border: transparent;
+$navbar-padding-horizontal: 30px;
+$navbar-padding-vertical: (($navbar-height - $line-height-computed) / 2);
+
+
+/* subnavbar - set to 0 if no subnavbar used*/
+$subnavbar-height: 0px;
+
+/* jumbotron */
+$jumbotron-padding: 60px;
 
 /* highlighters */
-$selectedtextcolor: #f67872;
-$alertcolor: #4E9799;
-$errorcolor: #cc6565;
-$successcolor: #3E803F;
-$noticecolor: #3d7a7a;
-$infocolor: #9ebe5e;
-$warningcolor: #BE5A13;
+$selected-text-color: #f67872;
+$alert-color: #4E9799;
+$error-color: #C04940;
+$danger-color: #9d261d;
+$success-color: #3E803F;
+$notice-color: #3d7a7a;
+$info-color: #E1E16C;
+$warning-color: #BE5A13;
 
-/* images */
-$home_background_image: "blah/bjl-1c.jpg" !default;
+/* == site theme =========================================================== */
 
-/* thumbs */
-$generic-thumb: 'hyhull/hyhull-thumb-generic.png';
-$calendar-thumb: 'hyhull/hyhull-thumb-calendar.png';
-$dataset-thumb: 'hyhull/hyhull-thumb-dataset.png';
-$exam-thumb: 'hyhull/hyhull-thumb-exam.png';
-$image-thumb: 'hyhull/hyhull-thumb-image.png';
-$policy-thumb: 'hyhull/hyhull-thumb-policy.png';
-$presentation-thumb: 'hyhull/hyhull-thumb-presentation.png';
-$domesday-thumb: 'hyhull/hyhull-thumb-domesday.png';
-$handbook-thumb: 'hyhull/hyhull-thumb-handbook.png';
-$thesis-thumb: 'hyhull/hyhull-thumb-thesis.png';
+/* navbar */
+$brand-logo-image: '/assets/hhc-logo-nt.svg';
+$brand-logo-min-width: 145px;
+$univesity-logo-height: 27px;
+$sub-navbar-height: 50px;
+$navbar-alt: #f5f5f5;
 
-/* modal */
-/* adjust to fit modal on lowest prefereable resolution (currently set for 1024x768) */
-$modal-body-maxheight: 406px;
+/* footer */
+$footer-text-color: #c1c1c1;
+$footer-color: #1F1F1F;
+$footer-height: 245px;
 
-/* nav-tabs */
-$active-tab-color: whitesmoke;
+$brand-title-size: 20px;
+$brand-title-color: #fff;
 
-/* workflow */
-$proto-color: #7EC6C8;
-$qa-color: #188092;
-$hidden-color: #444;
-$published-color: #3E803F;
-$deleted-color: #cc6565;
-$worflow-border: 10px;
-$workflow-border-sm: 3px;
+$primary-color: #009dce;
+$primary-dark: #005875;
+$blue: #0026d5;
+$green: #00dc4a;
+$orange: #ff8300;
+$neutral-color: #999;
+$neutral-color-light: #efefef;
+
+$primary-link-color: #006495;
+$primary-link-hover-color: #888;
+
+/* site extras - embed here once tile partial has been imported into uoh-base */
+$tile-padding: 20px;
+$tile-inner-min-height: 175px;

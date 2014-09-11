@@ -1,0 +1,17 @@
+/*header navigation*/
+.headernav { z-index: 1045; }
+
+/* sub navigation */
+.subnav { 
+	top: $sub-navbar-height;
+	/*height: $subnavbar-height;*/
+	/*padding: ($subnavbar-height * 0.25) 0 ($subnavbar-height * 0.75) 0;*/
+	padding: ($grid-gutter-width / 2) 0;
+	z-index: 999;
+}
+
+@media (max-width: 480px), (max-width: 767px) { 
+  .subnav { 
+	top: 0;
+	}
+}

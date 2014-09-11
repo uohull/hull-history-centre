@@ -1,0 +1,27 @@
+/* Body padding fix required to allow for fixed to top navbar */
+body { padding-top: 0; }
+
+/* the following CSS snippet removes the "sub-scrolling" on the navigation bar and 
+ removes the top margin which is there due to the large screen fixed navbar,
+ for a better usability on mobile*/
+
+@media (max-width: 767px) {
+    .navbar-fixed-top {
+        position: relative;
+        top: auto;
+    }
+    .navbar-collapse {
+        max-height: none;
+    }
+    body {
+        margin: 0;
+        padding-top: 0;
+    }
+}
+
+// need to fix
+/*.navbar-nav > li > a {
+    padding-bottom: 38px;
+    padding-top: 88px;
+    font-size: 15px;
+}*/

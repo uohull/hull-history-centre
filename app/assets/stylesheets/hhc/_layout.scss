@@ -1,0 +1,66 @@
+/* navbar-fixed-top is in use:*/
+/*body { padding-top: $navbar-height + $subnavbar-height; }*/
+
+/*.brand-logo { 
+	margin: (
+				(($navbar-height - $brand-logo-height) / 2) 
+				($grid-gutter-width / 2)
+			);
+	
+}*/
+/*
+#brand-logo-icon { 
+  display: block;
+  text-indent: -9999px;
+  height: $navbar-height;
+  min-width: $brand-logo-min-width; 
+  background: url($brand-logo-image);
+  background-size: cover;
+  margin: 30px;
+}*/
+
+/* navbar-fixed-top is in use:*/
+/*body { padding-top: $navbar-height + $subnavbar-height; }*/
+
+.brand-logo { 
+    margin: (
+                (($navbar-height - $brand-logo-height) / 2) 
+                ($grid-gutter-width / 2)
+/*              (($navbar-height - $brand-logo-height) / 2)
+                ($grid-gutter-width / 2)*/
+            );
+    background: url($brand-logo-image) no-repeat top left;
+    background-size: cover;
+    height: 56px;
+    margin: 11px 15px;
+    width: 41px;
+            }l
+
+.brand-title { 
+    margin: ( 
+                (($navbar-height - $brand-title-size) / 3) 
+                ($grid-gutter-width) 
+                0 
+                ($grid-gutter-width / 2) 
+            );
+}
+
+.university-logo {
+    margin-top: (($navbar-height - $univesity-logo-height) / 2); 
+    margin-right: ($grid-gutter-width / 2) !important;
+}
+
+.navbar-alt { background: $navbar-alt; }
+
+section#content {
+    background: transparent;  /*$body-bg;*/
+    margin: 0 0 $footer-height;
+    /*padding: 0 0 $footer-height;*/
+    z-index: 1045;
+}
+
+.full-width { width: 100%; margin: 0 !important; }
+
+.row-spacer {
+    margin-top: 50px;
+}
