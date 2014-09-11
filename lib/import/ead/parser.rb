@@ -11,13 +11,14 @@ module Ead
         collections = parse_records(doc, Ead::Collection)
         items = parse_records(doc, Ead::Item)
         pieces = parse_records(doc, Ead::Piece)
+        series = parse_records(doc, Ead::Series)
         sub_series = parse_records(doc, Ead::SubSeries)
 
         if collections.empty? && items.empty? && pieces.empty?
           raise "No records found.  Please check that you have valid XML."
         end
 
-        { collections: collections, items: items, pieces: pieces, sub_series: sub_series }
+        { collections: collections, items: items, pieces: pieces, series: series, sub_series: sub_series }
       end
 
       def parse_records(node, record_class)

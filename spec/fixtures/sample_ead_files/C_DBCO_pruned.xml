@@ -35,7 +35,7 @@
     <custodhist encodinganalog="3.2.3"><p>Received from the Hull office on George Street, Hull, 29 Jan 2013</p></custodhist>
     <relatedmaterial encodinganalog="3.5.3"><p>Related material held at Hull History Centre: </p><p>C TCY/3/1/39  Agreement: Comet Radio Services Limited and the Corporation of Hull re static water tank at 94 George Street, Hull, 6 Jun 1944;</p><p>C TCY/3/3/13 and C TCY/3/3/18 Correspondence re above, 1944;</p><p>C TYR/2/736 Control and Report personnel card for managing director of Comet Radio, George Street, c.1939;</p><p>C TYR/3/1108 Cyclist Messenger Corps personnel card for an Apprentice Radio Engineer at Comet Radio Service Limited, 15 Dock Street, c.1941.</p></relatedmaterial>
     <dsc type="combined">
-      <c level="otherlevel" otherlevel="series ">
+      <c level="series">
         <did>
           <unittitle encodinganalog="3.1.2">Comet Group PLC Minute Books</unittitle>
           <unitdate datechar="creation" encodinganalog="3.1.3.2" label="Creation Dates" type="inclusive" normal="1972-2003">1972-2003</unitdate>

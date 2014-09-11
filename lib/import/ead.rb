@@ -4,6 +4,7 @@ Dir[File.join(concerns_dir, '**', '*.rb')].each do |file|
   require file
 end
 
+puts Dir[File.join(File.dirname(__FILE__), '**', '*.rb')]
 Dir[File.join(File.dirname(__FILE__), '**', '*.rb')].each do |file|
   require file
 end

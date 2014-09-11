@@ -14,7 +14,7 @@ module ShowHelper
   def breadcrumbs(document)
     keys = [['collection_title_ss', 'collection_id_ssi'],
             ['sub_collection_title_ss', 'sub_collection_id_ss'],
-            ['series_title_ss', 'series_id_ss'],
+            ['series_title_ss', 'series_id_ssi'],
             ['sub_series_title_ss', 'sub_series_id_ssi'],
             ['item_title_ss', 'item_id_ssi']
     ]
@@ -38,7 +38,7 @@ module ShowHelper
 
   def sub_items_link(document)
     keys = { "subseries" => "sub_series_id_ssi",
-                     "series" => "" 
+                     "series" => "series_id_ssi" 
                 }
 
     search_id_field =  keys[document['type_ssi']].to_s 
