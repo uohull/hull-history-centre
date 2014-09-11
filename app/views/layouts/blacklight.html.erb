@@ -29,7 +29,7 @@
   </head>
   <body class="<%= render_body_class %>">
 
-    <header>
+    <header role="headerinfo">
         <%= render :partial => 'shared/header_navbar' %>
         <%= render :partial => 'shared/sub_navbar' %>
     </header>
@@ -44,7 +44,9 @@
     </div>
   </div>
 
-  <%= render :partial => 'shared/footer' %>
+    <footer role="contentinfo">
+        <%= render :partial => 'shared/footer' %>
+    </footer>
 
   </body>
 </html>

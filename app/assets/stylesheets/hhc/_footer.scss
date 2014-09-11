@@ -1,6 +1,6 @@
 
 footer {
-  position: absolute;
+/*  position: absolute;*/
   width: 100%;
   z-index: -20;
   /*height: 272px;*/
@@ -8,7 +8,7 @@ footer {
     background: $footer-color;
     min-height: $footer-height;
     padding: 2% 0;
-    position: fixed;
+    position: relative;
     color: $footer-text-color;
     text-shadow: 1px 1px darken($footer-color, 55%);
     ul.footer-column {
@@ -79,12 +79,13 @@ footer {
 		&:hover { color: lighten($footer-text-color, 25%) };
 	  }
 	}
+	 .footer-logo-container { display: inline-block; margin: 20px 20px 40px 0px; }
   }
-
+ 
 }
 
 /* mobile footer adjustment */
-@media (max-width: 480px), (max-width: 767px) { 
+/*@media (max-width: 480px), (max-width: 767px) { 
   footer #footer{
     position: relative !important;
     padding: 0 !important;
@@ -94,4 +95,4 @@ footer {
     padding: 0;       
   }
   section#content.page-shadow { box-shadow: none; }
-}
+}*/
