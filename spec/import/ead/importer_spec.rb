@@ -41,6 +41,13 @@ describe Ead::Importer do
       expect(doc['title_tesim']).to eq ['Papers of Denzil Dean Harber']
     end
 
+    it "imports subcollections correctly" do
+      Ead::Importer.import([dar_file])
+      doc = Blacklight.solr.select(params: {'q' => 'id:"U-DAR-x1"'})['response']['docs'].first
+      expect(doc['id']).to eq "U-DAR-x1"
+      expect(doc['title_tesim']).to eq ['First Deposit']
+    end
+
     it "imports series correctly" do
       Ead::Importer.import([dbco_file])
       doc = Blacklight.solr.select(params: {'q' => 'id:"C-DBCO-1"'})['response']['docs'].first

@@ -15,25 +15,19 @@ feature 'Facet pagination:' do
   scenario 'Selecting a facet limit' do
     visit root_path
 
+    fill_in 'range_dates_isim_begin', with: '1970'
+    fill_in 'range_dates_isim_end', with: '1972'
+
     within('#facet-dates_isim') do
-      click_link 'more »'
+       click_button 'Limit'
     end
+   
+    # Should have 10 search results
+    expect(page).to have_selector('#documents .document', count: 10)
 
-    expect(page).to have_selector('.facet_extended_list ul.facet-values')
-
-    within('.top') do
-      click_link 'Numerical Sort'
-      click_link 'Next »'
-    end
-
-    click_link '1971'
-
-    # Should have 4 search results
-    expect(page).to have_selector('#documents .document', count: 4)
-
-    # The search constraints should include the date 1971
+    # The search constraints should include the date 1970 to 1972 
     expect(page).to have_selector('.filterName', count: 1, text: 'Date')
-    expect(page).to have_selector('.filterValue', count: 1, text: '1971')
+    expect(page).to have_selector('.filterValue', count: 1, text: '1970 to 1972')
   end
 
 end

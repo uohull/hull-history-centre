@@ -9,6 +9,7 @@ module Ead
         doc = Nokogiri::XML(ead_data)
 
         collections = parse_records(doc, Ead::Collection)
+        sub_collections = parse_records(doc, Ead::SubCollection)
         items = parse_records(doc, Ead::Item)
         pieces = parse_records(doc, Ead::Piece)
         series = parse_records(doc, Ead::Series)
@@ -18,7 +19,7 @@ module Ead
           raise "No records found.  Please check that you have valid XML."
         end
 
-        { collections: collections, items: items, pieces: pieces, series: series, sub_series: sub_series }
+        { collections: collections, sub_collections: sub_collections, items: items, pieces: pieces, series: series, sub_series: sub_series }
       end
 
       def parse_records(node, record_class)

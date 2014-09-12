@@ -18,6 +18,8 @@ describe Ead::Item do
     let(:collection_id) { 'U DDH' }
     let(:formatted_collection_id) { 'U-DDH' }
     let(:collection_title) { 'Papers of Denzil Dean Harber' }
+    let(:sub_collection_id) { 'U DDH/x' }
+    let(:formatted_sub_collection_id) { 'U-DDH-x' }
     let(:sub_collection_title) { 'Sub Coll 1' }
     let(:series_id) { 'U DDH/1' }
     let(:formatted_series_id) { 'U-DDH-1' }
@@ -34,6 +36,7 @@ describe Ead::Item do
                      access_status: access_status,
                      collection_id: collection_id,
                      collection_title: collection_title,
+                     sub_collection_id: sub_collection_id,
                      sub_collection_title: sub_collection_title,
                      series_title: series_title,
                      series_id: series_id,
@@ -59,6 +62,7 @@ describe Ead::Item do
 
       expect(solr_fields['collection_id_ssi']).to eq formatted_collection_id
       expect(solr_fields['collection_title_ss']).to eq collection_title
+      expect(solr_fields['sub_collection_id_ssi']).to eq formatted_sub_collection_id
       expect(solr_fields['sub_collection_title_ss']).to eq sub_collection_title
       expect(solr_fields['series_id_ssi']).to eq formatted_series_id
       expect(solr_fields['series_title_ss']).to eq series_title

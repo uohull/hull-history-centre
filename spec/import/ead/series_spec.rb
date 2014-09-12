@@ -16,6 +16,9 @@ describe Ead::Series do
     let(:collection_id) { 'C DBCO' }
     let(:formatted_collection_id) { 'C-DBCO' }
     let(:collection_title) { 'Records of Comet Group PLC (1933-2012)' }
+    let(:sub_collection_id) { 'C DBCOx/1' }
+    let(:sub_formatted_collection_id) { 'C-DBCOx-1' }
+    let(:sub_collection_title) { 'Records of Comet Group PLC' }
 
     it 'converts attributes to a hash of solr fields' do
       attributes = { id: id, title: title, repository: repo,
@@ -23,7 +26,9 @@ describe Ead::Series do
                     description: desc, dates: dates,
                     dates_normal: dates_normal,
                     collection_id: collection_id,
-                    collection_title: collection_title }
+                    collection_title: collection_title,
+                    sub_collection_id: sub_collection_id,
+                    sub_collection_title: sub_collection_title }
 
       solr_fields = Ead::Series.to_solr(attributes)
 
@@ -43,6 +48,8 @@ describe Ead::Series do
 
       expect(solr_fields['collection_id_ssi']).to eq formatted_collection_id
       expect(solr_fields['collection_title_ss']).to eq collection_title
+      expect(solr_fields['sub_collection_id_ssi']).to eq sub_formatted_collection_id
+      expect(solr_fields['sub_collection_title_ss']).to eq sub_collection_title
     end
 
     it 'handles unknown dates' do

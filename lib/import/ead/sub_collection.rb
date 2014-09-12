@@ -1,15 +1,25 @@
+require_relative 'generic_record'
+
 module Ead
-  module SubCollection
-    class << self
+  class SubCollection < GenericRecord
+    class << self 
 
       def root_xpath
         'c[@otherlevel="SubCollection"]'
       end
 
-      # Map the name of the field to its xpath within the EAD xml
-      def fields_map
-        { title: 'did/unittitle' }
-      end
+      def to_solr(attributes)
+          super.merge({
+            'type_ssi' => 'subcollection',
+            'format_ssi' =>'Archive Subcollection',
+            'display_title_ss' => display_title(attributes[:title]),
+            'sub_collection_title_ss' => attributes[:sub_collection_title],
+          })
+        end
+
+        def display_title(title)
+          "Archive Subcollection: #{Array(title).first}"
+        end
 
     end
   end

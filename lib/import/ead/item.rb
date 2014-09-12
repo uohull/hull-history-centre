@@ -26,6 +26,7 @@ module Ead
         super.merge({
           access_status: 'accessrestrict[@type="status"]',
           sub_collection_title: "#{sub_collection_xpath}/#{Ead::SubCollection.fields_map[:title]}",
+          sub_collection_id: "#{sub_collection_xpath}/#{Ead::SubCollection.fields_map[:id]}",
           series_title: "#{series_xpath}/#{Ead::Series.fields_map[:title]}",
           series_id: "#{series_xpath}/#{Ead::Series.fields_map[:id]}",
           sub_series_title: "#{sub_series_xpath}/#{Ead::SubSeries.fields_map[:title]}",
@@ -40,6 +41,7 @@ module Ead
           'format_ssi' => 'Archive Item',
           'display_title_ss' => display_title(attributes[:title]),
           'access_status_ssi' => clean_access_status(attributes[:access_status]),
+          'sub_collection_id_ssi' => format_id(attributes[:sub_collection_id]),
           'sub_collection_title_ss' => attributes[:sub_collection_title],
           'series_title_ss' => attributes[:series_title],
           'series_id_ssi' => format_id(attributes[:series_id]),

@@ -89,11 +89,27 @@ describe Ead::Parser do
         expect(attrs[:description]).to eq 'Subseries contains minute books recording ordinary Board meetings of Comet Radiovision Services Limited. Please note that minutes of AGMs can be found under the reference C DBCO/1/3.'
         expect(attrs[:dates]).to eq '1972-1988'
         expect(attrs[:dates_normal]).to eq '1972-1988'
-
         expect(attrs[:collection_id]).to eq 'C DBCO'
         expect(attrs[:collection_title]).to eq 'Records of Comet Group PLC (1933-2012)'
+        expect(attrs[:series_title]).to eq 'Comet Group PLC Minute Books'
+        expect(attrs[:series_id]).to eq 'C DBCO/1'        
         # Awaiting clarification from Simon  W
         #expect(attrs[:series_title]).to eq 'Comet Group PLC Minute Books'
+      end
+    end
+
+    context 'for a single subcollection' do
+      it 'finds the attributes for that subcollection' do
+        xml = Nokogiri::XML(File.read(single_item)).xpath("//#{Ead::SubCollection.root_xpath}")
+        attrs = Ead::Parser.attrs_for_record(xml, Ead::SubCollection)
+        expect(attrs[:id]).to eq 'U DAR/x1'
+        expect(attrs[:title]).to eq 'First Deposit'
+        expect(attrs[:repository]).to eq 'Hull University Archives'
+        expect(attrs[:description].first).to match(/General files, 1896 - 1976/)
+        expect(attrs[:dates_normal]).to eq '1896-1978'
+
+        expect(attrs[:collection_id]).to eq 'U DAR'
+        expect(attrs[:collection_title]).to eq  'Papers of Robin Page Arnot'
       end
     end
 

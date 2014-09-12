@@ -7,10 +7,11 @@ module Ead
       objects = Ead::Parser.parse(filename)
 
       map_key_to_class = { collections: Ead::Collection,
-                           items:         Ead::Item,
-                           pieces:        Ead::Piece,
-                           series:         Ead::Series,
-                           sub_series: Ead::SubSeries }
+                           sub_collections:  Ead::SubCollection,
+                           items:                  Ead::Item,
+                           pieces:                 Ead::Piece,
+                           series:                  Ead::Series,
+                           sub_series:          Ead::SubSeries }
 
       print_message "\nSaving records to solr"
       map_key_to_class.each do |key, ead_class|

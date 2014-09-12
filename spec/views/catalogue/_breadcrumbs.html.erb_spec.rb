@@ -11,14 +11,20 @@ describe 'catalogue/_breadcrumbs.html.erb' do
     context 'happy path' do
       let(:fields) {{ 'collection_title_ss' => 'c title',
                       'collection_id_ssi' => '3',
+                      'sub_collection_title_ss' => 'sc title',
+                      'sub_collection_id_ssi' => '3a',
                       'series_title_ss' => 's title',
-                      'series_id_ss' => '2',
+                      'series_id_ssi' => '2',
+                      'sub_series_title_ss' => 'sa title',
+                      'sub_series_id_ssi' => '2a',
                       'title_tesim' => ['t1', 't2'],
                       'id' => '1' }}
 
       it 'displays breadcrumb links' do
         expect(rendered).to have_link(fields['collection_title_ss'], href: catalogue_path(fields['collection_id_ssi']))
-        expect(rendered).to have_link(fields['series_title_ss'], href: catalogue_path(fields['series_id_ss']))
+        expect(rendered).to have_link(fields['sub_collection_title_ss'], href: catalogue_path(fields['sub_collection_id_ssi']))
+        expect(rendered).to have_link(fields['series_title_ss'], href: catalogue_path(fields['series_id_ssi']))
+        expect(rendered).to have_link(fields['sub_series_title_ss'], href: catalogue_path(fields['sub_series_id_ssi']))
         expect(rendered).to have_content(fields['title_tesim'].first)
         expect(rendered).to_not have_link(fields['title_tesim'].first, href: catalogue_path(fields['id']))
       end

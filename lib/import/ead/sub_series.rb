@@ -20,7 +20,9 @@ module Ead
         def fields_map
           super.merge({
             sub_collection_title: "#{sub_collection_xpath}/#{Ead::SubCollection.fields_map[:title]}",
+            sub_collection_id: "#{sub_collection_xpath}/#{Ead::SubCollection.fields_map[:id]}",    
             series_title: "#{series_xpath}/#{Ead::Series.fields_map[:title]}",
+            series_id: "#{series_xpath}/#{Ead::Series.fields_map[:id]}"
           })
         end
 
@@ -29,13 +31,15 @@ module Ead
             'type_ssi' => 'subseries',
             'format_ssi' =>'Archive Subseries',
             'display_title_ss' => display_title(attributes[:title]),
+            'sub_collection_id_ssi' => format_id(attributes[:sub_collection_id]),
             'sub_collection_title_ss' => attributes[:sub_collection_title],
             'series_title_ss' => attributes[:series_title],
+            'series_id_ssi' => format_id(attributes[:series_id])
           })
         end
 
         def display_title(title)
-          "Archive sub-series: #{Array(title).first}"
+          "Archive Subseries: #{Array(title).first}"
         end
 
       end
