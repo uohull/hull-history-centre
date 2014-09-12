@@ -19,9 +19,12 @@ body { padding-top: 0; }
     }
 }
 
-// need to fix
-/*.navbar-nav > li > a {
-    padding-bottom: 38px;
-    padding-top: 88px;
-    font-size: 15px;
-}*/
+/* spacing fix */
+.input-group-addon {
+    padding: 0 10px;
+}
+
+/* stop form margins from breaking sub-navbar-height */
+.search-query-form {
+    margin: 0;
+}
