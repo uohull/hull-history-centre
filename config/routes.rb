@@ -1,9 +1,15 @@
 ALLOW_DOTS ||= /[a-zA-Z0-9_.:-]+/
 
 Rails.application.routes.draw do
+  # Switch over to this when home page has been created
+  #root to: 'pages#home'
   root :to => "catalogue#index"
 
   blacklight_for :catalogue, constraints: { id: ALLOW_DOTS }
+
+  %w[home about contact cookies help].each do |page|
+    get page, controller: 'pages', action: page
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
