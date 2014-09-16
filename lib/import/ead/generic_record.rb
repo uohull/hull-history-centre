@@ -35,7 +35,6 @@ module Ead
           {
             'id' => format_id(attributes[:id]),
             'type_ssi' => 'generic_record',
-            'format_ssi' =>'Archive record',
             'title_tesim' => attributes[:title],
             'title_ssi' => Array(attributes[:title]).first,
             'display_title_ss' => attributes[:title],

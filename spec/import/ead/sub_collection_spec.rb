@@ -33,7 +33,8 @@ describe Ead::SubCollection do
       expect(solr_fields['title_ssi']).to eq title.first
       expect(solr_fields['display_title_ss']).to eq "Archive Subcollection: #{title.first}"
       expect(solr_fields['repository_ssi']).to eq repo
-      expect(solr_fields['format_ssi']).to eq 'Archive Subcollection'
+      # We don't want to index for the facets
+      expect(solr_fields['format_ssi']).to eq nil
       expect(solr_fields['extent_ssm']).to eq extent
       expect(solr_fields['access_ssim']).to eq access
       expect(solr_fields['description_tesim']).to eq desc

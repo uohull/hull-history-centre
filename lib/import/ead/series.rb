@@ -23,7 +23,6 @@ module Ead
       def to_solr(attributes)
           super.merge({
             'type_ssi' => 'series',
-            'format_ssi' =>'Archive Series',
             'display_title_ss' => display_title(attributes[:title]),
             'sub_collection_id_ssi' => format_id(attributes[:sub_collection_id]),
             'sub_collection_title_ss' => attributes[:sub_collection_title],

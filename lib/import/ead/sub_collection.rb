@@ -11,7 +11,6 @@ module Ead
       def to_solr(attributes)
           super.merge({
             'type_ssi' => 'subcollection',
-            'format_ssi' =>'Archive Subcollection',
             'display_title_ss' => display_title(attributes[:title]),
             'sub_collection_title_ss' => attributes[:sub_collection_title],
           })
