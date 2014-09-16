@@ -90,6 +90,9 @@ John Saville, &apos;Obituary: Robin Page Arnot (1890-1986)&apos;, in Bulletin of
               <repository encodinganalog="3.1.2">Hull University Archives</repository>
               <unitid label="Former Reference">U DAR/1/51</unitid>
               <unitid encodinganalog="3.1.1" label="Reference" countrycode="GB" repositorycode="050">U DAR/x1/1/51</unitid>
+              <langmaterial>
+                <language scriptcode="Lat" langcode="eng">English (UK)</language>
+              </langmaterial>
             </did>
             <accessrestrict encodinganalog="3.4.1"><p>Access will be granted to any accredited reader</p><p> Paragraph 2 </p></accessrestrict>
             <!-- Added for testing of the closed status -->
@@ -106,6 +109,9 @@ John Saville, &apos;Obituary: Robin Page Arnot (1890-1986)&apos;, in Bulletin of
                 <repository encodinganalog="3.1.2">Hull University Archives</repository>
                 <unitid label="Former Reference">U DAR/1/51f</unitid>
                 <unitid encodinganalog="3.1.1" label="Reference" countrycode="GB" repositorycode="050">U DAR/x1/1/51/f</unitid>
+                <langmaterial>
+                  <language scriptcode="Lat" langcode="eng">English (UK)</language>
+              </langmaterial>
               </did>
               <scopecontent encodinganalog="3.3.1"><p>Returned with holograph note from George Bernard Shaw: - &apos;impossible: it would damage Dutt...&apos;, no date</p></scopecontent>
             </c>

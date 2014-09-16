@@ -27,6 +27,7 @@ describe Ead::Item do
     let(:sub_series_id) { 'U DDH/1/1' }
     let(:formatted_sub_series_id) { 'U-DDH-1-1' }
     let(:sub_series_title) { 'Sub Series 1' }
+    let(:language) { "English" }
 
     it 'converts attributes to a hash of solr fields' do
       attributes = { id: id, title: title, repository: repo,
@@ -41,7 +42,8 @@ describe Ead::Item do
                      series_title: series_title,
                      series_id: series_id,
                      sub_series_title: sub_series_title,
-                     sub_series_id: sub_series_id }
+                     sub_series_id: sub_series_id,
+                     language: language }
       solr_fields = Ead::Item.to_solr(attributes)
 
       expect(solr_fields['type_ssi']).to eq 'item'
@@ -59,6 +61,7 @@ describe Ead::Item do
       expect(solr_fields['dates_isim']).to eq [1940, 1941, 1942]
       expect(solr_fields['date_ssi']).to eq 1940
       expect(solr_fields['access_status_ssi']).to eq "closed"
+      expect(solr_fields['language_ssim']).to eq  language
 
       expect(solr_fields['collection_id_ssi']).to eq formatted_collection_id
       expect(solr_fields['collection_title_ss']).to eq collection_title

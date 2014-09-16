@@ -46,6 +46,7 @@ describe Ead::Parser do
         expect(attrs[:item_id]).to eq 'U DAR/x1/1/51'
         expect(attrs[:item_title]).to eq 'File. Shaw, George Bernard, added socialist to the title'
         expect(attrs[:description]).to eq "Returned with holograph note from George Bernard Shaw: - 'impossible: it would damage Dutt...', no date"
+        expect(attrs[:language]).to eq 'English (UK)'
       end
     end
 
@@ -66,6 +67,7 @@ describe Ead::Parser do
         expect(attrs[:collection_title]).to eq 'Papers of Robin Page Arnot'
         expect(attrs[:sub_collection_title]).to eq 'First Deposit'
         expect(attrs[:series_title]).to eq 'General Files'
+        expect(attrs[:language]).to eq 'English (UK)'
       end
 
       it 'finds sub_series attributes' do
