@@ -29,6 +29,7 @@ gem 'spring',        group: :development
 
 gem 'blacklight'
 gem 'blacklight_range_limit'
+gem 'blacklight_advanced_search'
 
 group :development, :test do
   gem 'byebug'

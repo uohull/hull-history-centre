@@ -31,6 +31,7 @@
        <str name="echoParams">explicit</str>
        <str name="q.alt">*:*</str>
        <str name="mm">2&lt;-1 5&lt;-2 6&lt;90%</str>
+       <str name="df">all_text_timv</str>
        <int name="qs">1</int>
        <int name="ps">2</int>
        <float name="tie">0.01</float>
@@ -60,6 +61,7 @@
           author_tesim
        </str>
        <str name="author_pf">
+          author_tesim
        </str>
        <str name="title_qf">
           title_tesim
@@ -68,11 +70,16 @@
           alternative_title_tesim
        </str>
        <str name="title_pf">
+          title_tesim
+          full_title_tesim
+          short_title_tesim
+          alternative_title_tesim
        </str>
        <str name="subject_qf">
           subject_tesim
        </str>
        <str name="subject_pf">
+          subject_tesim
        </str>
        
        <str name="fl">
@@ -84,8 +91,10 @@
        <str name="facet.mincount">1</str>
        <str name="facet.limit">10</str>
        <str name="facet.field">active_fedora_model_ssi</str>
-       <str name="facet.field">subject_ssim</str>
-       
+       <str name="facet.field">subject_tesim</str>
+       <str name="facet.field">repository_ssi</str>
+       <str name="facet.field">author_ssim</str>
+       <str name="facet.field">language_ssim</str>
        <str name="spellcheck">true</str>
        <str name="spellcheck.dictionary">default</str>
        <str name="spellcheck.onlyMorePopular">true</str>

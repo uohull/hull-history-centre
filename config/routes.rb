@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   blacklight_for :catalogue, constraints: { id: ALLOW_DOTS }
 
+  resources :catalog, controller: 'catalogue'
+
   %w[home about contact cookies help].each do |page|
     get page, controller: 'pages', action: page
   end

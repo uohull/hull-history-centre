@@ -5,6 +5,7 @@ class CatalogueController < ApplicationController
   before_filter :show_tab, only: :show
 
   include Blacklight::Catalog
+  include BlacklightAdvancedSearch::Controller
   include BlacklightRangeLimit::ControllerOverride
 
   configure_blacklight do |config|
@@ -109,22 +110,23 @@ class CatalogueController < ApplicationController
     
     config.add_search_field('title') do |field|
       field.solr_local_parameters = {
-        :qf => 'title_tesim',
-        :pf => 'title_tesim'
+        :qf => '$title_qf',
+        :pf => '$title_pf'
       }
     end
 
     config.add_search_field('author') do |field|
+
       field.solr_local_parameters = {
-        :qf => 'author_tesim',
-        :pf => 'author_tesim'
+        :qf => '$author_qf',
+        :pf => '$author_pf'
       }
     end
 
     config.add_search_field('subject') do |field|
       field.solr_local_parameters = {
-        :qf => 'subject_tesim',
-        :pf => 'subject_tesim'
+        :qf => '$subject_qf',
+        :pf => '$subject_pf'
       }
     end
 
@@ -140,6 +142,14 @@ class CatalogueController < ApplicationController
     # If there are more than this many search results, no spelling ("did you 
     # mean") suggestion is offered.
     config.spell_max = 5
+
+      config.advanced_search = {
+        :url_key => 'advanced',
+        :form_solr_parameters => {
+          'facet.field' => ['format_ssi', 'repository_ssi', 'subject_ssim', 'author_ssim'],
+        }
+      }
+
   end
 
 protected
