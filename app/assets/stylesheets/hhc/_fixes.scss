@@ -28,3 +28,14 @@ body { padding-top: 0; }
 .search-query-form {
     margin: 0;
 }
+
+/* todo: fix for affix jump, need to automatically generate */
+.affix + .container {
+    padding-top:160px
+}
+/*#nav.affix {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}*/
+

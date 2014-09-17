@@ -27,21 +27,20 @@
     <![endif]-->
 
   </head>
+
   <body class="<%= render_body_class %>">
 
     <header role="headerinfo">
         <%= render :partial => 'shared/header_navbar' %>
-        <%= render :partial => 'shared/sub_navbar' %>
     </header>
+
+    <%= render :partial => 'shared/sub_navbar' %>
 
   <%= render partial: 'shared/ajax_modal' %>
 
   <div id="main-container" class="container">
     <%= render :partial=>'/flash_msg', layout: 'shared/flash_messages' %>
-
-    <div class="row">
-      <%= yield %>
-    </div>
+    <%= yield %>
   </div>
 
     <footer role="contentinfo">
