@@ -1,0 +1,16 @@
+.image-holder {
+/*  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;*/
+}
+
+#carousel-image-1 { background: url($header-slide-1) center center; @include background-cover; }
+#carousel-image-2 { background: url($header-slide-2) center center; @include background-cover; }
+#carousel-image-3 { background: url($header-slide-3) center center; @include background-cover; }
+
+.carousel-caption {
+  bottom: 20%;
+  left: 10%;
+  right: 10%;
+}

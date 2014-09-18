@@ -1,9 +1,11 @@
+@import 'variables';
 @import 'mixins';
 
 @import 'typeography';
 @import 'layout';
 
 // modules
+@import 'header';
 @import 'messages';
 @import 'footer';
 
@@ -12,6 +14,7 @@
 
 // components
 @import 'components';
+@import 'tiles';
 
 // styles
 @import 'styles';

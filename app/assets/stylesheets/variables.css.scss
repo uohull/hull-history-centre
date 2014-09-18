@@ -27,6 +27,7 @@ $navbar-inverse-bg: #1f1f1f;
 $navbar-inverse-border: transparent;
 $navbar-padding-horizontal: 30px;
 $navbar-padding-vertical: (($navbar-height - $line-height-computed) / 2);
+$navbar-border-radius: 0;
 
 
 /* subnavbar - set to 0 if no subnavbar used*/
@@ -38,6 +39,7 @@ $jumbotron-padding: 60px;
 /* forms */
 $input-group-addon-bg: #dfdfdf;
 $input-group-addon-border-color: transparent;
+$input-border-radius: 0;
 
 /* panels */
 $panel-bg: #f5f5f5;

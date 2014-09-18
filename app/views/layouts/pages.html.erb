@@ -27,19 +27,27 @@
     <![endif]-->
 
   </head>
+
   <body class="<%= render_body_class %>">
-  <%= render :partial => 'shared/header_navbar_without_search' %>
 
-  <%= render partial: 'shared/ajax_modal' %>
+    <header role="headerinfo">
+      <%= render :partial => 'shared/header_navbar' %>
+    </header>
 
-  <div id="main-container" class="container">
-    <%= render :partial=>'/flash_msg', layout: 'shared/flash_messages' %>
+    <%= render partial: 'shared/ajax_modal' %>
 
-    <div class="row">
+    <!-- <div id="main-container" class="container"> -->
+    <div id="main-container">
+      <%= render :partial=>'/flash_msg', layout: 'shared/flash_messages' %>
+
       <%= yield %>
-    </div>
-  </div>
 
-  <%= render :partial => 'shared/footer' %>
+    </div>
+
+    <footer role="contentinfo">
+      <%= render :partial => 'shared/footer' %>
+    </footer>
+
   </body>
+
 </html>

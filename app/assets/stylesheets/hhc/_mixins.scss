@@ -24,6 +24,13 @@
   margin-right: auto;
 }
 
+@mixin background-cover {
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 /*Font-size*/
 /*This mixin sets the font size in rem's with a px fallback*/
 /*Usage: 
