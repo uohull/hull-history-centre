@@ -50,9 +50,11 @@ function getScreenWidth() {
 }
 
 function setHeaderSize() {
+  var _headerSubMenuHeight = $('#header-sub-menu').height();
   var _headerHeight = (window.outerHeight - ( $('#navbar').height() * 2 )  ) ;
-  $('#carousel').css('max-height', _headerHeight );
-  $('.image-holder').css('height', _headerHeight );
+  var _carouselHeight = (_headerHeight - _headerSubMenuHeight ) / 1.75;
+  $('#carousel').css('max-height', _carouselHeight );
+  $('.image-holder').css('height', _carouselHeight );
 }
 
 function getScreenWidth() {
@@ -65,4 +67,4 @@ function getScreenWidth() {
 //   $('#main-container').css("padding-top","0px");
 // }
 
-// });
+// });l

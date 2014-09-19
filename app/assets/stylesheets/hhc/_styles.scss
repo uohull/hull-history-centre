@@ -12,3 +12,23 @@
 .page-shadow {
 	box-shadow: 0 5px 20px -2px darken($footer-color, 25%);
 }
+
+.primary-color { color: $primary-color; }
+.primary-color-2 { color: $primary-color-2; }
+.primary-color-3 { color: $primary-color-3; }
+.primary-color-4 { color: $primary-color-4; }
+
+.primary-bg-color { background: $primary-color }
+.primary-bg-color-2 { background: $primary-color-2; }
+.primary-bg-color-3 { background: $primary-color-3; }
+.primary-bg-color-4 { background: $primary-color-4; }
+
+.secondary-color { background: $secondary-color; }
+.secondary-color-2 { background: $secondary-color-2; }
+.secondary-color-3 { background: $secondary-color-3; }
+.secondary-color-4 { background: $secondary-color-4; }
+
+.secondary-bg-color { background: lighten ($secondary-color, 75%); }
+.secondary-bg-color-2 { background: lighten ($secondary-color-2, 75%); }
+.secondary-bg-color-3 { background: lighten ($secondary-color-3, 75%); }
+.secondary-bg-color-4 { background: lighten ($secondary-color-4, 75%); }

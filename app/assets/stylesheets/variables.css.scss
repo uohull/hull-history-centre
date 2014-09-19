@@ -27,7 +27,6 @@ $navbar-inverse-bg: #1f1f1f;
 $navbar-inverse-border: transparent;
 $navbar-padding-horizontal: 30px;
 $navbar-padding-vertical: (($navbar-height - $line-height-computed) / 2);
-$navbar-border-radius: 0;
 
 
 /* subnavbar - set to 0 if no subnavbar used*/
@@ -40,6 +39,8 @@ $jumbotron-padding: 60px;
 $input-group-addon-bg: #dfdfdf;
 $input-group-addon-border-color: transparent;
 $input-border-radius: 0;
+
+
 
 /* panels */
 $panel-bg: #f5f5f5;
@@ -74,7 +75,15 @@ $footer-height: 245px;
 $brand-title-size: 20px;
 $brand-title-color: #fff;
 
-$primary-color: #009dce;
+$primary-color: #005269;
+$primary-color-2: #988861;
+$primary-color-3: #422f30;
+$primary-color-4: #00b9bb;
+$secondary-color: #ba4310;
+$secondary-color-2: #c59500;
+$secondary-color-3:#89ada4;
+$secondary-color-4: #686f93;
+
 $primary-dark: #005875;
 $blue: #0026d5;
 $green: #00dc4a;
@@ -84,6 +93,9 @@ $neutral-color-light: #efefef;
 
 $primary-link-color: #006495;
 $primary-link-hover-color: #888;
+
+/* buttons */
+$btn-primary-bg: $secondary-color-3;
 
 /* site extras - embed here once tile partial has been imported into uoh-base */
 $tile-padding: 20px;
