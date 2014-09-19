@@ -2,8 +2,8 @@ ALLOW_DOTS ||= /[a-zA-Z0-9_.:-]+/
 
 Rails.application.routes.draw do
   # Switch over to this when home page has been created
-  #root to: 'pages#home'
-  root :to => "catalogue#index"
+  root to: 'pages#home'
+  #root :to => "catalogue#index"
 
   blacklight_for :catalogue, constraints: { id: ALLOW_DOTS }
 
