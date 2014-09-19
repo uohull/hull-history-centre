@@ -61,7 +61,7 @@ $warning-color: #BE5A13;
 /* == site theme =========================================================== */
 
 /* navbar */
-$brand-logo-image: 'hhc-logo-nt.svg';
+$brand-logo-image: asset-path('hhc-logo-nt.svg');
 $brand-logo-min-width: 145px;
 $univesity-logo-height: 27px;
 $sub-navbar-height: 50px;
