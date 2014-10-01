@@ -30,7 +30,6 @@ $(document).ready (function (){
 
 
 
-
   // $('#image-holder').css('height', (window.outerHeight - ( $('#navbar').height() ) ) );
 
   // resize header on widow resize
@@ -61,6 +60,7 @@ function getScreenWidth() {
   var _width = $(window).width();
   return _width;
 }
+
 
 // $(document).scroll(function () {
 // else {;

@@ -2,98 +2,30 @@
 navbar/navbar-inverse. Use img fallback =< ie8 or android <= 2.3 (Modernizr.svg or svgeezy) -->
 
 <nav id="navbar" class="headernav navbar navbar-default" role="navigation">
-  <div class="container-fluid"> <!-- Use container-fluid for full-width -->
+  <div class="container"> <!-- Use container-fluid for full-width -->
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-        <div class="brand-logo pull-left hidden-xs hidden-sm">
-        <a href="/">
-<!--           <img src="assets/hhc-logo-nt.svg"> -->
-        </a>
-      </div>
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#application-navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">Hull History Centre</a>
+
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#application-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+      <%=link_to t('blacklight.application_name'), root_path, :class => "navbar-brand" %>
+
+    </div>
+    <div class="brand-logo pull-right hidden-xs hidden-sm">
+        <%= link_to image_tag("hhc-logo-nt.svg", :width => "43", :height => "58"), "http://hullhistorycentre.org.uk", :title => 'Click to go to the Hull History Centre website' %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="application-navbar-collapse">
-      
-      <%= render :partial => 'shared/user_util_links' %>
-
-      <!-- <div class="pull-right">
-      <div class="btn btn-default">M</div>
-      </div> -->
-      
-    <!-- <div class="navbar-right university-logo hidden-xs">                  
-      <a target="_blank" href="http://www.hull.ac.uk" alt="The University of Hull">
-      <img src="images/uoh-logo-white.png" alt="Uoh-logo-white">
-      </a>
-    </div> -->
-
+      <div class="container">
+        <%= render :partial => 'shared/user_util_links' %>
+      </div>
     </div><!-- /.navbar-collapse -->
 
   </div><!-- /.container-fluid -->
 </nav>
-
-
-
-
-<!-- <div id="header-navbar" class="headernav navbar navbar-inverse navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header full-width">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#user-util-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-
-    <div class="brand-logo pull-left">
-      <a href="/">
-        <img src="images/brand-logo.png">
-      </a>
-    </div>
-
-    <div class="brand-title">
-    <a id="MenuLink" class="brand" href="/">Application Name</a>
-    </div>
-    
-
-      <div class="collapse navbar-collapse" id="user-util-collapse">
-        
-        <%#= partial 'shared/user_util_links' %>
-
-        <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-
-      </div>
-
-      <div class="university-logo pull-right hidden-xs">                  
-        <a target="_blank" href="http://www.hull.ac.uk" alt="The University of Hull">
-          <img src="images/uoh-logo-white.png" alt="Uoh-logo-white">
-        </a>
-      </div>
-
-
-
-  </div>
-</div> -->
-
