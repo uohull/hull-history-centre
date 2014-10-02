@@ -4,7 +4,7 @@ require_relative '../../../lib/import/ead'
 describe Ead::Piece do
   let(:id) { 'U DAR/x1/1/51.1/a' }
   let(:formatted_id) { 'U-DAR-x1-1-51.1-a' }
-
+  let(:sortable_id) { 'U DAR/x1/000001/000051.1/a' }
   let(:title) { ['title 1', 'title 2'] }
   let(:repo) { 'Hull University Archives' }
   let(:extent) { ['6 items', '1 volume'] }
@@ -57,6 +57,7 @@ describe Ead::Piece do
 
       expect(solr_fields['type_ssi']).to eq 'piece'
       expect(solr_fields['reference_no_ssi']).to eq id
+      expect(solr_fields['reference_no_ssort']).to eq sortable_id
       expect(solr_fields['title_tesim']).to eq title
       expect(solr_fields['title_ssi']).to eq title.first
       expect(solr_fields['repository_ssi']).to eq repo

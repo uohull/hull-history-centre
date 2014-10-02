@@ -5,6 +5,7 @@ describe Ead::Collection do
   describe '.to_solr' do
     let(:id) { 'U DDH' }
     let(:formatted_id) { 'U-DDH' }
+    let(:sortable_id) { 'U DDH' }
     let(:title) { 'Papers of Denzil Dean Harber' }
     let(:repo) { 'Hull University Archives' }
     let(:dates) { ['1932-1938'] }
@@ -34,6 +35,7 @@ describe Ead::Collection do
       expect(solr_fields['type_ssi']).to eq 'collection'
       expect(solr_fields['id']).to eq formatted_id
       expect(solr_fields['reference_no_ssi']).to eq id
+      expect(solr_fields['reference_no_ssort']).to eq sortable_id
       expect(solr_fields['title_tesim']).to eq title
       expect(solr_fields['title_ssi']).to eq title
       expect(solr_fields['display_title_ss']).to eq "Archive Collection: #{title}"

@@ -6,6 +6,7 @@ describe Ead::Series do
   describe '.to_solr' do    
     let(:id) { 'C DBCO/1' }
     let(:formatted_id) { 'C-DBCO-1' }
+    let(:sortable_id) { 'C DBCO/000001' }
     let(:title) { ['Comet Group PLC Minute Books'] }
     let(:dates) { ['1972-1975'] }
     let(:dates_normal) { '1972-1975' }
@@ -34,6 +35,8 @@ describe Ead::Series do
 
       expect(solr_fields['type_ssi']).to eq 'series'
       expect(solr_fields['id']).to eq formatted_id
+      expect(solr_fields['reference_no_ssi']).to eq id
+      expect(solr_fields['reference_no_ssort']).to eq sortable_id
       expect(solr_fields['title_tesim']).to eq title
       expect(solr_fields['title_ssi']).to eq title.first
       expect(solr_fields['display_title_ss']).to eq "Archive Series: #{title.first}"

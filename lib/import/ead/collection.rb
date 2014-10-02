@@ -34,6 +34,7 @@ module Ead
         {
           'id' => format_id(attributes[:id]),
           'reference_no_ssi' => attributes[:id],
+          'reference_no_ssort' => sortable_id(attributes[:id]),
           'type_ssi' => 'collection',
           'format_ssi' => 'Archive Collection',
           'title_tesim' => attributes[:title],

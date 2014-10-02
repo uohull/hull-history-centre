@@ -13,7 +13,7 @@ feature 'Facet pagination:' do
   end
 
   scenario 'Selecting a facet limit' do
-    visit root_path
+    visit catalogue_index_path
 
     fill_in 'range_dates_isim_begin', with: '1970'
     fill_in 'range_dates_isim_end', with: '1972'

@@ -136,7 +136,7 @@ class CatalogueController < ApplicationController
     config.add_sort_field 'score desc, title_ssi asc', :label => 'relevance'
     config.add_sort_field 'title_ssi asc, score desc', :label => 'title'
     config.add_sort_field 'date_ssi desc, title_ssi asc', :label => 'year'
-    config.add_sort_field 'reference_no_ssi asc, score desc', :label => 'reference no.'
+    config.add_sort_field 'reference_no_ssort asc, score desc', :label => 'reference no.'
 
     # If there are more than this many search results, no spelling ("did you 
     # mean") suggestion is offered.
