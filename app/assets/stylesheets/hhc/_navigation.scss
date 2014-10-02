@@ -1,3 +1,6 @@
+/* links */
+a { color: $primary-color; }
+
 /*header navigation*/
 .headernav { z-index: 1045; }
 
@@ -57,15 +60,15 @@
 
 
 .tile-btn-blue {
-	@include tile-link($blue);
+    @include tile-link($blue);
 }
 
 .tile-btn-green {
-	@include tile-link($green);
+    @include tile-link($green);
 }
 
 .tile-btn-orange {
-	@include tile-link($orange);
+    @include tile-link($orange);
 }
 
 
@@ -97,4 +100,34 @@
 ::-moz-selection {
   background: $primary-link-color;
   color: #fff;
+}
+
+/* applied filters */
+.appliedFilter { 
+    > span, > a { 
+        background: $applied-filter-color; 
+        color: set-overlay-text-color($applied-filter-color);
+        border-color: darken($applied-filter-color, 5%);
+    }
+    .filterName:after { color: #fff; }
+    .constraint-value:hover, .constraint-value:active {
+        background: $applied-filter-color; 
+        color: set-overlay-text-color($applied-filter-color);
+        border-color: darken($applied-filter-color, 5%); 
+    }
+}
+
+/* sort and per page */
+#sort-dropdown, #per_page-dropdown {
+    > button { 
+        background: $btn-base-color; 
+        border-color: darken($btn-base-color, 5%); 
+        @include transition(0.5s);
+        a, .caret { color: set-overlay-text-color($btn-base-color); }
+        &:hover, &:active, { 
+            color: set-overlay-text-color($sort-and-per-page-color); 
+            background: $sort-and-per-page-color; 
+            border-color: darken($sort-and-per-page-color, 5%); 
+        }
+    }
 }

@@ -59,6 +59,7 @@
     margin: 20px 0;
 }
 
+/* navbar */
 .brand-logo { 
     margin: (
                 (($navbar-height - $brand-logo-height) / 2) 
@@ -100,4 +101,11 @@ section#content {
 
 .row-spacer {
     margin-top: 50px;
+}
+
+/* sort and per page */
+#sortAndPerPage {
+    margin: 12px 0;
+    border-bottom: 0;
+    padding-bottom: 0;
 }
