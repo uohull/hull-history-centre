@@ -129,6 +129,13 @@ class CatalogueController < ApplicationController
       }
     end
 
+   config.add_search_field('reference_number') do |field|
+      field.solr_local_parameters = {
+        :qf => '$reference_qf',
+        :pf => '$reference_pf'
+      }
+    end
+
     # "sort results by" select (pulldown)
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc

@@ -79,7 +79,15 @@
        <str name="subject_pf">
           subject_tesim
        </str>
-       
+       <str name="reference_qf">
+          reference_no_search^100
+          reference_no_ssi
+       </str>
+      <str name="reference_pf">
+          reference_no_search^1000
+          reference_no_ssi
+      </str>
+
        <str name="fl">
          *, 
          score
