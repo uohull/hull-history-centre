@@ -12,8 +12,8 @@
 
   <% document_col_class = is_collection ? 'col-md-12' : 'col-md-8' %>
 
-  <div id="document" class="document <%= document_col_class %> <%= render_document_class %>" itemscope itemtype="<%= @document.itemtype %>">
-    <div id="doc_<%= @document.id.to_s.parameterize %>">
+  <div id="document" class="document <%= document_col_class %> <%= render_document_class %> container-fluid" itemscope itemtype="<%= @document.itemtype %>">
+    <div id="doc_<%= @document.id.to_s.parameterize %>" class="row">
       <%= render_document_partials @document, blacklight_config.view_config(:show).partials %>
     </div>
   </div>

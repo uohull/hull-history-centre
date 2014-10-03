@@ -131,3 +131,43 @@ a { color: $primary-color; }
         }
     }
 }
+
+/* facet panel */
+.panel-title {
+    font-size: 14px;
+    a, a:hover { text-decoration: none;}
+}
+
+.facet-label, .facet-count {
+    font-size: 90%;
+}
+.facet_limit > .panel-heading {
+    @include transition(0.5s);
+    &:hover { background:  darken(whitesmoke, 5%); }
+}
+
+.facet_limit-active > .panel-heading {
+    @include transition(0.5s);
+    &:hover { background:  darken(#d6e9c6, 2%); }
+}
+
+.facet_limit-active > .panel-heading + .panel-collapse > .panel-body {
+    background: #dff0d8;
+    border-top-color: #dff0d8;
+}
+.panel-body > ul { margin-bottom: 0; }
+
+.facet-label a, .facet-count {
+    color: #444;
+    text-shadow: 0px 1px 0px #EFEFEF;
+}
+
+.facet-label {
+    padding-right: 0 !important;
+    .selected { float: left; }
+    .facet-count { float: right; }
+}
+
+/*.facet_limit-active > .panel-heading {
+    background-color: #d6e9c6;
+}*/
