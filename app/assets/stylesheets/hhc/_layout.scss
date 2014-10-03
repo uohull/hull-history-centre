@@ -26,6 +26,13 @@
     min-height: $main-container-height;
 }
 
+#document { margin-bottom: 50px; }
+#sidebar { padding: 0;}
+#assets legend {
+  h3 { margin: 0; }
+  border: none;
+}
+
 .news-article {
   margin: .5rem 0 3.5rem 0;
   .bar-time {
@@ -110,6 +117,13 @@ section#content {
     padding-bottom: 0;
 }
 
+#previousNextDocument {
+  margin: 12px; 
+  border-bottom: 0 none; 
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
 /* thumbs */
 .document-thumbnail {
     background-clip: border-box;
@@ -125,3 +139,4 @@ section#content {
     padding-left: 20px;
     width: 90px;
 }
+
