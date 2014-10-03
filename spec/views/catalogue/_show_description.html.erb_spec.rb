@@ -7,7 +7,7 @@ describe 'catalogue/_show_collection_description.html.erb' do
   end
 
   context 'happy path' do
-    let(:fields) {{ 'description_ssim' => ['desc1', 'desc2'],
+    let(:fields) {{ 'description_tesim' => ['desc1', 'desc2'],
                     'biog_hist_ssm' => ['bio1', 'bio2'] }}
 
     it 'displays the data' do
@@ -17,7 +17,7 @@ describe 'catalogue/_show_collection_description.html.erb' do
   end
 
   context 'with String data' do
-    let(:fields) {{ 'description_ssim' => 'desc1',
+    let(:fields) {{ 'description_tesim' => 'desc1',
                     'biog_hist_ssm' => 'bio1' }}
 
     it 'displays the data' do
@@ -27,7 +27,7 @@ describe 'catalogue/_show_collection_description.html.erb' do
   end
 
   context 'with missing data' do
-    let(:fields) {{ 'description_ssim' => nil,
+    let(:fields) {{ 'description_tesim' => nil,
                     'biog_hist_ssm' => nil }}
 
     it 'doesnt blow up' do

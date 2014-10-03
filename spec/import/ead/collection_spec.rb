@@ -49,7 +49,7 @@ describe Ead::Collection do
       expect(solr_fields['custodial_history_ssim']).to eq cust
       expect(solr_fields['language_ssim']).to eq lang
       expect(solr_fields['biog_hist_ssm']).to eq biog
-      expect(solr_fields['description_ssim']).to eq desc
+      expect(solr_fields['description_tesim']).to eq desc
       expect(solr_fields['arrangement_ssm']).to eq arrange
       expect(solr_fields['related_ssm']).to eq rel
       expect(solr_fields['pub_notes_ssm']).to eq pub_notes_trans

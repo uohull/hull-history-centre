@@ -49,7 +49,7 @@ module Ead
           'custodial_history_ssim' => attributes[:custodial_history],
           'language_ssim' => attributes[:language],
           'biog_hist_ssm' => attributes[:biog_hist],
-          'description_ssim' => attributes[:description],
+          'description_tesim' => attributes[:description],
           'arrangement_ssm' => attributes[:arrangement],
           'related_ssm' => attributes[:related],
           'pub_notes_ssm' => break_lines(attributes[:pub_notes]),
