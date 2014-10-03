@@ -1,4 +1,4 @@
-$(document).ready (function (){
+$(document).on ('ready page:load', function (){
 
   // $('#search-navbar').affix({
   //     offset: {
@@ -49,9 +49,9 @@ function getScreenWidth() {
 }
 
 function setHeaderSize() {
-  var _headerSubMenuHeight = $('#header-sub-menu').height();
+  /* var _headerSubMenuHeight = $('#header-sub-menu').height(); */ //removed the sub-navbar
   var _headerHeight = (window.outerHeight - ( $('#navbar').height() * 2 )  ) ;
-  var _carouselHeight = (_headerHeight - _headerSubMenuHeight ) / 1.75;
+  var _carouselHeight = (_headerHeight /*- _headerSubMenuHeight */) / 1.75;
   $('#carousel').css('max-height', _carouselHeight );
   $('.image-holder').css('height', _carouselHeight );
 }
