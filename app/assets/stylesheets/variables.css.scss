@@ -48,7 +48,6 @@ $panel-bg: #f5f5f5;
 $panel-body-padding: 10px 15px;
 $panel-default-border: transparent;
 
-
 /* highlighters */
 $selected-text-color: #f67872;
 $alert-color: #4E9799;
@@ -104,6 +103,12 @@ $applied-filter-color: $secondary-color-4;
 
 /* sort and per page */
 $sort-and-per-page-color: $secondary-color-3;
+
+/* pagination */
+$pagination-active-bg: $secondary-color-4;
+$pagination-active-border: darken($secondary-color-4, 5%);
+$pagination-color: $secondary-color-4;
+$pagination-hover-color: darken($secondary-color-4, 10%);
 
 /* site extras - embed here once tile partial has been imported into uoh-base */
 $tile-padding: 20px;
