@@ -1,6 +1,9 @@
 <ul class="nav navbar-nav">	
-	<li><a href="about.html">About</a></li>
-	<li><%= link_to 'Advanced search', advanced_search_path(params), :class=>'advanced_search'%></li>
+    <li><%= link_to 'Home', root_path, :title => 'Click to return to the homepage' %></li>
+    <li><%= link_to 'About', '/about', :title => 'Click to go to the about page' %> </li>
+    <li><%= link_to 'Advanced search', advanced_search_path(params), :class=>'advanced_search', :title => 'Click to go to the advanced search page' %></li>
+    <li><%= link_to 'Help', '/help', :title => 'Click to go to the help section' %> </li>
+    <li class="visible-xs visible-sm"><%= link_to 'Hull History Centre', 'hullhistorycentre.org.uk', :title => 'Click to go to the Hull History Centre website' %></li>
 </ul>
 
 <!-- <form method="get" class="navbar-form navbar-left" action="http://localhost:3000/" accept-charset="UTF-8">
@@ -20,7 +23,7 @@
         </form>
  -->
  
-<%= render_search_bar  %>
+<%#= render_search_bar  %>
 
 <!-- <ul class="nav navbar-nav">
 	<li><%#= link_to 'Advanced search', advanced_search_path(params), :class=>'advanced_search'%></li>

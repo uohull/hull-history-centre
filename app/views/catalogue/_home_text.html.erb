@@ -3,50 +3,24 @@
     <%#= image_tag 'Logo438C.jpg', class: 'main-home-image' %>
   </div>
  -->
-  <div class='col-md-6'>
-    <div class='story-box'>
-      <h2> Story Box 1 </h2>
+  <div class='col-md-12'>
+    <h2>Hull History Centre Catalogue Search</h2>
+    <p>There are numerous ways to find what your looking for in the Library Catalogue, here's how:</p>
+    <h3>Search</h3>
+    <p>
+      Enter a criteria into the search field below and press the Search button. You can limit your search to Title, Author or Subject by using the accompanying drop down list.
+    </p>
 
-      <h4> Help Resources </h4>
-      <ul>
-        <li> <%= link_to 'Help link 1', '#' %> </li>
-        <li> <%= link_to 'Help link 2', '#' %> </li>
-        <li> <%= link_to 'Help link 3', '#' %> </li>
-      </ul>
+    <%= render_search_bar %>
 
-      <h4> Newly Cataloged Collections </h4>
-      <ul>
-        <li> <%= link_to 'Collection link 1', '#' %> </li>
-        <li> <%= link_to 'Collection link 2', '#' %> </li>
-      </ul>
+    <h3>Advanced Search</h3>
+    <p>For more advanced searches of the Library Catalogue use the Advanced Search form. </p>
+    <div class="tile-content tile-btn-secondary">
+      <%= link_to 'Advanced Search', '/advanced', :title => 'Click to go to the advanced search page' %>
     </div>
-  </div>
 
-  <div class='col-md-6'>
-    <div class='story-box'>
-      <h2> Story Box 2 </h2>
-
-      <h4> Search Tips </h4>
-      <ul>
-        <li> Add an asterisk * for a wildcard search. </li>
-        <li> Add quotes " " to match an exact phrase. </li>
-      </ul>
-
-      <h4> Search Examples </h4>
-      <dl>
-        <dt> social* </dt>
-        <dd> Add an asterisk to match words like "social", "socialite", and "socialism". </dd>
-
-        <dt> social </dt>
-        <dd> Search with no asterisk to exactly match "social". </dd>
-
-        <dt> social science </dt>
-        <dd> Search for items that contain both words "social" and "science". </dd>
-
-        <dt> "social science" </dt>
-        <dd> Add quotes to match the exact phrase "social science". </dd>
-      </dl>
-    </div>
+    <h3>Browse</h3>
+    <p>Use categories panel to the left of the screen you can start browsing our catalogue, selecting more categories will limit your search results.</p>
   </div>
 
 </div>

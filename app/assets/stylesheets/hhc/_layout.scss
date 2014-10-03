@@ -22,6 +22,17 @@
 /* navbar-fixed-top is in use:*/
 /*body { padding-top: $navbar-height + $subnavbar-height; }*/
 
+#main-container {
+    min-height: $main-container-height;
+}
+
+#document { margin-bottom: 50px; }
+#sidebar { padding: 0;}
+#assets legend {
+  h3 { margin: 0; }
+  border: none;
+}
+
 .news-article {
   margin: .5rem 0 3.5rem 0;
   .bar-time {
@@ -55,6 +66,7 @@
     margin: 20px 0;
 }
 
+/* navbar */
 .brand-logo { 
     margin: (
                 (($navbar-height - $brand-logo-height) / 2) 
@@ -62,8 +74,8 @@
 /*              (($navbar-height - $brand-logo-height) / 2)
                 ($grid-gutter-width / 2)*/
             );
-    background: url($brand-logo-image) no-repeat top left;
-    background-size: cover;
+    /*background: url($brand-logo-image) no-repeat top left;
+    background-size: cover;*/
     height: 56px;
     margin: 11px 15px;
     width: 41px;
@@ -97,3 +109,34 @@ section#content {
 .row-spacer {
     margin-top: 50px;
 }
+
+/* sort and per page */
+#sortAndPerPage {
+    margin: 12px 0;
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+#previousNextDocument {
+  margin: 12px; 
+  border-bottom: 0 none; 
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+/* thumbs */
+.document-thumbnail {
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("/assets/book-thumb-sm.png");
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: cover;
+    float: right;
+    height: 90px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    width: 90px;
+}
+

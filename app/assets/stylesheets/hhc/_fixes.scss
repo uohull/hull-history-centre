@@ -39,3 +39,6 @@ body { padding-top: 0; }
     width: 100%;
 }*/
 
+/* fix twitter widget width*/
+/*iframe[id^='twitter-widget-']{ width:100% !important;}*/
+iframe[id^='twitter-widget-']{ width:760px !important;}
