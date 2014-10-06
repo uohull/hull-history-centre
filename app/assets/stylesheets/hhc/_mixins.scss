@@ -1,3 +1,21 @@
+/* functions */
+
+/* Sets color of text to be dark on light background 
+or light on a dark backround */
+/* Usage: 
+  .button {
+    background: $background-color;
+    color: set-overlay-text-color($background-color);
+  }
+*/
+@function set-overlay-text-color($color) {
+    @if (lightness( $color ) > 60) {
+      @return #333;
+    }
+    @else {
+      @return #FFFFFF;
+    }
+}
 
 /*Opacity*/
 /*Usage: 
@@ -81,23 +99,34 @@ body {
     @include transition(0.5s);
     padding: 1rem;
     margin: 1rem 0;
-    color: #111;
     background: $neutral-color-light;
+    color: set-overlay-text-color($neutral-color-light);
     border-bottom: none;
     &:hover {  
-      color: #fff;
       background: $hover-color;
+      color: set-overlay-text-color($hover-color);
+      text-decoration: none;
     }
   }
 }
 
-@function set-overlay-text-color($color) {
-    @if (lightness( $color ) > 60) {
-      @return #333;
+@mixin tile-link-fw($hover-color) {
+  margin-top: 15px;
+  a {
+    @include transition(0.5s);
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+    background: $neutral-color-light;
+    color: set-overlay-text-color($neutral-color-light);
+    border-bottom: none;
+    &:hover {  
+      background: $hover-color;
+      color: set-overlay-text-color($hover-color);
+      text-decoration: none;
     }
-    @else {
-      @return #FFFFFF;
-    }
+  }
 }
 
 @mixin message-borders($bordercolor) {
