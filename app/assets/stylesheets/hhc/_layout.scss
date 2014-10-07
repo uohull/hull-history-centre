@@ -66,7 +66,21 @@
     margin: 20px 0;
 }
 
-.side-panel-container { margin: 15px 0; }
+.side-panel-container { 
+  margin: 15px 0; 
+  margin-top: 68px;
+  margin-bottom: 30px;
+  position: fixed;
+  padding: 0;
+  @media (max-width: 480px), (max-width: 768px) { 
+    margin-top: 0px;  position: relative;
+  }
+}
+
+.embed-container { 
+  margin: 40px 0;
+  .embedded-label { text-align: center; margin: 15px;}
+}
 
 /* navbar */
 .brand-logo { 
@@ -142,3 +156,16 @@ section#content {
     width: 90px;
 }
 
+/* page */
+.page-footer {
+  margin-top: 150px;
+  .bar-time {
+    display: block;
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    color: $neutral-color;
+    margin: 0 0 0.2rem 0;
+  } 
+  p { color: $neutral-color; }
+}

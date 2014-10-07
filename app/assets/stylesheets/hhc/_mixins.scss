@@ -102,6 +102,7 @@ body {
     background: $neutral-color-light;
     color: set-overlay-text-color($neutral-color-light);
     border-bottom: none;
+    text-decoration: none;
     &:hover {  
       background: $hover-color;
       color: set-overlay-text-color($hover-color);
@@ -121,7 +122,8 @@ body {
     background: $neutral-color-light;
     color: set-overlay-text-color($neutral-color-light);
     border-bottom: none;
-    &:hover {  
+    text-decoration: none;
+    &:hover, &:active {  
       background: $hover-color;
       color: set-overlay-text-color($hover-color);
       text-decoration: none;

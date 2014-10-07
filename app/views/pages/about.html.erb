@@ -2,17 +2,12 @@
 
     <div class="row">
 
-        <div class="col-md-3">
-            <div class="side-panel-container">
-                <div class="tile-btn-fw-primary">
-                <a class="read-article" title="Click to read this article" href="http://www2.hull.ac.uk/administration/tel.aspx">Read article →</a>
-                </div>
-                <div class="tile-btn-fw-primary">
-                    <a class="read-article" title="Click to read this article" href="http://www2.hull.ac.uk/administration/tel.aspx">Read article →</a>
-                </div>
+        <div class="col-sm-3">
+            <div class="side-panel-container col-sm-2 col-lg-2">
+
+                <%= render :partial => 'shared/side_bar_menu' %>
+                
             </div>
-
-
         </div>
 
         <div class="col-md-9">
@@ -35,10 +30,9 @@
             </p>
 
             <h3>Display</h3>
-            <p>The data is presented through the use of the Blacklight software, originally developed at the University of Virginia Library, but is now an open source Ruby on Rails gem. It uses Apache Solr as the basis for its search engine. </p>
+            <p>The data is presented through the use of the <%= link_to 'Blacklight', 'http://projectblacklight.org/', :title => 'Click to go to Project Blacklight website', :target => '_blank' %> software, originally developed at the University of Virginia Library, but is now an open source Ruby on Rails gem. It uses <%= link_to 'Apache Solr', 'http://lucene.apache.org/solr/', :title => 'Click to go to the Apache Solr website', :target => '_blank' %> as the basis for its search engine. </p>
 
-            <p>The display templates were based on the work undertaken to use Blacklight for the University of Hull library catalogue and then modified to accommodate History Centre</p>
-
+            <p>The display templates were based on the work undertaken to use Blacklight for the <%=  link_to 'University of Hull library catalogue', 'http://blacklight.hull.ac.uk/', :title => 'Click to go to the University of Hull Library Catalogue', :target => '_blank' %> and then modified to accommodate History Centre</p>
 
             <h3>Thanks</h3>
             <p>Particular thanks for assistance with this project go to:</p>
@@ -49,10 +43,12 @@
                 <li>Chris Awre, Simon Lamb and Richard Garbutt at the University of Hull</li>
             </ul>
 
-            <p style="margin-top: 150px;">October 2014</p>
-
-            <p>Simon Wilson<br/>
-            Senior Archivist, Hull History Centre</p>
+            <div class="page-footer">
+                <hr/>
+                <time datetime="2014-10-07" class="date-time">October 2014</time>
+                <p>Simon Wilson<br/>
+                Senior Archivist, Hull History Centre</p>
+            </div>
 
         </div>
 

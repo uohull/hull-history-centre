@@ -61,6 +61,32 @@ function getScreenWidth() {
   return _width;
 }
 
+/* scroll to anchor of same name */
+  $(function() {
+    $('a[href*=#]:not([href=#])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html,body').animate({
+            scrollTop: target.offset().top - $('#navbar').height()
+          }, 1000);
+          return false;
+        }
+      }
+    });
+  });
+
+// show scroll to top link if > 100
+$(document).scroll(function () {
+    var y = $(this).scrollTop();
+    if (y > 100) {
+        $('.scroll-to-top').fadeIn();
+    } else {
+        $('.scroll-to-top').fadeOut();
+    }
+
+});
 
 // $(document).scroll(function () {
 // else {;

@@ -83,26 +83,16 @@ a { color: $primary-color; }
     @include tile-link($orange);
 }
 
-
-/*.tile-btn-green {
-	&:hover { 
-		.tile-inner-container {  
-			@include transition(0.5s);
-			background: $green;
-			> h3 { color: #fff !important; }
-		}
-	}
+.scroll-to-top {
+    position: fixed; 
+    bottom: 50px; 
+    right: 50px;
+    z-index: 1000;
+    @include tile-link($secondary-color-4);
+    span.glyphicon-arrow-up {
+        font-size: 1.2em;
+    }
 }
-
-.tile-btn-orange {
-	&:hover { 
-		.tile-inner-container {  
-			@include transition(0.5s);
-			background: $orange;
-			> h3 { color: #fff !important; }
-		}
-	}
-}*/
 
 ::selection {
   background: $primary-link-color;
