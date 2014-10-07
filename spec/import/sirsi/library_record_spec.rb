@@ -37,6 +37,7 @@ describe Sirsi::LibraryRecord do
       expect(solr_fields['type_ssi']).to eq 'library_record'
       expect(solr_fields['id']).to eq id
       expect(solr_fields['reference_no_ssi']).to eq reference_number
+      expect(solr_fields['reference_no_ssort']).to eq reference_number
       expect(solr_fields['format_ssi']).to eq 'Book'
       expect(solr_fields['title_tesim']).to eq title
       expect(solr_fields['title_ssi']).to eq title.first

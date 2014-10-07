@@ -40,6 +40,7 @@ module Sirsi
           'repository_ssi' => 'Hull Local Studies Library',
           'id' => attributes[:id],
           'reference_no_ssi' => attributes[:reference_number],
+          'reference_no_ssort' => attributes[:reference_number],
           'title_tesim' => attributes[:title],
           'title_ssi' => Array(attributes[:title]).first,
           'display_title_ss' => display_title(attributes),
