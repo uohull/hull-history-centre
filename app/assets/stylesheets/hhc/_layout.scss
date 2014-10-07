@@ -128,7 +128,7 @@ section#content {
 .document-thumbnail {
     background-clip: border-box;
     background-color: rgba(0, 0, 0, 0);
-    background-image: url("book-thumb-sm.png");
+    background-image: url(asset-path("book-thumb-sm.png"));    
     background-origin: padding-box;
     background-position: 0 0;
     background-repeat: repeat;
