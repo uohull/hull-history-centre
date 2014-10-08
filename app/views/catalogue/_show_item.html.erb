@@ -1,22 +1,33 @@
 <%# A show view for a single Item -%>
-<br />
-<dl class="dl-horizontal  dl-invert">
 
-  <% show_fields = [['reference_no_ssi', 'Reference No'],
-                    ['dates_ssim', 'Dates'],
-                    ['description_tesim', 'Description'],
-                    ['format_ssi', 'Format'],
-                    ['extent_ssm', 'Extent'],
-                    ['language_ssim', 'Language'],
-                    ['access_ssim', 'Access Conditions'],
-                    ['repository_ssi', 'Repository']] %>
+<div class="row">
 
-  <% show_fields.each do |(solr_doc_key, label)| %>
-    <%= show_attribute(document, solr_doc_key, label) %>
-  <% end %>
+  <div class="col-sm-3">
+    <div class="cover-art">
+      <img class="img-responsive" src="/assets/dvd-thumb-lg.png">
+    </div>
+  </div>
 
-  <dt> Collection: </dt>
-  <dd>
-    <%= link_to document[:collection_title_ss], catalogue_path(document[:collection_id_ssi]) %>
-  </dd>
-</dl>
+  <div class="col-sm-9">
+    <dl class="dl-vertical  dl-invert">
+
+      <% show_fields = [['reference_no_ssi', 'Reference No'],
+                        ['dates_ssim', 'Dates'],
+                        ['description_tesim', 'Description'],
+                        ['format_ssi', 'Format'],
+                        ['extent_ssm', 'Extent'],
+                        ['language_ssim', 'Language'],
+                        ['access_ssim', 'Access Conditions'],
+                        ['repository_ssi', 'Repository']] %>
+
+      <% show_fields.each do |(solr_doc_key, label)| %>
+        <%= show_attribute(document, solr_doc_key, label) %>
+      <% end %>
+
+      <dt> Collection: </dt>
+      <dd>
+        <%= link_to document[:collection_title_ss], catalogue_path(document[:collection_id_ssi]) %>
+      </dd>
+    </dl>
+  </div>
+</div>

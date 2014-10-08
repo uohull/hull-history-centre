@@ -82,6 +82,16 @@
   .embedded-label { text-align: center; margin: 15px;}
 }
 
+.cover-art { margin-bottom: $grid-gutter-width / 2; }
+
+.dl-vertical > span > dd, .dl-vertical > dd { margin-bottom: 1rem; }
+
+.documentHeader > h4 { margin-top: 0; }
+.document-metadata {
+  > dt { width: 120px; text-align: left; }
+  > dd { margin-left: 120px; }
+}
+
 /* navbar */
 .brand-logo { 
     margin: (
