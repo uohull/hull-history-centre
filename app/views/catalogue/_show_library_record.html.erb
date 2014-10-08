@@ -1,7 +1,7 @@
 <%# A show view for a single LibraryRecord -%>
 <br />
 <dl class="dl-horizontal  dl-invert">
-    <h3>
+    <h4>
       <% authors = Array(document['author_tesim']) %>
       <% unless authors.empty? %>
         <dt> <%= author_label(document) %> &nbsp; </dt>
@@ -16,7 +16,7 @@
         <dt> Date: &nbsp; </dt>
         <dd> <%= Array(document['dates_ssim']).join(', ') %> </dd>
       <% end %>
-    </h3>
+    </h4>
   </dl>
 
 <% show_fields = [['reference_no_ssi', 'Reference No'],

@@ -86,7 +86,7 @@ a { color: $primary-color; }
 .scroll-to-top {
     position: fixed; 
     bottom: 50px; 
-    right: 50px;
+    left: 50px;
     z-index: 1000;
     @include tile-link($secondary-color-4);
     span.glyphicon-arrow-up {
@@ -122,6 +122,21 @@ a { color: $primary-color; }
 /* sort and per page */
 #sort-dropdown, #per_page-dropdown {
     > button { 
+        background: $btn-base-color; 
+        border-color: darken($btn-base-color, 5%); 
+        @include transition(0.5s);
+        a, .caret { color: set-overlay-text-color($btn-base-color); }
+        &:hover, &:active, { 
+            color: set-overlay-text-color($sort-and-per-page-color); 
+            background: $sort-and-per-page-color; 
+            border-color: darken($sort-and-per-page-color, 5%); 
+        }
+    }
+}
+
+/* search widgets */
+.search-widgets {
+    > a { 
         background: $btn-base-color; 
         border-color: darken($btn-base-color, 5%); 
         @include transition(0.5s);
