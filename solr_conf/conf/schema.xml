@@ -354,13 +354,13 @@
      -->
      <fieldType name="reference_no_text" class="solr.TextField" positionIncrementGap="100">
        <analyzer type="index">
-          <tokenizer class="solr.WhitespaceTokenizerFactory" />
+           <tokenizer class="solr.StandardTokenizerFactory"/>
            <filter class="solr.LowerCaseFilterFactory" />
            <filter class="solr.EdgeNGramFilterFactory" minGramSize="2" maxGramSize="15" side="front"/>
            <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="([\s|\W])" replacement=""/>
        </analyzer>
         <analyzer type="query">
-          <tokenizer class="solr.WhitespaceTokenizerFactory" />
+           <tokenizer class="solr.StandardTokenizerFactory"/>
            <filter class="solr.LowerCaseFilterFactory" />
            <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="([\s|\W])" replacement=""/>
        </analyzer>

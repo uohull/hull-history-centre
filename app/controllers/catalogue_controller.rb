@@ -129,10 +129,10 @@ class CatalogueController < ApplicationController
       }
     end
 
-   config.add_search_field('reference_number') do |field|
+   config.add_search_field('reference_no') do |field|
       field.solr_local_parameters = {
-        :qf => '$reference_qf',
-        :pf => '$reference_pf'
+        :qf => '$reference_no_qf',
+        :pf => '$reference_no_pf'
       }
     end
 
