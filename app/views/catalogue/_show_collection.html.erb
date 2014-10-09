@@ -1,32 +1,46 @@
 <%# A show view for a single Collection -%>
 
 <% unless document['dates_ssim'].blank? %>
-  <h3>
-    <dl class="dl-horizontal  dl-invert">
+  <h4>
+    <dl class="dl-vertical  dl-invert">
       <dt> Dates: &nbsp; </dt>
       <dd> <%= Array(document['dates_ssim']).join(', ') %> </dd>
     </dl>
-  </h3>
+  </h4>
 <% end %>
 
 <div class="row">
   <% @show_tab ||= 'summary' %>
 
-  <div id="tab-sidebar" class="col-md-3">
+  <div id="tab-sidebar" class="col-sm-2">
+
+    <%= display_resource_thumbnail (document) %>
+
     <% menu_item_classes = 'tab-menu-item col-md-12' %>
 
-    <%= link_to 'Summary', catalogue_path(document.id, tab: 'summary'), class: "#{tab_class('summary', @show_tab)} #{menu_item_classes}" %>
+    <div class="tile-btn-fw-primary-2">
+      <%= link_to 'Summary', catalogue_path(document.id, tab: 'summary'), class: "#{tab_class('summary', @show_tab)} #{menu_item_classes}" %>
+    </div>
 
-    <%= link_to 'Description', catalogue_path(document.id, tab: 'description'), class: "#{tab_class('description', @show_tab)} #{menu_item_classes}" %>
+    <div class="tile-btn-fw-primary-2">
+      <%= link_to 'Description', catalogue_path(document.id, tab: 'description'), class: "#{tab_class('description', @show_tab)} #{menu_item_classes}" %>
+    </div>
 
-    <%= link_to 'Arrangement', catalogue_path(document.id, tab: 'arrangement'), class: "#{tab_class('arrangement', @show_tab)} #{menu_item_classes}" %>
+    <div class="tile-btn-fw-primary-2">
+      <%= link_to 'Arrangement', catalogue_path(document.id, tab: 'arrangement'), class: "#{tab_class('arrangement', @show_tab)} #{menu_item_classes}" %>
+    </div>
 
-    <%= link_to 'Related Material', catalogue_path(document.id, tab: 'related'), class: "#{tab_class('related', @show_tab)} #{menu_item_classes}" %>
+    <div class="tile-btn-fw-primary-2">
+      <%= link_to 'Related Material', catalogue_path(document.id, tab: 'related'), class: "#{tab_class('related', @show_tab)} #{menu_item_classes}" %>
+    </div>
 
-    <%= link_to 'Search', catalogue_path(document.id, tab: 'search'), class: "#{tab_class('search', @show_tab)} #{menu_item_classes}" %>
+    <div class="tile-btn-fw-primary-2">
+      <%= link_to 'Search', catalogue_path(document.id, tab: 'search'), class: "#{tab_class('search', @show_tab)} #{menu_item_classes}" %>
+    </div>
+
   </div>
 
-  <div id="tab-content" class="col-md-9">
+  <div id="tab-content" class="col-sm-10">
     <%= render "catalogue/show_collection_#{@show_tab}", document: document %>
   </div>
 

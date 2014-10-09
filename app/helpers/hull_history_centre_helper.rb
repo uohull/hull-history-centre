@@ -18,4 +18,42 @@ module HullHistoryCentreHelper
     end
   end
 
+  # Returns the Resource type/Format from the Solr document
+  def resource_type_from_document(document)
+    resource_type = ""
+    resource_type = document["format_ssi"] unless document["format_ssi"].nil?
+    resource_type = resource_type.is_a?(Array) ? resource_type.first : resource_type
+  end
+
+  def display_resource_thumbnail(document)
+    content_tag(:img, nil, class: "img-responsive thumbnail-image" , src: thumbnail_src_from_document(document) )
+  end
+
+  def thumbnail_src_from_document(document)
+    resource_type = resource_type_from_document(document)
+
+    thumbnail_src = case resource_type
+    when "Book"
+      asset_path "icon-flat-book.png"
+    when "CD/DVD"
+      asset_path "icon-flat-dvd.png"
+    when "Map"
+      asset_path "icon-flat-map.png"
+    when "Microfilm"
+      asset_path "icon-flat-microfilm.png"
+    # no icons created yet
+    #when "Newspaper"
+      #asset_path "icon-flat-file"
+    #when "Pamphlet"
+      #asset_path "icon-flat-file"
+    #when "Cassette"
+      #asset_path "icon-flat-file"
+    when "Video"
+      asset_path "icon-flat-video.png"
+    else
+       asset_path "icon-flat-file.png"
+    end
+
+  end
+
 end

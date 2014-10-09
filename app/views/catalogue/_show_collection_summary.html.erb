@@ -1,4 +1,4 @@
-<h3> Summary </h3>
+<h3>Summary</h3>
 
 <% show_fields = [['reference_no_ssi', 'Reference No'],
                   ['extent_ssm', 'Extent'],
@@ -7,7 +7,7 @@
                   ['copyright_ssm', 'Copyright'],
                   ['custodial_history_ssim', 'Custodial History']] %>
 
-<dl class="dl-horizontal  dl-invert">
+<dl class="dl-vertical  dl-invert">
   <% show_fields.each do |(solr_doc_key, label)| %>
     <%= show_attribute(document, solr_doc_key, label) %>
   <% end %>

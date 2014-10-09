@@ -32,3 +32,12 @@
 .secondary-bg-color-2 { background: lighten ($secondary-color-2, 75%); }
 .secondary-bg-color-3 { background: lighten ($secondary-color-3, 75%); }
 .secondary-bg-color-4 { background: lighten ($secondary-color-4, 75%); }
+
+.date-time {
+    display: block;
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    color: $neutral-color;
+    margin: 0 0 0.2rem 0;
+}

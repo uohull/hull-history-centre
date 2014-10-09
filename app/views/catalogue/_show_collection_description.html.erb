@@ -3,7 +3,7 @@
 <% show_fields = [['biog_hist_ssm', 'Admin History'],
                   ['description_tesim', 'Description']] %>
 
-<dl class="dl-horizontal  dl-invert">
+<dl class="dl-vertical dl-invert">
   <% show_fields.each do |(solr_doc_key, label)| %>
     <%= show_attribute(document, solr_doc_key, label) %>
   <% end %>

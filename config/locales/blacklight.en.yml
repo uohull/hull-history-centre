@@ -3,13 +3,14 @@ en:
     application_name: 'Hull History Centre Catalogue'
 
     search:
-      start_over: 'Start Again'
-      back_to_search: 'Back to Search Results'
+      start_over: 'Start again'
+      back_to_search: 'Back to search results'
       form:
         q: Search our catalogues
       filters:
         title: ''
 
+    back_to_search: 'Back to search'
 
     show:
       availability_link: Check if this item can be borrowed

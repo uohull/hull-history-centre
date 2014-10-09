@@ -23,16 +23,17 @@ a { color: $primary-color; }
 	font-size: 4em;
 }
 
-.tile-content a {
+.tile-content a, p a {
   color: $primary-link-color;
   text-decoration: none;
   border-bottom:1px dotted;
+  @include transition(0.5s);
   &:hover { color: $primary-link-hover-color; text-decoration: none;}
 }
 
 .btn-sign-in { 
-	@include transition(0.5s);
-	background-color: $primary-color;
+    @include transition(0.5s);
+    background-color: $primary-color;
     border-color: darken($primary-color, 7%);
     color: white; 
     &:hover { background: darken($primary-color, 7%); color: $neutral-color-light; }
@@ -48,6 +49,7 @@ a { color: $primary-color; }
     &:hover { background: darken($primary-color, 7%); color: $neutral-color-light; }
 }
 
+/* tile buttons */
 .tile-btn-primary { @include tile-link($primary-color); }
 .tile-btn-primary-2 { @include tile-link($primary-color-2); }
 .tile-btn-primary-3 { @include tile-link($primary-color-3); }
@@ -58,6 +60,16 @@ a { color: $primary-color; }
 .tile-btn-secondary-3 { @include tile-link($secondary-color-3); }
 .tile-btn-secondary-4 { @include tile-link($secondary-color-4); }
 
+/* tile buttons - full width of container */
+.tile-btn-fw-primary { @include tile-link-fw($primary-color); }
+.tile-btn-fw-primary-2 { @include tile-link-fw($primary-color-2); }
+.tile-btn-fw-primary-3 { @include tile-link-fw($primary-color-3); }
+.tile-btn-fw-primary-4 { @include tile-link-fw($primary-color-4); }
+
+.tile-btn-fw-secondary { @include tile-link-fw($secondary-color); }
+.tile-btn-fw-secondary-2 { @include tile-link-fw($secondary-color-2); }
+.tile-btn-fw-secondary-3 { @include tile-link-fw($secondary-color-3); }
+.tile-btn-fw-secondary-4 { @include tile-link-fw($secondary-color-4); }
 
 .tile-btn-blue {
     @include tile-link($blue);
@@ -71,26 +83,16 @@ a { color: $primary-color; }
     @include tile-link($orange);
 }
 
-
-/*.tile-btn-green {
-	&:hover { 
-		.tile-inner-container {  
-			@include transition(0.5s);
-			background: $green;
-			> h3 { color: #fff !important; }
-		}
-	}
+.scroll-to-top {
+    position: fixed; 
+    bottom: 50px; 
+    left: 50px;
+    z-index: 1000;
+    @include tile-link($secondary-color-4);
+    span.glyphicon-arrow-up {
+        font-size: 1.2em;
+    }
 }
-
-.tile-btn-orange {
-	&:hover { 
-		.tile-inner-container {  
-			@include transition(0.5s);
-			background: $orange;
-			> h3 { color: #fff !important; }
-		}
-	}
-}*/
 
 ::selection {
   background: $primary-link-color;
@@ -120,6 +122,21 @@ a { color: $primary-color; }
 /* sort and per page */
 #sort-dropdown, #per_page-dropdown {
     > button { 
+        background: $btn-base-color; 
+        border-color: darken($btn-base-color, 5%); 
+        @include transition(0.5s);
+        a, .caret { color: set-overlay-text-color($btn-base-color); }
+        &:hover, &:active, { 
+            color: set-overlay-text-color($sort-and-per-page-color); 
+            background: $sort-and-per-page-color; 
+            border-color: darken($sort-and-per-page-color, 5%); 
+        }
+    }
+}
+
+/* search widgets */
+.search-widgets {
+    > a { 
         background: $btn-base-color; 
         border-color: darken($btn-base-color, 5%); 
         @include transition(0.5s);
