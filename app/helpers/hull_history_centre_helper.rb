@@ -1,5 +1,21 @@
 module HullHistoryCentreHelper
 
+  ##############################################
+  # Blacklight Overrides 
+  # FacetHelpers 
+  ##############################################
+  # Standard display of a SELECTED facet value (e.g. without a link and with a remove button)
+  # @params (see #render_facet_value)
+  def render_selected_facet_value(facet_solr_field, item)
+    content_tag(:span, :class => "facet-label") do
+      content_tag(:span, facet_display_value(facet_solr_field, item), :class => "selected") + render_facet_count(item.hits, :classes => ["selected"])
+    end
+  end
+  
+  ##############################################
+  # End of Blacklight overides
+  ##############################################
+  
   def title_by_id(value)
     query = 'id:"' + value + '"'
     result = Blacklight.solr.select(params: { q: query })
