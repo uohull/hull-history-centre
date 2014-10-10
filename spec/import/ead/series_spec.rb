@@ -39,7 +39,7 @@ describe Ead::Series do
       expect(solr_fields['reference_no_ssort']).to eq sortable_id
       expect(solr_fields['title_tesim']).to eq title
       expect(solr_fields['title_ssi']).to eq title.first
-      expect(solr_fields['display_title_ss']).to eq "Archive Series: #{title.first}"
+      expect(solr_fields['display_title_ss']).to eq "#{title.first}"
       expect(solr_fields['repository_ssi']).to eq repo
       # We don't want to index for the facets
       expect(solr_fields['format_ssi']).to eq nil

@@ -58,7 +58,7 @@ module Ead
       end
 
       def display_title(title)
-        "Archive Collection: #{Array(title).first}"
+        "#{Array(title).first}"
       end
 
       def break_lines(raw_data)

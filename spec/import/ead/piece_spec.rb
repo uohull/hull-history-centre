@@ -53,7 +53,7 @@ describe Ead::Piece do
       # We want Pieces to behave exactly like Items for
       # format faceting and display.
       expect(solr_fields['format_ssi']).to eq 'Archive Item'
-      expect(solr_fields['display_title_ss']).to eq "Archive Item: #{title.first}"
+      expect(solr_fields['display_title_ss']).to eq "#{title.first}"
 
       expect(solr_fields['type_ssi']).to eq 'piece'
       expect(solr_fields['reference_no_ssi']).to eq id

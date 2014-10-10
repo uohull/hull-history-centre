@@ -29,10 +29,6 @@ module Ead
           })
         end
 
-        def display_title(title)
-          "Archive Series: #{Array(title).first}"
-        end
-
     end
   end
 end

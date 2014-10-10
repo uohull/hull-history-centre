@@ -15,13 +15,13 @@ describe "Search Results" do
   it "should have for an empty query" do
     search_for ''
     expect(number_of_results_from_page(page)).to eq 3
-    expect(page).to have_content('Archive Series: Birmingham Six Case Papers')
+    expect(page).to have_content('Birmingham Six Case Papers')
   end
 
   it "should have for an all fields query" do
     search_for 'parliamentary questions and debates'
     expect(number_of_results_from_page(page)).to eq 2
-    expect(page).to have_content('Archive Collection: Papers of Chris Mullin MP Relating to Miscarriages of Justice')
+    expect(page).to have_content('Papers of Chris Mullin MP Relating to Miscarriages of Justice')
   end
 end
 

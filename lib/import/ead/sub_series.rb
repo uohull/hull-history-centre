@@ -37,10 +37,6 @@ module Ead
           })
         end
 
-        def display_title(title)
-          "Archive Subseries: #{Array(title).first}"
-        end
-
       end
 
   end

@@ -120,9 +120,7 @@ module Sirsi
       end
 
       def display_title(attributes)
-        format = transformed_format(attributes[:format])
-        format = 'Library Book' if format == 'Book'
-        "#{format}: #{Array(attributes[:title]).first}"
+        "#{Array(attributes[:title]).first}"
       end
 
     end

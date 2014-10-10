@@ -41,7 +41,7 @@ describe Sirsi::LibraryRecord do
       expect(solr_fields['format_ssi']).to eq 'Book'
       expect(solr_fields['title_tesim']).to eq title
       expect(solr_fields['title_ssi']).to eq title.first
-      expect(solr_fields['display_title_ss']).to eq "Library Book: #{title.first}"
+      expect(solr_fields['display_title_ss']).to eq "#{title.first}"
       expect(solr_fields['repository_ssi']).to eq 'Hull Local Studies Library'
 
       expect(solr_fields['subject_ssim']).to eq subject

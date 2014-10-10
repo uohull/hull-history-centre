@@ -50,10 +50,6 @@ module Ead
         })
       end
 
-      def display_title(title)
-        "Archive Item: #{Array(title).first}"
-      end
-
       def clean_access_status(access)
         access.to_s.downcase.match(/closed/) ? "closed" : "open"
       end

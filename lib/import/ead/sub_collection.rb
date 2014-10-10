@@ -16,10 +16,6 @@ module Ead
           })
         end
 
-        def display_title(title)
-          "Archive Subcollection: #{Array(title).first}"
-        end
-
     end
   end
 end

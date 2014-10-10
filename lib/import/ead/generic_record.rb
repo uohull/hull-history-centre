@@ -54,6 +54,10 @@ module Ead
           }
         end
 
+        def display_title(title)
+          "#{Array(title).first}"
+        end
+
       end
 
   end

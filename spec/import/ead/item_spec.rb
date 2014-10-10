@@ -53,7 +53,7 @@ describe Ead::Item do
       expect(solr_fields['reference_no_ssort']).to eq sortable_id
       expect(solr_fields['title_tesim']).to eq title
       expect(solr_fields['title_ssi']).to eq title.first
-      expect(solr_fields['display_title_ss']).to eq "Archive Item: #{title.first}"
+      expect(solr_fields['display_title_ss']).to eq "#{title.first}"
       expect(solr_fields['repository_ssi']).to eq repo
       expect(solr_fields['format_ssi']).to eq 'Archive Item'
       expect(solr_fields['extent_ssm']).to eq extent
