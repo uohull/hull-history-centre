@@ -1,5 +1,7 @@
 /* links */
-a { color: $primary-color; }
+a { 
+    color: $primary-color;
+}
 
 /*header navigation*/
 .headernav { z-index: 1045; }
@@ -61,15 +63,16 @@ a { color: $primary-color; }
 .tile-btn-secondary-4 { @include tile-link($secondary-color-4); }
 
 /* tile buttons - full width of container */
-.tile-btn-fw-primary { @include tile-link-fw($primary-color); }
-.tile-btn-fw-primary-2 { @include tile-link-fw($primary-color-2); }
-.tile-btn-fw-primary-3 { @include tile-link-fw($primary-color-3); }
-.tile-btn-fw-primary-4 { @include tile-link-fw($primary-color-4); }
+/* max-width fix applied to stop crashing in side panel*/
+.tile-btn-fw-primary { @include tile-link-fw($primary-color); @media (min-width: 767px) { max-width: 265px; } }
+.tile-btn-fw-primary-2 { @include tile-link-fw($primary-color-2); @media (min-width: 767px) { max-width: 265px; } }
+.tile-btn-fw-primary-3 { @include tile-link-fw($primary-color-3); @media (min-width: 767px) { max-width: 265px; } }
+.tile-btn-fw-primary-4 { @include tile-link-fw($primary-color-4); @media (min-width: 767px) { max-width: 265px; } }
 
-.tile-btn-fw-secondary { @include tile-link-fw($secondary-color); }
-.tile-btn-fw-secondary-2 { @include tile-link-fw($secondary-color-2); }
-.tile-btn-fw-secondary-3 { @include tile-link-fw($secondary-color-3); }
-.tile-btn-fw-secondary-4 { @include tile-link-fw($secondary-color-4); }
+.tile-btn-fw-secondary { @include tile-link-fw($secondary-color); @media (min-width: 767px) { max-width: 265px; } }
+.tile-btn-fw-secondary-2 { @include tile-link-fw($secondary-color-2); @media (min-width: 767px) { max-width: 265px; } }
+.tile-btn-fw-secondary-3 { @include tile-link-fw($secondary-color-3); @media (min-width: 767px) { max-width: 265px; } }
+.tile-btn-fw-secondary-4 { @include tile-link-fw($secondary-color-4); @media (min-width: 767px) { max-width: 265px; } }
 
 .tile-btn-blue {
     @include tile-link($blue);
@@ -127,7 +130,7 @@ a { color: $primary-color; }
         @include transition(0.5s);
         a, .caret { color: set-overlay-text-color($btn-base-color); }
         &:hover, &:active, { 
-            color: set-overlay-text-color($sort-and-per-page-color); 
+            color: set-overlay-text-color($sort-and-per-page-color);
             background: $sort-and-per-page-color; 
             border-color: darken($sort-and-per-page-color, 5%); 
         }
@@ -147,6 +150,13 @@ a { color: $primary-color; }
             border-color: darken($sort-and-per-page-color, 5%); 
         }
     }
+}
+
+/* document + components*/
+.document * a, .page_links > a {
+    text-decoration: none;
+    @include transition(0.5s);
+    &:hover { text-decoration: none; border-bottom: 1px dotted; };
 }
 
 /* facet panel */
