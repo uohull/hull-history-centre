@@ -3,8 +3,7 @@
 
     <div class="col-sm-3 col-md-2">
         <div class="cover-art">
-            <!-- <img class="img-responsive" src="/assets/dvd-thumb-lg.png"> -->
-            <%= display_resource_thumbnail (document) %>
+            <%= display_resource_thumbnail(document, id: isbn(document))%>
         </div>
     </div>
 

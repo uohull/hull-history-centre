@@ -9,6 +9,11 @@ module HullHistoryCentreHelper
     value
   end
 
+  def isbn(document)
+    isbn = document.get("isbn_ssm", sep: nil) 
+    isbn = isbn.nil? ? nil : isbn.first
+  end
+
   def render_selected_facet_value(facet_solr_field, item)
     content_tag(:span, :class => "facet-label") do
     content_tag(:span, facet_display_value(facet_solr_field, item), :class => "selected") + render_facet_count(item.hits, :classes => ["selected"])
@@ -25,8 +30,9 @@ module HullHistoryCentreHelper
     resource_type = resource_type.is_a?(Array) ? resource_type.first : resource_type
   end
 
-  def display_resource_thumbnail(document)
-    content_tag(:img, nil, class: "img-responsive thumbnail-image" , src: thumbnail_src_from_document(document) )
+  def display_resource_thumbnail(document, opts={})
+    options = { id: '', class: 'img-responsive thumbnail-image' }.merge(opts) #defaults
+    content_tag(:img, nil, class: options[:class], id: options[:id], src: thumbnail_src_from_document(document) )
   end
 
   def thumbnail_src_from_document(document)
