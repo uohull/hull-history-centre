@@ -77,6 +77,13 @@
   }
 }
 
+.top-panel-heading { 
+  > h4 { 
+    margin-top: 7px;
+    margin-bottom: 8px;
+  } 
+}
+
 .embed-container { 
   margin: 40px 0;
   .embedded-label { text-align: center; margin: 15px;}
@@ -157,7 +164,7 @@ section#content {
 
 /* page */
 .page-footer {
-  margin-top: 150px;
+  margin: 50px 0 25px;
   .bar-time {
     display: block;
     font-size: 1.2rem;
