@@ -168,3 +168,19 @@ section#content {
   } 
   p { color: $neutral-color; }
 }
+
+/* advanced search */
+.panel.panel-default.well {
+  > h3 { margin-top: 0; }
+  ul { 
+    margin: 0;
+    padding: 0;
+    list-style-type: circle;
+    list-style-position: outside;
+    list-style-image: none;
+    li { margin-bottom: 0.5em; }
+  }
+}
+.sort-submit-buttons {
+  margin: 2em 0;
+}

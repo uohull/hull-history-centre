@@ -18,3 +18,14 @@ en:
       item_open_access: This item is reference only and can only be consulted in person at the Hull History Centre.
       item_closed_access: This item is not currently available for consultation – please see the Access Conditions statement for more details.
 
+  blacklight_advanced_search:
+    all: all
+    any: any
+    form:
+      title: Advanced search
+      search_context: Within search
+      limit_criteria_heading_html: "<em>AND</em> have these attributes"
+      query_criteria_heading_html: "Find items that match %{select_menu} of"
+      sort_label: "Results by"
+      start_over: "Start again"
+      search_btn: 'Search'
