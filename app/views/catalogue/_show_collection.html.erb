@@ -18,23 +18,23 @@
 
     <% menu_item_classes = 'tab-menu-item col-md-12' %>
 
-    <div class="tile-btn-fw-primary-2">
+    <div class="tile-btn-fw-secondary">
       <%= link_to 'Summary', catalogue_path(document.id, tab: 'summary'), class: "#{tab_class('summary', @show_tab)} #{menu_item_classes}" %>
     </div>
 
-    <div class="tile-btn-fw-primary-2">
+    <div class="tile-btn-fw-secondary">
       <%= link_to 'Description', catalogue_path(document.id, tab: 'description'), class: "#{tab_class('description', @show_tab)} #{menu_item_classes}" %>
     </div>
 
-    <div class="tile-btn-fw-primary-2">
+    <div class="tile-btn-fw-secondary">
       <%= link_to 'Arrangement', catalogue_path(document.id, tab: 'arrangement'), class: "#{tab_class('arrangement', @show_tab)} #{menu_item_classes}" %>
     </div>
 
-    <div class="tile-btn-fw-primary-2">
+    <div class="tile-btn-fw-secondary">
       <%= link_to 'Related Material', catalogue_path(document.id, tab: 'related'), class: "#{tab_class('related', @show_tab)} #{menu_item_classes}" %>
     </div>
 
-    <div class="tile-btn-fw-primary-2">
+    <div class="tile-btn-fw-secondary">
       <%= link_to 'Search', catalogue_path(document.id, tab: 'search'), class: "#{tab_class('search', @show_tab)} #{menu_item_classes}" %>
     </div>
 

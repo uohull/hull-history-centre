@@ -127,6 +127,7 @@ body {
       background: $hover-color;
       color: set-overlay-text-color($hover-color);
       text-decoration: none;
+      border-bottom: 0 !important;
     }
   }
 }

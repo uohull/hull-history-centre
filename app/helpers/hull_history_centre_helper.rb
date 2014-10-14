@@ -63,6 +63,10 @@ module HullHistoryCentreHelper
       asset_path "icon-flat-map.png"
     when "Microfilm"
       asset_path "icon-flat-microfilm.png"
+    when "Archive Collection"
+      asset_path "icon-flat-archive.png"
+    when "Archive Item"
+      asset_path "icon-flat-archive-item.png"
     # no icons created yet
     #when "Newspaper"
       #asset_path "icon-flat-file"
