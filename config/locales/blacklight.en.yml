@@ -10,7 +10,7 @@ en:
       filters:
         title: ''
 
-    back_to_search: 'Back to search'
+    back_to_search: 'Back to search results'
 
     show:
       availability_link: Check if this item can be borrowed

@@ -205,6 +205,26 @@ a {
     .facet-count { float: right; }
 }
 
+@media (max-width: 480px), (max-width: 767px) { 
+    #facets .top-panel-heading {
+        border: 1px solid #CCC;
+        margin-bottom: 1em;
+        margin-top: 1em;
+        background: $primary-color-3;
+        color: #fff;
+        > .facets-toggle { margin-right: 0; }
+    }
+    .panel-title, .panel-body {
+        font-size: 16px;
+        line-height: 25px;
+    }
+    .appliedFilter > span, .appliedFilter > a {
+        font-size: 16px;
+    }
+
+}
+
+
 /*.facet_limit-active > .panel-heading {
     background-color: #d6e9c6;
 }*/

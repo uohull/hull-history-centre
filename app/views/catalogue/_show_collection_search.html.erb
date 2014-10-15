@@ -1,5 +1,7 @@
 <h3> Search </h3>
-
+<p>
+Use the search box below to conduct a search of this collection ONLY – this is also possible from the Advanced Search
+</p>
 <%= form_tag search_action_url, :method => :get, :class => 'search-query-form form-inline clearfix' do %>
   <%= hidden_field_tag 'f[collection_id_ssi][]', document.id %>
 
