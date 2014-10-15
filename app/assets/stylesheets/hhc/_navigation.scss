@@ -74,6 +74,16 @@ a {
 .tile-btn-fw-secondary-3 { @include tile-link-fw($secondary-color-3); @media (min-width: 767px) { max-width: 265px; } }
 .tile-btn-fw-secondary-4 { @include tile-link-fw($secondary-color-4); @media (min-width: 767px) { max-width: 265px; } }
 
+.tile-btn-fw-inverse-primary { @include tile-link-fw-inverse($primary-color); @media (min-width: 767px) { max-width: 265px; } }
+.tile-btn-fw-inverse-primary-2 { @include tile-link-fw-inverse($primary-color-2); @media (min-width: 767px) { max-width: 265px; } }
+.tile-btn-fw-inverse-primary-3 { @include tile-link-fw-inverse($primary-color-3); @media (min-width: 767px) { max-width: 265px; } }
+.tile-btn-fw-inverse-primary-4 { @include tile-link-fw-inverse($primary-color-4); @media (min-width: 767px) { max-width: 265px; } }
+
+.tile-btn-fw-inverse-secondary { @include tile-link-fw-inverse($secondary-color); @media (min-width: 767px) { max-width: 265px; } }
+.tile-btn-fw-inverse-secondary-2 { @include tile-link-fw-inverse($secondary-color-2); @media (min-width: 767px) { max-width: 265px; } }
+.tile-btn-fw-inverse-secondary-3 { @include tile-link-fw-inverse($secondary-color-3); @media (min-width: 767px) { max-width: 265px; } }
+.tile-btn-fw-inverse-secondary-4 { @include tile-link-fw-inverse($secondary-color-4); @media (min-width: 767px) { max-width: 265px; } }
+
 .tile-btn-blue {
     @include tile-link($blue);
 }

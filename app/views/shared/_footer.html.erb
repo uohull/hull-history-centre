@@ -1,58 +1,42 @@
-<!-- <div id="parter-footer" class="row">
-  <div class="partner-logos col-md-2"> </div>
-
-  <div class="partner-logos col-md-8">
-    <%#= image_tag('Partner.jpg', alt: 'Partners: Hull City Council, Heritage Lottery Fund, University of Hull') %>
-  </div>
+<div id="feedback-tab-container" class="row">
+    <div class="col-sm-2 col-sm-offset-9">
+        <div id="feedback-tab" class="tile-btn-fw-inverse-primary"> 
+            <a href="mailto:s.wilson@hull.ac.uk?subject=HHC%20Online%20catalogue%20feedback"><span class="glyphicon glyphicon-envelope"></span> 
+            <span>&nbsp;Feedback</span></a>
+        </div>
+    </div>
 </div>
 
+<div id="footer" class="navbar navbar-fixed-bottom">
 
+    <div class="footer-container container">
 
- -->
+        <div class="row-fluid">
+            <div class="col-sm-12">
+                <ul class="footer-column-horizontal">
+                    <li>All information &copy; <a href="http://www.hullhistorycentre.org.uk/">Hull History Centre</a> <%= Time.now.year %>&nbsp; </li>
+                    <li>|</li>
+                    <li>ver 1.0.0</li>
+                </ul>
+            </div>
+        </div>
 
-	<div id="footer" class="navbar navbar-fixed-bottom">
-
-		<!-- <div class="navbar navbar-inverse visible-xs">
-		  <div class="container container-fluid">
-			  <div class="navbar-right university-logo pull-right">                  
-			    <a target="_blank" href="http://www.hull.ac.uk" alt="The University of Hull">
-				  <img src="images/uoh-logo-white.png" alt="Uoh-logo-white">
-			  	</a>
-			  </div>
-		  </div>
-		</div> -->
-
-	    <div class="footer-container container">
-
-	    	<div class="row-fluid">
-	    		<div class="col-sm-12">
-			     <ul class="footer-column-horizontal">
-			           <li>All information &copy; <a href="http://www.hullhistorycentre.org.uk/">Hull History Centre</a> <%= Time.now.year %>&nbsp; </li>
-			           <li>|</li>
-			           <li>ver 1.0.0</li>
-			           <li>|</li>
-			           <li><a href="mailto:@hull.ac.uk?subject=Hull History Centre feedback">Feedback</a></li>
-			        </ul>
-	    		</div>
-
-			</div>
-
-	        <div class="row-fluid">
-	          <div class="col-sm-12 footer-horizontal">
-	            <div id="footer-bottom">
-	                <div class="footer-logo-container">
-               		<a href="http://www.hullcc.gov.uk" target="_blank"><%= image_tag("hcc-logo.png",  alt: "Hull City Council") %></a>
-                            </div>
-                            <div class="footer-logo-container">
-               		<a href="http://www.hullcc.gov.uk" target="_blank"><%= image_tag("lottery-logo.png",  alt: "The National Lottery Heritage Lottery Fund") %></a>
-                            </div>
-                            <div class="footer-logo-container">
-                                        <a href="http://www.hull.ac.uk" target="_blank"><%= image_tag("uoh-footer-logo.png",  alt: "The University of Hull") %></a>
-	                     </div>
-	            </div>
-	          </div>
-	        </div>
-
-    	</div>
+        <div class="row-fluid">
+            <div class="col-sm-12 footer-horizontal">
+                <div id="footer-bottom">
+                    <div class="footer-logo-container">
+                        <a href="http://www.hullcc.gov.uk" target="_blank"><%= image_tag("hcc-logo.png",  alt: "Hull City Council") %></a>
+                    </div>
+                    <div class="footer-logo-container">
+                        <a href="http://www.hlf.org.uk" target="_blank"><%= image_tag("lottery-logo.png",  alt: "The National Lottery Heritage Lottery Fund") %></a>
+                    </div>
+                    <div class="footer-logo-container">
+                            <a href="http://www.hull.ac.uk" target="_blank"><%= image_tag("uoh-footer-logo.png",  alt: "The University of Hull") %></a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
+
+</div>

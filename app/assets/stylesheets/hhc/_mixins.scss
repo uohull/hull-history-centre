@@ -132,6 +132,27 @@ body {
   }
 }
 
+@mixin tile-link-fw-inverse($hover-color) {
+  margin-top: 15px;
+  a {
+    @include transition(0.5s);
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+    background: $hover-color;
+    color: set-overlay-text-color($hover-color);
+    border-bottom: none;
+    text-decoration: none;
+    &:hover, &:active {  
+      background: $neutral-color-light;
+      color: set-overlay-text-color($neutral-color-light);
+      text-decoration: none;
+      border-bottom: 0 !important;
+    }
+  }
+}
+
 @mixin message-borders($bordercolor) {
   border-top: 1px solid lighten($bordercolor, 3%);
   border-bottom: 1px solid darken($bordercolor, 3%);
