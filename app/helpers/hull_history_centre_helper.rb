@@ -82,4 +82,12 @@ module HullHistoryCentreHelper
 
   end
 
+  # Returns a collection pdf url based upon a pre-defined format for pdf naming.  
+  def collection_pdf_url(id, label="Link")
+    unless id.nil? 
+      filename = "#{id.downcase}.pdf"
+      return link_to label, "/files/#{filename}"
+    end
+  end
+
 end
