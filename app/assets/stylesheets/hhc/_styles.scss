@@ -9,6 +9,14 @@
     padding: 30px 30px 30px 30px;
 }
 
+/* adjust font size on small screen due to large title */
+@media (max-width: 480px), (max-width: 767px) { 
+    .navbar-brand {
+        font-size: 15px;
+        line-height: 22px;
+    }
+}
+
 .page-shadow {
     box-shadow: 0 5px 20px -2px darken($footer-color, 25%);
 }

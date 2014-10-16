@@ -33,6 +33,18 @@ a {
   &:hover { color: $primary-link-hover-color; text-decoration: none;}
 }
 
+.carousel-caption {
+    p {
+        > a { text-decoration: none; border-bottom: none;
+            &:hover { border-bottom: 1px dotted; color: #dadada; }
+         }
+    }
+}
+
+.btn, .facets-toggle {
+    @include transition(0.5s);
+}
+
 .btn-sign-in { 
     @include transition(0.5s);
     background-color: $primary-color;
