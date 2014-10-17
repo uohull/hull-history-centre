@@ -7,6 +7,7 @@ class CatalogueController < ApplicationController
   include Blacklight::Catalog
   include BlacklightAdvancedSearch::Controller
   include BlacklightRangeLimit::ControllerOverride
+  include BlacklightGoogleAnalytics::ControllerExtraHead
 
   configure_blacklight do |config|
     ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params

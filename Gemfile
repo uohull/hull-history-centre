@@ -30,6 +30,7 @@ gem 'spring',        group: :development
 gem 'blacklight'
 gem 'blacklight_range_limit'
 gem 'blacklight_advanced_search'
+gem 'blacklight_google_analytics', git: 'https://github.com/uohull/blacklight_google_analytics', branch: 'master'
 
 group :development, :test do
   gem 'byebug'

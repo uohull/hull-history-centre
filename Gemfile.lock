@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/uohull/blacklight_google_analytics
+  revision: 2e6d6c8f921e75284bf45418c831119716647cd9
+  branch: master
+  specs:
+    blacklight_google_analytics (0.0.1.pre3)
+      content_for_in_controllers (~> 0.0.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -76,6 +84,7 @@ GEM
     coffee-script-source (1.7.0)
     colorize (0.7.3)
     columnize (0.8.9)
+    content_for_in_controllers (0.0.2)
     debugger-linecache (1.2.0)
     deprecation (0.1.0)
       activesupport
@@ -208,6 +217,7 @@ PLATFORMS
 DEPENDENCIES
   blacklight
   blacklight_advanced_search
+  blacklight_google_analytics!
   blacklight_range_limit
   byebug
   capistrano

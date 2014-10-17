@@ -31,3 +31,5 @@
 
 //= require 'site'
 
+
+//= require blacklight_google_analytics
