@@ -15,7 +15,7 @@ set :assets_prefix, "#{shared_path}/public/assets"
 # to deploy with a separate assets folder, use release_path:
 # set :assets_prefix, "#{release_path}/public/assets"
 
-set :linked_files, %w{config/database.yml config/solr.yml config/secrets.yml}
+set :linked_files, %w{config/database.yml config/solr.yml config/secrets.yml config/initializers/blacklight_google_analytics.rb}
 
 set :linked_dirs, %w{tmp/pids tmp/cache tmp/sockets public/assets}
 # to deploy with a separate assets folder, remove public/assets from linked dirs:
