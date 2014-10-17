@@ -27,6 +27,14 @@ rake import:ead['spec/fixtures/sample_ead_files/U_DDH.xml, spec/fixtures/sample_
 
 Note that there is not a space between the rake task name and the square bracket that begins the arguments list, and that there are qutoes around the argument list.
 
+
+## PDF files
+Collection records have an associated pdf file that contains the collection catalogue.  This is implemented by letting the web server server the files (e.g. webrick in development) and Apache http when deployed.  To add some sample pdfs to the public folder of the application: 
+
+```bash
+rake copy:pdf
+```
+
 ## Deploying with Capistrano
 
 First, set up an ssh config entry with details about the server name used in the relevant config/deploy/[my-env].rb file.
