@@ -42,7 +42,10 @@ module HullHistoryCentreHelper
   # Returns the Resource type/Format from the Solr document
   def resource_type_from_document(document)
     resource_type = ""
-    resource_type = document["format_ssi"] unless document["format_ssi"].nil?
+
+    #type_ssi
+    #resource_type = document["format_ssi"] unless document["format_ssi"].nil?
+    resource_type = document["format_ssi"] || document["type_ssi"]
     resource_type = resource_type.is_a?(Array) ? resource_type.first : resource_type
   end
 
@@ -65,8 +68,10 @@ module HullHistoryCentreHelper
       asset_path "icon-flat-microfilm.png"
     when "Archive Collection"
       asset_path "icon-flat-archive.png"
-    when "Archive Item"
+    when "Archive Item", "piece", "item", "series", "subcollection", "subseries"
       asset_path "icon-flat-archive-item.png"
+    when "Video"
+      asset_path "icon-flat-video.png"
     # no icons created yet
     #when "Newspaper"
       #asset_path "icon-flat-file"
@@ -74,10 +79,9 @@ module HullHistoryCentreHelper
       #asset_path "icon-flat-file"
     #when "Cassette"
       #asset_path "icon-flat-file"
-    when "Video"
-      asset_path "icon-flat-video.png"
+
     else
-       asset_path "icon-flat-file.png"
+       asset_path "icon-flat-generic.png"
     end
 
   end
