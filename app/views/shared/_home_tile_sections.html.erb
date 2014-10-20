@@ -1,6 +1,6 @@
   <!-- the catalogue -->
-  <div class="col-md-3 col-md-offset-1">         
-      <div class="">
+  <div class="col-sm-6 col-lg-3">         
+      <div class="tile-bottom">
         <h2>The Catalogue</h2>
         <p>
           The History Centre catalogue contains information and descriptions to over 330,000 items in the archives and local studies collections. It does not include images of the documents themselves.
@@ -12,12 +12,12 @@
       </div>
   </div>
 
-  <div class="hr-alt hidden-md hidden-lg"></div>
+  <div class="hr-alt visible-xs"></div>
 
 <!-- collections -->
-<div class="col-md-3">
+<div class="col-sm-6 col-lg-3">
   
-  <div class="">
+  <div class="tile-bottom">
     <h2>Collections</h2>
     <p class="doc">
       The Hull History Centre houses collections of local, regional and national importance relating to the city of Hull and the surrounding areas, Hull’s maritime history, political figures and pressure groups, and prominent figures in literature and drama.
@@ -45,13 +45,13 @@
 
 </div>
 
-<div class="hr-alt hidden-md hidden-lg"></div>
+<div class="hr-alt visible-xs"></div>
 
 <!-- help -->
-<div class="col-md-3">
+<div class="col-sm-6 col-lg-3">
   
-    <div class="">
-      <h2>Help</h2>
+    <div class="tile-bottom">
+      <h2 class="twitter-header-adjuster">Help</h2>
       <p class="doc">
        Our help page contains information and tips on searching and using the catalogue to identify material relevant to your enquiry – whether it for family history, locals history or just curiously.
       </p><!-- help links -->
@@ -66,4 +66,13 @@
       </div>
     </div>
 
+</div>
+
+<div class="hr-alt visible-xs"></div>
+
+<!-- twitter -->
+<div class="col-md-6 col-lg-3">
+  <div class="tile-bottom">
+    <%= render :partial => 'shared/home_tile_twitter' %>
+  </div>
 </div>

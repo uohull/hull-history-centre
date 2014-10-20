@@ -41,4 +41,12 @@ body { padding-top: 0; }
 
 /* fix twitter widget width*/
 /*iframe[id^='twitter-widget-']{ width:100% !important;}*/
-iframe[id^='twitter-widget-']{ width:760px !important;}
+iframe[id^='twitter-widget-'] { 
+    /* width:760px !important; */
+    width: 325px !important; /* max-width restricted to the smallest column width to stop crashing/wrap */ 
+}
+
+/* adjusting space between header and content as misalignment differences in spacing used */
+.twitter-header-adjuster {
+    margin-bottom: 12px;
+}
