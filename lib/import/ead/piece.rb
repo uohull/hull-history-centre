@@ -1,3 +1,5 @@
+require_relative 'item'
+
 module Ead
   class Piece < Item
     class << self
