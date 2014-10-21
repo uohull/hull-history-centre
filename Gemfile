@@ -13,6 +13,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 group :production do
   gem 'therubyracer',  platforms: :ruby
+  gem 'mysql2', '~> 0.3.16'
 end
 
 # Use jquery as the JavaScript library
