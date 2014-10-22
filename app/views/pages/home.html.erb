@@ -3,9 +3,10 @@
 <div id="carousel" class="carousel slide" data-interval="10000" data-pause="hover">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <li data-target="#carousel" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel" data-slide-to="1"></li>
+    <li data-target="#carousel" data-slide-to="1" class="active"></li>
     <li data-target="#carousel" data-slide-to="2"></li>
+    <li data-target="#carousel" data-slide-to="3"></li>
+    <li data-target="#carousel" data-slide-to="4"></li>
   </ol>
 
   <div class="carousel-inner">
@@ -40,6 +41,17 @@
         <div class="carousel-caption">
           <h1>Search. Discover. Visit.</h1>
           <!-- <p>Did you know our enquiry service can undertake research on your behalf?</p> -->
+          <p>&nbsp;</p>
+          <%= render partial: 'home_search' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div id="carousel-image-4" class="image-holder"></div>
+      <div class="container">
+        <div class="carousel-caption">
+          <h1> <!-- Welcome to the <br/> --> Hull History Centre Catalogue</h1>
           <p>&nbsp;</p>
           <%= render partial: 'home_search' %>
         </div>

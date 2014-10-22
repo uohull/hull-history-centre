@@ -8,6 +8,7 @@
 #carousel-image-1 { background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), url($header-slide-1) center center; @include background-cover; }
 #carousel-image-2 { background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), url($header-slide-2) center center; @include background-cover; }
 #carousel-image-3 { background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), url($header-slide-3) center center; @include background-cover; }
+#carousel-image-4 { background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), url($header-slide-4) center center; @include background-cover; }
 
 .carousel-caption {
   bottom: 8%;
