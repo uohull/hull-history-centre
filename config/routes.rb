@@ -9,6 +9,9 @@ Rails.application.routes.draw do
 
   resources :catalog, controller: 'catalogue'
 
+  # Add LB healthcheck page
+  get 'healthcheck/rails-status' => 'pages#rails_status'
+
   %w[home about contact cookies help].each do |page|
     get page, controller: 'pages', action: page
   end
