@@ -52,7 +52,7 @@ h1 {
   margin-bottom: 0.5em;
 }
 
-@media (max-width: 480px), (max-width: 767px) { 
+@media (max-width: 480px), (max-width: 767px), (max-height: 850px) { 
    h1 { font-size: 40px !important; }
 }
 
