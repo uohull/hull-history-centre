@@ -5,21 +5,47 @@
   background-size: cover;*/
 }
 
-#carousel-image-1 { background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), url($header-slide-1) center center; @include background-cover; }
-#carousel-image-2 { background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), url($header-slide-2) center center; @include background-cover; }
-#carousel-image-3 { background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), url($header-slide-3) center center; @include background-cover; }
-#carousel-image-4 { background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), url($header-slide-4) center center; @include background-cover; }
+#carousel-image-1 { 
+  background: #005269;
+  background: url($header-slide-1); /* fallback */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), url($header-slide-1) center center;
+  @include background-cover; 
+}
+#carousel-image-2 { 
+  background: #005269;
+  background: url($header-slide-2); /* fallback */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), url($header-slide-2) center center; 
+  @include background-cover; 
+}
+#carousel-image-3 { 
+  background: #005269;
+  background: url($header-slide-3); /* fallback */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), url($header-slide-3) center center; 
+  @include background-cover; 
+}
+#carousel-image-4 { 
+  background: #005269;
+  background: url($header-slide-4); /* fallback */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), url($header-slide-4) center center; 
+  @include background-cover; 
+}
 
 .carousel-caption {
   bottom: 8%;
   left: 10%;
   right: 10%;
-  h1 { font-size: 60px; text-shadow: 0 0 4px rgba(0, 0, 0, 0.57); }
+  h1 { 
+    font-size: 60px; 
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.57); 
+    /*filter: progid:DXImageTransform.Microsoft.Shadow(color=#000000,direction=90); *//* IE9 fallback - all ugly, need svg fallback*/
+    /*filter: dropshadow(color=#000000, offx=0, offy=0, Positive=1);*/
+    /*filter: shadow(color=#111, Direction=120, Strength=3);*/
+  }
   input, button { border-radius: 0 !important; }
   .navbar-form { box-shadow: none; }
   p { font-size: 20px; }
   a { color: #fff }
- /* background: rgba(0,0,0,0.75);
+ /* background: rgba(0,0,0,0.75)ok, no ;
   -webkit-box-shadow: 0px 0px 165px 1px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 0px 165px 1px rgba(0,0,0,0.75);
 box-shadow: 0px 0px 165px 1px rgba(0,0,0,0.75);*/
