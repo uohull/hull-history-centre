@@ -97,8 +97,8 @@ body {
   margin-top: 30px;
   a {
     @include transition(0.5s);
-    padding: 1rem;
-    margin: 1rem 0;
+    padding: 1em;
+    margin: 1em 0;
     background: $neutral-color-light;
     color: set-overlay-text-color($neutral-color-light);
     border-bottom: none;
@@ -140,8 +140,8 @@ body {
     @include transition(0.5s);
     display: block;
     width: 100%;
-    padding: 1rem;
-    margin: 1rem 0;
+    padding: 1em;
+    margin: 1em 0;
     background: $neutral-color-light;
     color: set-overlay-text-color($neutral-color-light);
     border-bottom: none;
@@ -161,8 +161,8 @@ body {
     @include transition(0.5s);
     display: block;
     width: 100%;
-    padding: 1rem;
-    margin: 1rem 0;
+    padding: 1em;
+    margin: 1em 0;
     background: $hover-color;
     color: set-overlay-text-color($hover-color);
     border-bottom: none;
