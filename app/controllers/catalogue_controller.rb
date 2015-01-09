@@ -116,7 +116,6 @@ class CatalogueController < ApplicationController
     end
 
     config.add_search_field('author') do |field|
-
       field.solr_local_parameters = {
         :qf => '$author_qf',
         :pf => '$author_pf'
@@ -151,6 +150,7 @@ class CatalogueController < ApplicationController
     config.spell_max = 5
 
       config.advanced_search = {
+        :query_parser => 'edismax',
         :url_key => 'advanced',
         :form_solr_parameters => {
           'facet.field' => ['format_ssi', 'repository_ssi', 'subject_ssim', 'author_ssim'],
